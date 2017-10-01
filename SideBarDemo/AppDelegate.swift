@@ -12,15 +12,29 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    
+    var sideBarWindowController: SideBarWindowController?
+
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        
+        sideBarWindowController = SideBarWindowController(windowNibName: NSNib.Name(rawValue: "SideBarWindowController"))
+        sideBarWindowController?.delegate = self
+        sideBarWindowController?.showWindow(self)
+
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
+    
+    @objc(applicationShouldTerminateAfterLastWindowClosed:) func applicationShouldTerminateAfterLastWindowClosed (_ sender: NSApplication) -> Bool
+    {
+        return true
+    }
+
 
 
 }

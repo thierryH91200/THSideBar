@@ -12,6 +12,12 @@
 		0305FAC91F80AE3900D9B979 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAC71F80AE3900D9B979 /* MainMenu.xib */; };
 		0305FAD51F80AE3900D9B979 /* SideBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FAD41F80AE3900D9B979 /* SideBarDemoTests.swift */; };
 		0305FAE01F80AE3900D9B979 /* SideBarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FADF1F80AE3900D9B979 /* SideBarDemoUITests.swift */; };
+		0305FAEF1F80AEAD00D9B979 /* SideBarWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */; };
+		0305FAF01F80AEAD00D9B979 /* SideBarWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */; };
+		0305FAF21F80BBA500D9B979 /* SidebarTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */; };
+		0305FAF41F8117A600D9B979 /* ContentView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF31F8117A600D9B979 /* ContentView1.xib */; };
+		0305FAF61F8117BC00D9B979 /* ContentView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF51F8117BC00D9B979 /* ContentView2.xib */; };
+		0305FAF81F8117D500D9B979 /* ContentView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF71F8117D500D9B979 /* ContentView3.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		0305FADB1F80AE3900D9B979 /* SideBarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideBarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0305FADF1F80AE3900D9B979 /* SideBarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDemoUITests.swift; sourceTree = "<group>"; };
 		0305FAE11F80AE3900D9B979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarWindowController.swift; sourceTree = "<group>"; };
+		0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideBarWindowController.xib; sourceTree = "<group>"; };
+		0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarTableCellView.swift; sourceTree = "<group>"; };
+		0305FAF31F8117A600D9B979 /* ContentView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView1.xib; sourceTree = "<group>"; };
+		0305FAF51F8117BC00D9B979 /* ContentView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView2.xib; sourceTree = "<group>"; };
+		0305FAF71F8117D500D9B979 /* ContentView3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView3.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,12 @@
 				0305FAC71F80AE3900D9B979 /* MainMenu.xib */,
 				0305FACA1F80AE3900D9B979 /* Info.plist */,
 				0305FACB1F80AE3900D9B979 /* SideBarDemo.entitlements */,
+				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
+				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
+				0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */,
+				0305FAF31F8117A600D9B979 /* ContentView1.xib */,
+				0305FAF51F8117BC00D9B979 /* ContentView2.xib */,
+				0305FAF71F8117D500D9B979 /* ContentView3.xib */,
 			);
 			path = SideBarDemo;
 			sourceTree = "<group>";
@@ -228,6 +246,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0305FAF41F8117A600D9B979 /* ContentView1.xib in Resources */,
+				0305FAF61F8117BC00D9B979 /* ContentView2.xib in Resources */,
+				0305FAF81F8117D500D9B979 /* ContentView3.xib in Resources */,
+				0305FAF01F80AEAD00D9B979 /* SideBarWindowController.xib in Resources */,
 				0305FAC61F80AE3900D9B979 /* Assets.xcassets in Resources */,
 				0305FAC91F80AE3900D9B979 /* MainMenu.xib in Resources */,
 			);
@@ -254,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0305FAF21F80BBA500D9B979 /* SidebarTableCellView.swift in Sources */,
+				0305FAEF1F80AEAD00D9B979 /* SideBarWindowController.swift in Sources */,
 				0305FAC41F80AE3900D9B979 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
