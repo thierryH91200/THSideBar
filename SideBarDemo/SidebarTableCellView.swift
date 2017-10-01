@@ -12,6 +12,7 @@ class SidebarTableCellView: NSTableCellView {
     
     var backgroundColor : CGColor = NSColor.green.cgColor
     var cornerRadius : CGFloat = 8.0
+    var title : String = "Unread indicator"
     
     @IBOutlet var button: NSButton!
     

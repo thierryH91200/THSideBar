@@ -43,7 +43,7 @@ class SideBarWindowController: NSWindowController , NSOutlineViewDelegate, NSOut
         sidebarOutlineView.rowSizeStyle = .default
         // Expand all the root items; disable the expansion animation that normally happens
         NSAnimationContext.beginGrouping()
-        NSAnimationContext.current.duration = 0
+        NSAnimationContext.current.duration = 10
         sidebarOutlineView.expandItem(nil, expandChildren: true)
         NSAnimationContext.endGrouping()
     }
