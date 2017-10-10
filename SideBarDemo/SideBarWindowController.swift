@@ -66,7 +66,6 @@ class SideBarWindowController: NSWindowController , NSOutlineViewDelegate, NSOut
             if sidebarOutlineView.parent(forItem: item) != nil {
                 // Only change things for non-root items (root items can be selected, but are ignored)
                 setContentView(toName: item!)
-                print(item!)
             }
         }
     }
