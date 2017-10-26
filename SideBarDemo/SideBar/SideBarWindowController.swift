@@ -7,8 +7,6 @@
 //
 
 import Cocoa
-import CoreData
-
 
 class SideBarWindowController: NSWindowController, NSMenuDelegate {
     
@@ -17,47 +15,42 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
     
     var topLevelItems = [String]()
     var currentContentViewController: NSViewController?
-    var childrenDictionary = [String: [String]]()
     
-    
+    @IBOutlet weak var badgeP: NSButton!
     @IBOutlet var sidebarOutlineView: NSOutlineView!
     @IBOutlet var mainContentView: NSView!
     
     var delegate: AppDelegate?
     
-    var compteData = CompteData()
-
-    var folderImage = NSImage (named: NSImage.Name(rawValue: "Human_resource"))
-    var itemImage = NSImage (named: NSImage.Name(rawValue: "displayView_detail"))
-
+    var favorites = Section (name:"Favorites",icon:NSImage (named: NSImage.Name(rawValue: "Department-50")))
+    var mailboxes = Section (name:"Mailboxes",icon:NSImage (named: NSImage.Name(rawValue: "Department-50")))
+    var allSection : [Section] = [Section]()
     
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        let account1 = Account(icon:NSImage (named: NSImage.Name(rawValue: "account"))!, name:"Account 1", nameView: "ContentView1", badge: "-10", colorBadge: NSColor.red)
+        let account2 = Account(icon:NSImage (named: NSImage.Name(rawValue: "account"))!, name:"Account 2", nameView: "ContentView2", badge: "7", colorBadge: NSColor.blue)
+        let account3 = Account(icon:NSImage (named: NSImage.Name(rawValue: "account"))!, name:"Account 3", nameView: "ContentView3", badge: "5", colorBadge: NSColor.blue)
         
-        // The array determines our order
-        topLevelItems = ["ContentView1", "ContentView2", "ContentView3"]
+        favorites.accounts.append(account1)
+        favorites.accounts.append(account2)
+        favorites.accounts.append(account3)
         
-        // The data is stored ina  dictionary. The objects are the nib names to load.
-        childrenDictionary["Favorites"] = ["ContentView1", "ContentView2", "ContentView3"]
-        childrenDictionary["Content Views"] = ["ContentView1", "ContentView2", "ContentView3"]
-        childrenDictionary["Mailboxes"] = ["ContentView2"]
-        childrenDictionary["A Fourth Group"] = ["ContentView1", "ContentView1", "ContentView1", "ContentView1", "ContentView2"]
+        mailboxes.accounts.append(account3)
+        mailboxes.accounts.append(account2)
+        mailboxes.accounts.append(account1)
         
-        compteData.addFolder(nameFolder: "Compte", Comptes: topLevelItems)
-        compteData.addFolder(nameFolder: "Another", Comptes: topLevelItems)
-        compteData.dump()
-        _ = compteData.Folder[0].items[0].name = "test"
-
+        allSection.append(favorites)
+        allSection.append(mailboxes)
         
-        // The basic recipe for a sidebar. Note that the selectionHighlightStyle is set to NSTableViewSelectionHighlightStyleSourceList in the nib
         sidebarOutlineView.sizeLastColumnToFit()
         sidebarOutlineView.reloadData()
         sidebarOutlineView.floatsGroupRows = false
         
         sidebarOutlineView.rowSizeStyle = .default
         sidebarOutlineView.expandItem(nil, expandChildren: true)
+        
     }
     
     func setContentView(toName name: String) {
@@ -72,27 +65,36 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         mainContentView.addSubview(view!)
     }
     
-    
-    
-    func children(forItem item: Any?) -> [Any] {
-        
-        var children = [String]()
-        if item == nil {
-            children = topLevelItems
+    @IBAction func buttonBadge(_ sender: Any) {
+        var badge = Int(favorites.accounts[1].badge)
+        badge = badge! + 1
+        favorites.accounts[1].badge = String(describing: badge!)
+        if badge! >= 0 {
+            favorites.accounts[ 1].colorBadge = NSColor.blue
         }
         else {
-            let item = item as? String
-            children = childrenDictionary[item!]!
+            favorites.accounts[1].colorBadge = NSColor.red
         }
-        return children
+        sidebarOutlineView.sizeLastColumnToFit()
+        sidebarOutlineView.reloadData()
+        sidebarOutlineView.selectRowIndexes(NSIndexSet(index: 2  ) as IndexSet, byExtendingSelection: false)
     }
     
-    @objc func buttonClicked(_ sender: Any) {
-        // Example target action for the button
-        let row: Int = sidebarOutlineView.row(for: sender as! NSView )
-        print("row: \(row)")
+    @IBAction func buttonBadgeM(_ sender: Any) {
+        var badge = Int(favorites.accounts[1].badge)
+        badge = badge! - 1
+        favorites.accounts[ 1].badge = String(describing: badge!)
+        if badge! >= 0 {
+            favorites.accounts[ 1].colorBadge = NSColor.blue
+        }
+        else {
+            favorites.accounts[ 1].colorBadge = NSColor.red
+        }
+        sidebarOutlineView.sizeLastColumnToFit()
+        sidebarOutlineView.reloadData()
+        sidebarOutlineView.selectRowIndexes(NSIndexSet(index: 2  ) as IndexSet, byExtendingSelection: false)
     }
-    
+
     @IBAction func sidebarMenuDidChange(_ sender: NSMenuItem) {
         // Allow the user to pick a sidebar style
         print(sender.title,"    ", sender.tag)
@@ -114,20 +116,17 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
     }
 }
 
-
-
-
 extension SideBarWindowController: NSSplitViewDelegate {
     func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
         return false
     }
     
-//    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-//        var proposedMinimumPosition = proposedMinimumPosition
-//        if proposedMinimumPosition < 150 {
-//            proposedMinimumPosition = 150
-//        }
-//        return proposedMinimumPosition
-//    }
+    //    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+    //        var proposedMinimumPosition = proposedMinimumPosition
+    //        if proposedMinimumPosition < 150 {
+    //            proposedMinimumPosition = 150
+    //        }
+    //        return proposedMinimumPosition
+    //    }
 }
 

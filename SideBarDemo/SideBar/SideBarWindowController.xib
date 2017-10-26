@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SideBarWindowController" customModule="SideBarDemo" customModuleProvider="target">
             <connections>
+                <outlet property="badgeP" destination="TiS-l0-rhE" id="FzN-8f-ONu"/>
                 <outlet property="mainContentView" destination="33q-Eh-e6b" id="Gb7-K0-yF2"/>
                 <outlet property="sidebarOutlineView" destination="qCO-Cz-CzO" id="uj2-Hd-aOE"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -31,20 +32,20 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-vg-Sni">
-                                        <rect key="frame" x="0.0" y="489" width="319" height="25"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Groupe et comptes" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CJh-WN-6Qm">
+                                        <rect key="frame" x="0.0" y="492" width="319" height="21"/>
+                                        <buttonCell key="cell" type="recessed" title="Groupe et comptes" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CJh-WN-6Qm">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="systemBold" size="12"/>
                                         </buttonCell>
                                     </button>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEq-Gx-TEG">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="493"/>
+                                        <rect key="frame" x="0.0" y="34" width="319" height="459"/>
                                         <clipView key="contentView" drawsBackground="NO" id="n8m-KV-aqx">
-                                            <rect key="frame" x="1" y="1" width="317" height="491"/>
+                                            <rect key="frame" x="1" y="1" width="317" height="457"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="16" outlineTableColumn="oiC-aU-wQM" id="qCO-Cz-CzO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="491"/>
+                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="16" autosaveExpandedItems="YES" outlineTableColumn="oiC-aU-wQM" id="qCO-Cz-CzO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="457"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -142,14 +143,37 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiS-l0-rhE">
+                                        <rect key="frame" x="38" y="0.0" width="81" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Badge+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="13c-6h-HoA">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="buttonBadge:" target="-2" id="ro9-bA-9iI"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ed-CK-Wtq">
+                                        <rect key="frame" x="154" y="0.0" width="81" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Badge-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nBf-Ji-l1x">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="buttonBadgeM:" target="-2" id="vHH-mN-g1S"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" constant="20" symbolic="YES" id="A92-9W-vgM"/>
                                     <constraint firstAttribute="trailing" secondItem="kEq-Gx-TEG" secondAttribute="trailing" id="HY6-GF-dIX"/>
                                     <constraint firstItem="M1z-vg-Sni" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="Jfc-Xj-lTx"/>
                                     <constraint firstItem="M1z-vg-Sni" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" id="NJl-vU-Tlh"/>
+                                    <constraint firstAttribute="bottom" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="34" id="Ogb-7a-uPj"/>
                                     <constraint firstAttribute="trailing" secondItem="M1z-vg-Sni" secondAttribute="trailing" id="bWI-rs-PK8"/>
-                                    <constraint firstAttribute="bottom" secondItem="kEq-Gx-TEG" secondAttribute="bottom" id="qFB-dj-vtp"/>
+                                    <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="M1z-vg-Sni" secondAttribute="bottom" id="dVy-tK-RmG"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="sgi-6v-hDU"/>
                                 </constraints>
                             </customView>

@@ -13,41 +13,40 @@ extension SideBarWindowController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         
-        if item == nil
-        {
-            return compteData.Folder.count
+        if let item: Any = item {
+            switch item {
+            case let section as Section:
+                return section.accounts.count
+            default:
+                return 0
+            }
+        } else {
+            return allSection.count
         }
-        else if let folderItem = item as? CompteFolder
-        {
-            return folderItem.items.count
-        }
-        return 0
-    }
+   }
     
     // Returns the child item at the specified index of a given item
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if item == nil
-        {
-            return compteData.Folder[index]
+        if let item: Any = item {
+            switch item {
+            case let section as Section:
+                return section.accounts[index]
+            default:
+                return self
+            }
+        } else {
+            switch index {
+            case 0:
+                return allSection[0]
+            default:
+                return allSection[1]
+            }
         }
-        else if let folderItem = item as? CompteFolder
-        {
-            return folderItem.items[index]
-        }
-        // impossible
-        return "BAD ITEM"
     }
     
     // ok
     // indicates whether a given row should be drawn in the “group row” style.
     public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
-    {
-        return isSourceGroupItem(item)
-    }
-    
-    // ok
-    //    Show the expander triangle for group items..
-    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool
     {
         return isSourceGroupItem(item)
     }
@@ -58,11 +57,16 @@ extension SideBarWindowController: NSOutlineViewDataSource {
     }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        return isSourceGroupItem(item)
+        switch item {
+        case let section as Section:
+            return (section.accounts.count > 0) ? true : false
+        default:
+            return false
+        }
     }
     
     func outlineView(_ outlineView: NSOutlineView, objectValueFor objectValueForTableColumn: NSTableColumn?, byItem:Any?) -> Any? {
-        if let item = byItem as? CompteItem
+        if let item = byItem as? Section
         {
             return item.name
         }
@@ -71,7 +75,7 @@ extension SideBarWindowController: NSOutlineViewDataSource {
     
     func isSourceGroupItem(_ item: Any) -> Bool
     {
-        if item is CompteFolder {
+        if item is Section {
             return true
         }
         return false

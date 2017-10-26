@@ -10,12 +10,12 @@ import Cocoa
 
 extension SideBarWindowController: NSOutlineViewDelegate {
     
-    func outlineView( outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
+    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for FAVORITES. This hides the "Show/Hide" button and disables the tracking area for that row.
-        let item = item as? String
+        let item = item as? Section
         if item != nil
         {
-            if (item == "Favorites") {
+            if item?.name == "Favorites" {
                 return false
             }
             else {
@@ -27,31 +27,29 @@ extension SideBarWindowController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 
-        if let folderItem = item as? CompteFolder
+        if let section = item as? Section
         {
             let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCellHeader"), owner: self) as! KSHeaderCellView
 
-            cell.textField!.stringValue = folderItem.name.uppercased()
-            cell.imageView!.image = folderImage
+            cell.textField!.stringValue = section.name.uppercased()
+            cell.imageView!.image = section.icon
             return cell
         }
-        else if let aItem = item as? CompteItem
+        else if let account = item as? Account
         {
             let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? SidebarTableCellView
             cell?.textField!.delegate = self
 
-            cell?.textField!.stringValue = aItem.name
-            cell?.imageView!.image = itemImage
+            cell?.textField!.stringValue = account.name
+            
+            cell?.imageView!.image = account.icon
 
             cell?.button.isHidden = false
-            cell?.title = "12" //aItem.name
-            cell?.backgroundColor = NSColor.red.cgColor
+            cell?.title = account.badge
+            cell?.backgroundColor = account.colorBadge.cgColor
+            
             cell?.button.sizeToFit()
-            //            result?.backgroundColor = NSColor.systemBlue.cgColor
-
-            // Make it appear as a normal label and not a button
-            cell?.button?.bezelStyle = .inline
-//            cell?.needsDisplay = true
+            cell?.button?.bezelStyle = .inline // Make it appear as a normal label and not a button
             return cell
         }
         return nil
@@ -72,9 +70,9 @@ extension SideBarWindowController: NSOutlineViewDelegate {
 
         let selectedIndex = outlineView.selectedRow
 
-        if let feedItem = outlineView.item(atRow: selectedIndex) as? CompteItem
+        if let feedItem = outlineView.item(atRow: selectedIndex) as? Account
         {
-            let item = feedItem.name
+            let item = feedItem.nameView
             setContentView(toName: item)
             print(item)
         }

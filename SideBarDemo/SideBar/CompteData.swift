@@ -9,6 +9,37 @@
 import Foundation
 import Cocoa
 
+class Section: NSObject {
+    let name:String
+    var accounts: [Account] = []
+    let icon:NSImage?
+    
+    init (name:String,icon:NSImage?){
+        self.name = name
+        self.icon = icon
+    }
+}
+
+class Account: NSObject {
+    var icon : NSImage?
+    var name: String
+    var nameView: String
+    var badge: String
+    var colorBadge : NSColor
+    var isHidden = false
+
+    init(icon: NSImage, name: String, nameView: String, badge : String, colorBadge : NSColor) {
+        self.icon = icon
+        self.name = name
+        self.nameView = nameView
+        self.badge = badge
+        self.colorBadge = colorBadge
+    }
+}
+
+
+
+
 class CompteItem {
     var icon = NSImage()
     var name = ""
@@ -77,7 +108,7 @@ class CompteData
 //            newParent!.items.insert(removedItem , at: toIndex)
 //        }
 //    }
-   
+//   
     func dump() {
         for item in Folder
         {
@@ -85,3 +116,46 @@ class CompteData
         }
     }
 }
+
+protocol SourceListItem {
+    
+    var name: String {get set }
+    var icon: NSImage? {get set}
+    
+    var children: [SourceListItem] {get set}
+    var isExpandable: Bool { get }
+    
+    var itemType: SourceListItemType {get set}
+    
+}
+
+enum SourceListItemType {
+    case header
+    case plain
+    case icon
+}
+
+class Kingdom : SourceListItem {
+    
+    var name: String = ""
+    var children: [SourceListItem] = []
+    var icon: NSImage?
+    
+    var isExpandable: Bool {
+        return !children.isEmpty
+    }
+    
+    init(name: String){
+        self.name = name
+    }
+    var itemType: SourceListItemType = .header
+}
+
+
+
+extension Array {
+    mutating func rearrange(from: Int, to: Int) {
+        insert(remove(at: from), at: to)
+    }
+}
+

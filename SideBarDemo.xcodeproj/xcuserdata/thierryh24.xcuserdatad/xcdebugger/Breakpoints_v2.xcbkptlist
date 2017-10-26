@@ -255,23 +255,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideBarDemo/SideBar/SideBarDataSource.swift"
-            timestampString = "530649462.590147"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "outlineView(_:numberOfChildrenOfItem:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SideBarDemo/SideBar/SideBarDataSource.swift"
-            timestampString = "530649462.590455"
+            timestampString = "530734438.45256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -287,11 +271,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideBarDemo/SideBar/SideBarDataSource.swift"
-            timestampString = "530649462.590636"
+            timestampString = "530734438.452646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "outlineView(_:child:ofItem:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,13 +286,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SideBarDemo/SideBar/SideBarWindowController.swift"
-            timestampString = "530649462.590842"
+            filePath = "SideBarDemo/SideBar/SideBarDelegate.swift"
+            timestampString = "530734438.45269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "windowDidLoad()"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "outlineViewSelectionDidChange(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -319,12 +303,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideBarDemo/SideBar/SideBarDelegate.swift"
-            timestampString = "530680168.812068"
+            timestampString = "530734438.452732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "outlineViewSelectionDidChange(_:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "outlineView(_:shouldShowOutlineCellForItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SideBarDemo/SideBar/SideBarDelegate.swift"
+            timestampString = "530734438.452769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "outlineView(_:shouldShowOutlineCellForItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

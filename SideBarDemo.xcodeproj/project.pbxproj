@@ -178,11 +178,11 @@
 			isa = PBXGroup;
 			children = (
 				0361A1271F9FD05B00FED796 /* CompteData.swift */,
+				0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */,
+				0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */,
 				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
 				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
 				0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */,
-				0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */,
-				0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */,
 				0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */,
 			);
 			path = SideBar;
