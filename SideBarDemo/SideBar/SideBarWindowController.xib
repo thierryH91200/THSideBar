@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13526" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13528" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13528"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="windowSave" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="634" height="513"/>
@@ -23,21 +23,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="634" height="513"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-6F-XvZ">
+                    <splitView arrangesAllSubviews="NO" autosaveName="splitViewSave" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-6F-XvZ">
                         <rect key="frame" x="0.0" y="0.0" width="634" height="513"/>
                         <subviews>
                             <customView id="Qox-hK-tyY">
                                 <rect key="frame" x="0.0" y="0.0" width="319" height="513"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-vg-Sni">
+                                        <rect key="frame" x="0.0" y="489" width="319" height="25"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Groupe et comptes" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CJh-WN-6Qm">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEq-Gx-TEG">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="513"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="493"/>
                                         <clipView key="contentView" drawsBackground="NO" id="n8m-KV-aqx">
-                                            <rect key="frame" x="1" y="1" width="317" height="511"/>
+                                            <rect key="frame" x="1" y="1" width="317" height="491"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="16" outlineTableColumn="oiC-aU-wQM" id="qCO-Cz-CzO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="511"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="491"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -56,16 +63,32 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <textField identifier="HeaderTextField" verticalHuggingPriority="750" id="5g5-xi-LFw">
+                                                                <tableCellView identifier="FeedCellHeader" id="w4f-eR-PVf" customClass="KSHeaderCellView" customModule="SideBarDemo" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="1" width="314" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Header Label" usesSingleLineMode="YES" id="65B-xd-ft2">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                                <customView identifier="MainCell" id="kS8-dT-cw5" userLabel="MainCell" customClass="SidebarTableCellView" customModule="SideBarDemo" customModuleProvider="target">
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <subviews>
+                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5g5-xi-LFw">
+                                                                            <rect key="frame" x="26" y="0.0" width="288" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Header Label" usesSingleLineMode="YES" id="65B-xd-ft2">
+                                                                                <font key="font" metaFont="system"/>
+                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
+                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUj-PS-Ke1">
+                                                                            <rect key="frame" x="3" y="0.0" width="17" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="tbe-as-1Du"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <connections>
+                                                                        <outlet property="headerInfo" destination="5g5-xi-LFw" id="6PR-jg-zfd"/>
+                                                                        <outlet property="imageView" destination="FUj-PS-Ke1" id="pJS-ck-k1s"/>
+                                                                        <outlet property="textField" destination="5g5-xi-LFw" id="KCM-1V-NkC"/>
+                                                                    </connections>
+                                                                </tableCellView>
+                                                                <customView identifier="FeedCell" id="kS8-dT-cw5" userLabel="FeedCell" customClass="SidebarTableCellView" customModule="SideBarDemo" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="20" width="314" height="26"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
@@ -74,23 +97,23 @@
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="e3N-PC-KGK"/>
                                                                         </imageView>
-                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-8A-BkA">
-                                                                            <rect key="frame" x="21" y="6" width="288" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Row label" id="ElF-ar-Hgg">
-                                                                                <font key="font" metaFont="system"/>
-                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                         <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-RV-fdC">
-                                                                            <rect key="frame" x="201" y="6" width="104" height="19"/>
+                                                                            <rect key="frame" x="231" y="3" width="99" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <buttonCell key="cell" type="roundRect" title="Unread indicator" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="FUe-Lf-u5d">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" metaFont="cellTitle"/>
                                                                             </buttonCell>
                                                                         </button>
+                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-8A-BkA">
+                                                                            <rect key="frame" x="41" y="6" width="174" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Row label" id="ElF-ar-Hgg">
+                                                                                <font key="font" metaFont="system"/>
+                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                     </subviews>
                                                                     <connections>
                                                                         <outlet property="button" destination="Npz-RV-fdC" id="Tot-s8-ssU"/>
@@ -121,8 +144,11 @@
                                     </scrollView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" constant="20" symbolic="YES" id="A92-9W-vgM"/>
                                     <constraint firstAttribute="trailing" secondItem="kEq-Gx-TEG" secondAttribute="trailing" id="HY6-GF-dIX"/>
-                                    <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" id="M4y-Aj-Dvl"/>
+                                    <constraint firstItem="M1z-vg-Sni" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="Jfc-Xj-lTx"/>
+                                    <constraint firstItem="M1z-vg-Sni" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" id="NJl-vU-Tlh"/>
+                                    <constraint firstAttribute="trailing" secondItem="M1z-vg-Sni" secondAttribute="trailing" id="bWI-rs-PK8"/>
                                     <constraint firstAttribute="bottom" secondItem="kEq-Gx-TEG" secondAttribute="bottom" id="qFB-dj-vtp"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="sgi-6v-hDU"/>
                                 </constraints>
@@ -149,9 +175,9 @@
                 </constraints>
             </view>
             <connections>
-                <outlet property="delegate" destination="qCO-Cz-CzO" id="BwF-De-TFP"/>
+                <outlet property="delegate" destination="qCO-Cz-CzO" id="WWG-jY-39L"/>
             </connections>
-            <point key="canvasLocation" x="155" y="39"/>
+            <point key="canvasLocation" x="155" y="38.5"/>
         </window>
         <menu id="V1Y-We-xHM" userLabel="SidebarOutlineViewMenu">
             <items>
@@ -191,6 +217,7 @@
         </menu>
     </objects>
     <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
     </resources>
 </document>

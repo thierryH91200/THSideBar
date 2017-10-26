@@ -18,6 +18,17 @@
 		0305FAF41F8117A600D9B979 /* ContentView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF31F8117A600D9B979 /* ContentView1.xib */; };
 		0305FAF61F8117BC00D9B979 /* ContentView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF51F8117BC00D9B979 /* ContentView2.xib */; };
 		0305FAF81F8117D500D9B979 /* ContentView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF71F8117D500D9B979 /* ContentView3.xib */; };
+		0324E0841FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0821FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodeld */; };
+		0324E0861FA0605400D0AB52 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0851FA0605400D0AB52 /* CoreDataStack.swift */; };
+		0324E0891FA0637A00D0AB52 /* JournalEntry+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0871FA0637A00D0AB52 /* JournalEntry+Helper.swift */; };
+		0324E08A1FA0637A00D0AB52 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0881FA0637A00D0AB52 /* JournalEntry.swift */; };
+		0324E08B1FA069A600D0AB52 /* SurfJournalModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0324E07F1FA05D7A00D0AB52 /* SurfJournalModel.sqlite */; };
+		0324E08C1FA069A600D0AB52 /* SurfJournalModel.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 0324E07E1FA05D7A00D0AB52 /* SurfJournalModel.sqlite-shm */; };
+		0324E08D1FA069A600D0AB52 /* SurfJournalModel.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 0324E0801FA05D7A00D0AB52 /* SurfJournalModel.sqlite-wal */; };
+		0324E0901FA085EF00D0AB52 /* SideBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */; };
+		0324E0921FA0867400D0AB52 /* SideBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */; };
+		0324E0941FA0D96600D0AB52 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */; };
+		0361A1281F9FD05B00FED796 /* CompteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0361A1271F9FD05B00FED796 /* CompteData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +67,17 @@
 		0305FAF31F8117A600D9B979 /* ContentView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView1.xib; sourceTree = "<group>"; };
 		0305FAF51F8117BC00D9B979 /* ContentView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView2.xib; sourceTree = "<group>"; };
 		0305FAF71F8117D500D9B979 /* ContentView3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView3.xib; sourceTree = "<group>"; };
+		0324E07E1FA05D7A00D0AB52 /* SurfJournalModel.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SurfJournalModel.sqlite-shm"; sourceTree = "<group>"; };
+		0324E07F1FA05D7A00D0AB52 /* SurfJournalModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = SurfJournalModel.sqlite; sourceTree = "<group>"; };
+		0324E0801FA05D7A00D0AB52 /* SurfJournalModel.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SurfJournalModel.sqlite-wal"; sourceTree = "<group>"; };
+		0324E0831FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModel.xcdatamodel; sourceTree = "<group>"; };
+		0324E0851FA0605400D0AB52 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0324E0871FA0637A00D0AB52 /* JournalEntry+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JournalEntry+Helper.swift"; sourceTree = "<group>"; };
+		0324E0881FA0637A00D0AB52 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDelegate.swift; sourceTree = "<group>"; };
+		0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDataSource.swift; sourceTree = "<group>"; };
+		0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		0361A1271F9FD05B00FED796 /* CompteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +133,15 @@
 				0305FAC71F80AE3900D9B979 /* MainMenu.xib */,
 				0305FACA1F80AE3900D9B979 /* Info.plist */,
 				0305FACB1F80AE3900D9B979 /* SideBarDemo.entitlements */,
-				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
-				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
-				0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */,
+				0324E08E1FA0847700D0AB52 /* SideBar */,
 				0305FAF31F8117A600D9B979 /* ContentView1.xib */,
 				0305FAF51F8117BC00D9B979 /* ContentView2.xib */,
 				0305FAF71F8117D500D9B979 /* ContentView3.xib */,
+				0324E0821FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodeld */,
+				0324E0851FA0605400D0AB52 /* CoreDataStack.swift */,
+				0324E0881FA0637A00D0AB52 /* JournalEntry.swift */,
+				0324E0871FA0637A00D0AB52 /* JournalEntry+Helper.swift */,
+				0324E0811FA05D8B00D0AB52 /* CoreDataSeed */,
 			);
 			path = SideBarDemo;
 			sourceTree = "<group>";
@@ -137,6 +162,30 @@
 				0305FAE11F80AE3900D9B979 /* Info.plist */,
 			);
 			path = SideBarDemoUITests;
+			sourceTree = "<group>";
+		};
+		0324E0811FA05D8B00D0AB52 /* CoreDataSeed */ = {
+			isa = PBXGroup;
+			children = (
+				0324E07F1FA05D7A00D0AB52 /* SurfJournalModel.sqlite */,
+				0324E07E1FA05D7A00D0AB52 /* SurfJournalModel.sqlite-shm */,
+				0324E0801FA05D7A00D0AB52 /* SurfJournalModel.sqlite-wal */,
+			);
+			path = CoreDataSeed;
+			sourceTree = "<group>";
+		};
+		0324E08E1FA0847700D0AB52 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				0361A1271F9FD05B00FED796 /* CompteData.swift */,
+				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
+				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
+				0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */,
+				0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */,
+				0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */,
+				0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */,
+			);
+			path = SideBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +295,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0324E08B1FA069A600D0AB52 /* SurfJournalModel.sqlite in Resources */,
+				0324E08C1FA069A600D0AB52 /* SurfJournalModel.sqlite-shm in Resources */,
+				0324E08D1FA069A600D0AB52 /* SurfJournalModel.sqlite-wal in Resources */,
 				0305FAF41F8117A600D9B979 /* ContentView1.xib in Resources */,
 				0305FAF61F8117BC00D9B979 /* ContentView2.xib in Resources */,
 				0305FAF81F8117D500D9B979 /* ContentView3.xib in Resources */,
@@ -277,7 +329,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0305FAF21F80BBA500D9B979 /* SidebarTableCellView.swift in Sources */,
+				0324E0891FA0637A00D0AB52 /* JournalEntry+Helper.swift in Sources */,
+				0324E08A1FA0637A00D0AB52 /* JournalEntry.swift in Sources */,
+				0361A1281F9FD05B00FED796 /* CompteData.swift in Sources */,
+				0324E0941FA0D96600D0AB52 /* TextFieldDelegate.swift in Sources */,
+				0324E0841FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodeld in Sources */,
+				0324E0861FA0605400D0AB52 /* CoreDataStack.swift in Sources */,
 				0305FAEF1F80AEAD00D9B979 /* SideBarWindowController.swift in Sources */,
+				0324E0921FA0867400D0AB52 /* SideBarDataSource.swift in Sources */,
+				0324E0901FA085EF00D0AB52 /* SideBarDelegate.swift in Sources */,
 				0305FAC41F80AE3900D9B979 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +500,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SideBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..SideBarDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100.SideBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -455,7 +515,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SideBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..SideBarDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100.SideBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -563,6 +623,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0324E0821FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0324E0831FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodel */,
+			);
+			currentVersion = 0324E0831FA05D9D00D0AB52 /* SurfJournalModel.xcdatamodel */;
+			path = SurfJournalModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0305FAB81F80AE3900D9B979 /* Project object */;
 }
