@@ -10,10 +10,6 @@ import Cocoa
 
 class SideBarWindowController: NSWindowController, NSMenuDelegate {
     
-    var coreDataStack: CoreDataStack!
-    var fetchedResultsController: NSFetchedResultsController<JournalEntry> = NSFetchedResultsController()
-    
-    var topLevelItems = [String]()
     var currentContentViewController: NSViewController?
     
     @IBOutlet weak var badgeP: NSButton!
