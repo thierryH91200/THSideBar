@@ -21,7 +21,7 @@ extension SideBarWindowController: NSOutlineViewDataSource {
                 return 0
             }
         } else {
-            return allSection.count
+            return allSection.sections.count
         }
    }
     
@@ -37,9 +37,9 @@ extension SideBarWindowController: NSOutlineViewDataSource {
         } else {
             switch index {
             case 0:
-                return allSection[0]
+                return allSection.sections[0]
             default:
-                return allSection[1]
+                return allSection.sections[1]
             }
         }
     }

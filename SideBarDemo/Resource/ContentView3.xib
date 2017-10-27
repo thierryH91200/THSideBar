@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13528" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13528"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="ea8-KE-wv9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYB-n5-eCa">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="record-vinyl-turntable" id="EEI-D2-1UM"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jYB-n5-eCa" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="63l-Gl-eO1"/>
+                <constraint firstAttribute="trailing" secondItem="jYB-n5-eCa" secondAttribute="trailing" id="DAH-aF-6GB"/>
+                <constraint firstItem="jYB-n5-eCa" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="tm6-Ro-IZ1"/>
+                <constraint firstAttribute="bottom" secondItem="jYB-n5-eCa" secondAttribute="bottom" id="xjB-gr-AhW"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="record-vinyl-turntable" width="600" height="400"/>
+    </resources>
+</document>

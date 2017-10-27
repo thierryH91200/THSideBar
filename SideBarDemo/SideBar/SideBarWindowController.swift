@@ -18,27 +18,47 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
     
     var delegate: AppDelegate?
     
-    var favorites = Section (name:"Favorites",icon:NSImage (named: NSImage.Name(rawValue: "Department-50")))
-    var mailboxes = Section (name:"Mailboxes",icon:NSImage (named: NSImage.Name(rawValue: "Department-50")))
-    var allSection : [Section] = [Section]()
+    var draggedNode:AnyObject? = nil
+
+    var favorites = Section (name:"Favorites", icon:NSImage (named: NSImage.Name(rawValue: "Department-50"))!)
+    var mailboxes = Section (name:"Mailboxes", icon:NSImage (named: NSImage.Name(rawValue: "Department-50"))!)
+    var allSection : AllSection = AllSection()
+    
+    var fromIndex: Int? = nil;
+
     
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        let account1 = Account(icon:NSImage (named: NSImage.Name(rawValue: "account"))!, name:"Account 1", nameView: "ContentView1", badge: "-10", colorBadge: NSColor.red)
-        let account2 = Account(icon:NSImage (named: NSImage.Name(rawValue: "account"))!, name:"Account 2", nameView: "ContentView2", badge: "7", colorBadge: NSColor.blue)
-        let account3 = Account(icon:NSImage (named: NSImage.Name(rawValue: "account"))!, name:"Account 3", nameView: "ContentView3", badge: "5", colorBadge: NSColor.blue)
-        
+        let account1 = Account(name:"Account 1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView1", badge: "-10", colorBadge: NSColor.red)
+        let account2 = Account(name:"Account 2", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView2", badge: "7", colorBadge: NSColor.blue)
+        let account3 = Account(name:"Account 3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView3", badge: "5", colorBadge: NSColor.blue)
+        let account4 = Account(name:"Account 4", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4", badge: "-10", colorBadge: NSColor.red)
+        let account5 = Account(name:"Account 5", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView5", badge: "7", colorBadge: NSColor.blue)
+        let account6 = Account(name:"Account 6", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView6", badge: "5", colorBadge: NSColor.blue)
+        let account7 = Account(name:"Account 7", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView7", badge: "5", colorBadge: NSColor.blue)
+
         favorites.accounts.append(account1)
         favorites.accounts.append(account2)
         favorites.accounts.append(account3)
         
-        mailboxes.accounts.append(account3)
-        mailboxes.accounts.append(account2)
-        mailboxes.accounts.append(account1)
+        mailboxes.accounts.append(account4)
+        mailboxes.accounts.append(account5)
+        mailboxes.accounts.append(account6)
+        mailboxes.accounts.append(account7)
         
-        allSection.append(favorites)
-        allSection.append(mailboxes)
+        allSection.sections.append(favorites)
+        allSection.sections.append(mailboxes)
+        
+        // Register for the dropped object types we can accept.
+        sidebarOutlineView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
+        
+        // Disable dragging items from our view to other applications.
+        sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation(), forLocal: false)
+        
+        // Enable dragging items within and into our view.
+        sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation.every, forLocal: true)
+
         
         sidebarOutlineView.sizeLastColumnToFit()
         sidebarOutlineView.reloadData()
@@ -46,7 +66,6 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         
         sidebarOutlineView.rowSizeStyle = .default
         sidebarOutlineView.expandItem(nil, expandChildren: true)
-        
     }
     
     func setContentView(toName name: String) {

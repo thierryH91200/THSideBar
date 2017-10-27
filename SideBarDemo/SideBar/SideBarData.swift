@@ -9,26 +9,15 @@
 import Foundation
 import Cocoa
 
-class Section: NSObject {
-    let name:String
-    var accounts: [Account] = []
-    let icon:NSImage?
-    
-    init (name:String,icon:NSImage?){
-        self.name = name
-        self.icon = icon
-    }
-}
-
-class Account: NSObject {
-    var icon : NSImage?
+class BaseItem {
     var name: String
+    var icon : NSImage?
     var nameView: String
     var badge: String
     var colorBadge : NSColor
     var isHidden = false
-
-    init(icon: NSImage, name: String, nameView: String, badge : String, colorBadge : NSColor) {
+    
+    init(name: String, icon: NSImage,  nameView : String = "", badge : String = "", colorBadge : NSColor = .blue) {
         self.icon       = icon
         self.name       = name
         self.nameView   = nameView
@@ -36,30 +25,56 @@ class Account: NSObject {
         self.colorBadge = colorBadge
     }
     
-    //Moves the items in a way that is compatible with NSOutlineView's method of the same name
-    //    func moveItemAtIndex(_ fromIndex: Int, inParent oldParent: CompteFolder?, toIndex: Int, inParent newParent: CompteFolder?)
-    //    {
-    //        var removedItem : CompteFolder
-    //        if oldParent == nil
-    //        {
-    //            removedItem = self.Folder.remove(at: fromIndex)
-    //        }
-    //        else
-    //        {
-    //            removedItem = oldParent!.items.remove(at: fromIndex)
-    //        }
-    //
-    //        if newParent == nil
-    //        {
-    //            self.Folder.insert(removedItem, at: toIndex)
-    //        }
-    //        else
-    //        {
-    //            newParent!.items.insert(removedItem , at: toIndex)
-    //        }
-    //    }
-    //
+    init() {
+        self.icon       = NSImage (named: NSImage.Name(rawValue: "account"))!
+        self.name       = ""
+        self.nameView   = ""
+        self.badge      = ""
+        self.colorBadge = NSColor.blue
+    }
 
+    func dump()
+    {
+        print(name)
+    }
+}
+
+
+class AllSection: BaseItem {
+    
+    var sections:[Section] = []
+    
+    // Moves the items in a way that is compatible with NSOutlineView's method of the same name
+    func moveItemAtIndex(_ fromIndex: Int, inParent oldParent: Section?, toIndex: Int, inParent newParent: Section?)
+    {
+        var removedItem : BaseItem
+        if oldParent == nil
+        {
+            removedItem = self.sections.remove(at: fromIndex)
+        }
+        else
+        {
+            removedItem = oldParent!.accounts.remove(at: fromIndex)
+        }
+        
+        if newParent == nil
+        {
+            self.sections.insert(removedItem as! Section, at: toIndex)
+        }
+        else
+        {
+            newParent!.accounts.insert(removedItem as! Account , at: toIndex)
+        }
+    }
+
+}
+
+class Section: BaseItem {
+
+    var accounts: [Account] = []
+ }
+
+class Account: BaseItem {
 }
 
 extension Array {

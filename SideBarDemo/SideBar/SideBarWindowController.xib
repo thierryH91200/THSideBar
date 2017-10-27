@@ -143,9 +143,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiS-l0-rhE">
-                                        <rect key="frame" x="38" y="0.0" width="81" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TiS-l0-rhE">
+                                        <rect key="frame" x="38" y="0.0" width="88" height="32"/>
                                         <buttonCell key="cell" type="push" title="Badge+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="13c-6h-HoA">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -154,9 +153,8 @@
                                             <action selector="buttonBadge:" target="-2" id="ro9-bA-9iI"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ed-CK-Wtq">
-                                        <rect key="frame" x="154" y="0.0" width="81" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Ed-CK-Wtq">
+                                        <rect key="frame" x="154" y="0.0" width="85" height="32"/>
                                         <buttonCell key="cell" type="push" title="Badge-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nBf-Ji-l1x">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -167,13 +165,17 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="TiS-l0-rhE" firstAttribute="top" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="6" id="2hN-uO-3M1"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" constant="20" symbolic="YES" id="A92-9W-vgM"/>
                                     <constraint firstAttribute="trailing" secondItem="kEq-Gx-TEG" secondAttribute="trailing" id="HY6-GF-dIX"/>
                                     <constraint firstItem="M1z-vg-Sni" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="Jfc-Xj-lTx"/>
                                     <constraint firstItem="M1z-vg-Sni" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" id="NJl-vU-Tlh"/>
                                     <constraint firstAttribute="bottom" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="34" id="Ogb-7a-uPj"/>
+                                    <constraint firstItem="TiS-l0-rhE" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" constant="44" id="QQc-zB-SVw"/>
                                     <constraint firstAttribute="trailing" secondItem="M1z-vg-Sni" secondAttribute="trailing" id="bWI-rs-PK8"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="M1z-vg-Sni" secondAttribute="bottom" id="dVy-tK-RmG"/>
+                                    <constraint firstItem="0Ed-CK-Wtq" firstAttribute="top" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="6" id="ewf-fF-SJF"/>
+                                    <constraint firstItem="0Ed-CK-Wtq" firstAttribute="leading" secondItem="TiS-l0-rhE" secondAttribute="trailing" constant="40" id="fMQ-sO-ftq"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="sgi-6v-hDU"/>
                                 </constraints>
                             </customView>
@@ -240,7 +242,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="b97-Qf-3cf"/>
             </connections>
-            <point key="canvasLocation" x="207.5" y="463.5"/>
+            <point key="canvasLocation" x="-270" y="380"/>
         </menu>
     </objects>
     <resources>
