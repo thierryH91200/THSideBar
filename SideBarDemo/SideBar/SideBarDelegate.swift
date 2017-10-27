@@ -48,7 +48,7 @@ extension SideBarWindowController: NSOutlineViewDelegate {
             cell?.title = account.badge
             cell?.backgroundColor = account.colorBadge.cgColor
             
-            cell?.button.sizeToFit()
+//            cell?.button.sizeToFit()
             cell?.button?.bezelStyle = .inline // Make it appear as a normal label and not a button
             return cell
         }

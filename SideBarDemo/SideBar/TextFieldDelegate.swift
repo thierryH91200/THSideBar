@@ -16,11 +16,9 @@ extension SideBarWindowController: NSTextFieldDelegate {
         let row = sidebarOutlineView.row(for: textField)
         let item = sidebarOutlineView.item(atRow: row)
         
-        let newName:String = textField.stringValue
-        
         if let theItem = item as? Account
         {
-            theItem.name = newName
+            theItem.name = textField.stringValue
         }
     }
 }
