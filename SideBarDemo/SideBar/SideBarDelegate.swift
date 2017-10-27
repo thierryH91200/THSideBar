@@ -38,13 +38,13 @@ extension SideBarWindowController: NSOutlineViewDelegate {
         else if let account = item as? Account
         {
             let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? SidebarTableCellView
-            cell?.textField!.delegate = self
-
-            cell?.textField!.stringValue = account.name
             
             cell?.imageView!.image = account.icon
 
-            cell?.button.isHidden = false
+            cell?.textField!.delegate = self
+            cell?.textField!.stringValue = account.name
+            
+            cell?.button.isHidden = account.isHidden
             cell?.title = account.badge
             cell?.backgroundColor = account.colorBadge.cgColor
             

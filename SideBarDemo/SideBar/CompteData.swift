@@ -1,9 +1,9 @@
 //
-//  TestData.swift
-//  OutlineViewReorder
+//  SideBarDataSource.swift
+//  SideBarDemo
 //
-//  Created by Matt Grippaldi on 6/4/16.
-//  Copyright © 2016 Kinematic Systems. All rights reserved.
+//  Created by thierryH24 on 25/10/2017.
+//  Copyright © 2017 thierryH24. All rights reserved.
 //
 
 import Foundation

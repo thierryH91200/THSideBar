@@ -1,9 +1,9 @@
 //
-//  TextFieldDelegate.swift
-//  OutlineViewReorder
+//  SideBarDataSource.swift
+//  SideBarDemo
 //
-//  Created by Matt Grippaldi on 6/6/16.
-//  Copyright © 2016 Kinematic Systems. All rights reserved.
+//  Created by thierryH24 on 25/10/2017.
+//  Copyright © 2017 thierryH24. All rights reserved.
 //
 
 import Cocoa
@@ -18,11 +18,9 @@ extension SideBarWindowController: NSTextFieldDelegate {
         
         let newName:String = textField.stringValue
         
-        if let theItem = item as? CompteItem
+        if let theItem = item as? Account
         {
             theItem.name = newName
-//            theItem.entityCompte?.name = newName
-//            Compte.sharedInstance.editEntity(entity: theItem.entityCompte!)
         }
     }
 }
