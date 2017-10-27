@@ -21,7 +21,7 @@
 		0324E0901FA085EF00D0AB52 /* SideBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */; };
 		0324E0921FA0867400D0AB52 /* SideBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */; };
 		0324E0941FA0D96600D0AB52 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */; };
-		0361A1281F9FD05B00FED796 /* CompteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0361A1271F9FD05B00FED796 /* CompteData.swift */; };
+		0361A1281F9FD05B00FED796 /* SideBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0361A1271F9FD05B00FED796 /* SideBarData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,7 @@
 		0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDelegate.swift; sourceTree = "<group>"; };
 		0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDataSource.swift; sourceTree = "<group>"; };
 		0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
-		0361A1271F9FD05B00FED796 /* CompteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteData.swift; sourceTree = "<group>"; };
+		0361A1271F9FD05B00FED796 /* SideBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 		0324E08E1FA0847700D0AB52 /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
-				0361A1271F9FD05B00FED796 /* CompteData.swift */,
+				0361A1271F9FD05B00FED796 /* SideBarData.swift */,
 				0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */,
 				0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */,
 				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0305FAF21F80BBA500D9B979 /* SidebarTableCellView.swift in Sources */,
-				0361A1281F9FD05B00FED796 /* CompteData.swift in Sources */,
+				0361A1281F9FD05B00FED796 /* SideBarData.swift in Sources */,
 				0324E0941FA0D96600D0AB52 /* TextFieldDelegate.swift in Sources */,
 				0305FAEF1F80AEAD00D9B979 /* SideBarWindowController.swift in Sources */,
 				0324E0921FA0867400D0AB52 /* SideBarDataSource.swift in Sources */,

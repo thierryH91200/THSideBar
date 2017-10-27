@@ -1,5 +1,5 @@
 //
-//  SideBarDataSource.swift
+//  SideBarData.swift
 //  SideBarDemo
 //
 //  Created by thierryH24 on 25/10/2017.
@@ -29,10 +29,10 @@ class Account: NSObject {
     var isHidden = false
 
     init(icon: NSImage, name: String, nameView: String, badge : String, colorBadge : NSColor) {
-        self.icon = icon
-        self.name = name
-        self.nameView = nameView
-        self.badge = badge
+        self.icon       = icon
+        self.name       = name
+        self.nameView   = nameView
+        self.badge      = badge
         self.colorBadge = colorBadge
     }
     
