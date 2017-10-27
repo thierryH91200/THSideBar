@@ -65,12 +65,8 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         var badge = Int(favorites.accounts[1].badge)
         badge = badge! + 1
         favorites.accounts[1].badge = String(describing: badge!)
-        if badge! >= 0 {
-            favorites.accounts[ 1].colorBadge = NSColor.blue
-        }
-        else {
-            favorites.accounts[1].colorBadge = NSColor.red
-        }
+        favorites.accounts[ 1].colorBadge = badge! >= 0 ? .blue : .red
+        
         sidebarOutlineView.sizeLastColumnToFit()
         sidebarOutlineView.reloadData()
         sidebarOutlineView.selectRowIndexes(NSIndexSet(index: 2  ) as IndexSet, byExtendingSelection: false)
@@ -80,20 +76,15 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         var badge = Int(favorites.accounts[1].badge)
         badge = badge! - 1
         favorites.accounts[ 1].badge = String(describing: badge!)
-        if badge! >= 0 {
-            favorites.accounts[ 1].colorBadge = NSColor.blue
-        }
-        else {
-            favorites.accounts[ 1].colorBadge = NSColor.red
-        }
+        favorites.accounts[ 1].colorBadge = badge! >= 0 ? .blue : .red
+
         sidebarOutlineView.sizeLastColumnToFit()
         sidebarOutlineView.reloadData()
         sidebarOutlineView.selectRowIndexes(NSIndexSet(index: 2  ) as IndexSet, byExtendingSelection: false)
     }
-
+    
     @IBAction func sidebarMenuDidChange(_ sender: NSMenuItem) {
         // Allow the user to pick a sidebar style
-        print(sender.title,"    ", sender.tag)
         let rowSizeStyle = sender.tag
         sidebarOutlineView.rowSizeStyle = NSTableView.RowSizeStyle(rawValue: rowSizeStyle)!
     }
@@ -105,8 +96,8 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
                 
                 // In IB, the tag was set to the appropriate rowSizeStyle. Read in that value.
                 let state = item?.tag == sidebarOutlineView.rowSizeStyle.rawValue
-                print(state)
-                //                item?.state = NSControl.StateValue(rawValue: state : .on ?? .off)
+                let state1 : Int = state == true ? 1 : 0
+                item?.state = NSControl.StateValue(rawValue: state1 )
             }
         }
     }
@@ -116,13 +107,5 @@ extension SideBarWindowController: NSSplitViewDelegate {
     func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
         return false
     }
-    
-    //    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-    //        var proposedMinimumPosition = proposedMinimumPosition
-    //        if proposedMinimumPosition < 150 {
-    //            proposedMinimumPosition = 150
-    //        }
-    //        return proposedMinimumPosition
-    //    }
 }
 

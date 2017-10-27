@@ -287,23 +287,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideBarDemo/SideBar/SideBarDelegate.swift"
-            timestampString = "530734640.058672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "outlineViewSelectionDidChange(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SideBarDemo/SideBar/SideBarDelegate.swift"
-            timestampString = "530734640.058747"
+            timestampString = "530767242.904146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -319,12 +303,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideBarDemo/SideBar/SideBarDelegate.swift"
-            timestampString = "530734640.05879"
+            timestampString = "530767242.904197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "outlineView(_:shouldShowOutlineCellForItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SideBarDemo/SideBar/SideBarWindowController.swift"
+            timestampString = "530767242.904235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "menuNeedsUpdate(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

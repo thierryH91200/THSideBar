@@ -59,15 +59,6 @@ extension SideBarWindowController: NSOutlineViewDelegate {
     {
         guard let outlineView = notification.object as? NSOutlineView else { return }
         
-//        if sidebarOutlineView.selectedRow != -1 {
-//            let item = sidebarOutlineView.item(atRow: sidebarOutlineView.selectedRow) as? String
-//            if sidebarOutlineView.parent(forItem: item) != nil {
-//                // Only change things for non-root items (root items can be selected, but are ignored)
-//                setContentView(toName: item!)
-//                print(item!)
-//            }
-//        }
-
         let selectedIndex = outlineView.selectedRow
 
         if let feedItem = outlineView.item(atRow: selectedIndex) as? Account

@@ -31,9 +31,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="319" height="513"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-vg-Sni">
+                                    <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-vg-Sni">
                                         <rect key="frame" x="0.0" y="492" width="319" height="21"/>
-                                        <buttonCell key="cell" type="recessed" title="Groupe et comptes" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CJh-WN-6Qm">
+                                        <buttonCell key="cell" type="recessed" title="Groupe et comptes" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="CJh-WN-6Qm">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold" size="12"/>
                                         </buttonCell>
@@ -44,7 +44,7 @@
                                             <rect key="frame" x="1" y="1" width="317" height="457"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="16" autosaveExpandedItems="YES" outlineTableColumn="oiC-aU-wQM" id="qCO-Cz-CzO">
+                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveName="outlineSave" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="16" autosaveExpandedItems="YES" outlineTableColumn="oiC-aU-wQM" id="qCO-Cz-CzO">
                                                     <rect key="frame" x="0.0" y="0.0" width="317" height="457"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -237,6 +237,9 @@
                     </connections>
                 </menuItem>
             </items>
+            <connections>
+                <outlet property="delegate" destination="-2" id="b97-Qf-3cf"/>
+            </connections>
             <point key="canvasLocation" x="207.5" y="463.5"/>
         </menu>
     </objects>
