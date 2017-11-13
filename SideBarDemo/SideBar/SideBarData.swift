@@ -39,7 +39,6 @@ class BaseItem {
     }
 }
 
-
 class AllSection: BaseItem {
     
     var sections:[Section] = []
@@ -66,20 +65,41 @@ class AllSection: BaseItem {
             newParent!.accounts.insert(removedItem as! Account , at: toIndex)
         }
     }
-
+    
+    override func dump()
+    {
+        print("AllSection: ", terminator:"")
+        super.dump()
+        
+        for section in sections
+        {
+            print("  ", terminator:"")
+            section.dump()
+        }
+    }
 }
 
 class Section: BaseItem {
-
     var accounts: [Account] = []
+    
+    override func dump()
+    {
+        print("Section: ", terminator:"")
+        super.dump()
+        
+        for account in accounts
+        {
+            print("  ", terminator:"")
+            account.dump()
+        }
+    }
  }
 
 class Account: BaseItem {
-}
-
-extension Array {
-    mutating func rearrange(from: Int, to: Int) {
-        insert(remove(at: from), at: to)
+    override func dump()
+    {
+        print("     Item: ", terminator:"")
+        super.dump()
     }
 }
 

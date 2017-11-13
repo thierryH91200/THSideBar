@@ -163,9 +163,24 @@
                                             <action selector="buttonBadgeM:" target="-2" id="vHH-mN-g1S"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-kh-06z">
+                                        <rect key="frame" x="6" y="5" width="20" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="m9g-m6-cJJ"/>
+                                            <constraint firstAttribute="width" constant="20" id="n7u-Ax-hDd"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cMz-WO-cnX">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="ItemPlus:" target="-2" id="bH1-NT-enN"/>
+                                            </connections>
+                                        </buttonCell>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="TiS-l0-rhE" firstAttribute="top" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="6" id="2hN-uO-3M1"/>
+                                    <constraint firstItem="PKJ-kh-06z" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" constant="6" id="8h5-rG-elX"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="Qox-hK-tyY" secondAttribute="top" constant="20" symbolic="YES" id="A92-9W-vgM"/>
                                     <constraint firstAttribute="trailing" secondItem="kEq-Gx-TEG" secondAttribute="trailing" id="HY6-GF-dIX"/>
                                     <constraint firstItem="M1z-vg-Sni" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="Jfc-Xj-lTx"/>
@@ -176,6 +191,7 @@
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="top" secondItem="M1z-vg-Sni" secondAttribute="bottom" id="dVy-tK-RmG"/>
                                     <constraint firstItem="0Ed-CK-Wtq" firstAttribute="top" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="6" id="ewf-fF-SJF"/>
                                     <constraint firstItem="0Ed-CK-Wtq" firstAttribute="leading" secondItem="TiS-l0-rhE" secondAttribute="trailing" constant="40" id="fMQ-sO-ftq"/>
+                                    <constraint firstItem="PKJ-kh-06z" firstAttribute="top" secondItem="kEq-Gx-TEG" secondAttribute="bottom" constant="8" id="sWj-b1-xHQ"/>
                                     <constraint firstItem="kEq-Gx-TEG" firstAttribute="leading" secondItem="Qox-hK-tyY" secondAttribute="leading" id="sgi-6v-hDU"/>
                                 </constraints>
                             </customView>
@@ -247,6 +263,7 @@
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
     </resources>
 </document>

@@ -50,6 +50,8 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         allSection.sections.append(favorites)
         allSection.sections.append(mailboxes)
         
+        allSection.dump()
+        
         // Register for the dropped object types we can accept.
         sidebarOutlineView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
         
@@ -80,6 +82,14 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         mainContentView.addSubview(view!)
     }
     
+    @IBAction func ItemPlus(_ sender: Any) {
+        let account7 = Account(name:"Account 7", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView7", badge: "5", colorBadge: NSColor.blue)
+        favorites.accounts.append(account7)
+        
+        sidebarOutlineView.sizeLastColumnToFit()
+        sidebarOutlineView.reloadData()
+    }
+
     @IBAction func buttonBadge(_ sender: Any) {
         var badge = Int(favorites.accounts[1].badge)
         badge = badge! + 1
@@ -108,6 +118,7 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         sidebarOutlineView.rowSizeStyle = NSTableView.RowSizeStyle(rawValue: rowSizeStyle)!
     }
     
+    // NSMenuDelegate
     func menuNeedsUpdate(_ menu: NSMenu) {
         for i in 0..<menu.numberOfItems {
             let item = menu.item(at: i)

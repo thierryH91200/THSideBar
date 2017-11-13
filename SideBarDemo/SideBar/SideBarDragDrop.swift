@@ -9,8 +9,7 @@
 import Foundation
 import Cocoa
 
-let REORDER_PASTEBOARD_TYPE = "com.kinematicsystems.outline.item"
-
+let REORDER_PASTEBOARD_TYPE = "com.outline.item"
 
 extension SideBarWindowController: NSPasteboardItemDataProvider {
 
@@ -54,7 +53,7 @@ extension SideBarWindowController: NSPasteboardItemDataProvider {
             }
         }
 
-        debugPrint("validateDrop targetItem:\(itemName) childIndex:\(index) returning: \(retVal != NSDragOperation())")
+        debugPrint("validateDrop targetItem: \(itemName) childIndex: \(index) returning: \(retVal != NSDragOperation())")
         return retVal
     }
 
@@ -69,13 +68,13 @@ extension SideBarWindowController: NSPasteboardItemDataProvider {
         let destItem :Section?   = item as? Section
         let parentItem:Section?  = outlineView.parent(forItem: srcItem) as? Section
         let oldIndex             = outlineView.childIndex(forItem: srcItem)
-        var   toIndex            = index
+        var toIndex            = index
         
         if destItem == nil {
             return false
         }
 
-        debugPrint("move src:\(srcItem.name) dest:\(String(describing: (destItem?.name)!)) destIndex:\(index) oldIndex:\(oldIndex) srcParent:\(String(describing: parentItem?.name)) toIndex:\(toIndex) toParent:\(String(describing: destItem?.name)) childIndex:\(index)", terminator: "")
+        debugPrint("move src:\(srcItem.name) dest:\(String(describing: (destItem?.name)!)) destIndex:\(index) oldIndex:\(oldIndex) srcParent:\(String(describing: (parentItem?.name)!)) toIndex:\(toIndex) toParent:\(String(describing: (destItem?.name)!)) childIndex:\(index)", terminator: "")
 
         if (toIndex == NSOutlineViewDropOnItemIndex) // This should never happen, prevented in validateDrop
         {

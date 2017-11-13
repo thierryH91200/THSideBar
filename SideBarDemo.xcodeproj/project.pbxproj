@@ -138,13 +138,13 @@
 		0305FAC21F80AE3900D9B979 /* SideBarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0324E08E1FA0847700D0AB52 /* SideBar */,
 				0305FAC31F80AE3900D9B979 /* AppDelegate.swift */,
 				0305FAC51F80AE3900D9B979 /* Assets.xcassets */,
-				0305FAC71F80AE3900D9B979 /* MainMenu.xib */,
 				0305FACA1F80AE3900D9B979 /* Info.plist */,
-				0305FACB1F80AE3900D9B979 /* SideBarDemo.entitlements */,
-				0324E08E1FA0847700D0AB52 /* SideBar */,
+				0305FAC71F80AE3900D9B979 /* MainMenu.xib */,
 				032081DB1FA3098E000925C6 /* Resource */,
+				0305FACB1F80AE3900D9B979 /* SideBarDemo.entitlements */,
 			);
 			path = SideBarDemo;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 				0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */,
 				0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */,
 				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
-				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
 				0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */,
 				0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */,
+				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
 			);
 			path = SideBar;
 			sourceTree = "<group>";
