@@ -30,27 +30,7 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        let account1 = Account(name:"Account 1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView1", badge: "-10", colorBadge: NSColor.red)
-        let account2 = Account(name:"Account 2", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView2", badge: "7", colorBadge: NSColor.blue)
-        let account3 = Account(name:"Account 3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView3", badge: "5", colorBadge: NSColor.blue)
-        let account4 = Account(name:"Account 4", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4", badge: "-10", colorBadge: NSColor.red)
-        let account5 = Account(name:"Account 5", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView5", badge: "7", colorBadge: NSColor.blue)
-        let account6 = Account(name:"Account 6", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView6", badge: "5", colorBadge: NSColor.blue)
-        let account7 = Account(name:"Account 7", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView7", badge: "5", colorBadge: NSColor.blue)
-
-        favorites.accounts.append(account1)
-        favorites.accounts.append(account2)
-        favorites.accounts.append(account3)
-        
-        mailboxes.accounts.append(account4)
-        mailboxes.accounts.append(account5)
-        mailboxes.accounts.append(account6)
-        mailboxes.accounts.append(account7)
-        
-        allSection.sections.append(favorites)
-        allSection.sections.append(mailboxes)
-        
-        allSection.dump()
+        initData()
         
         // Register for the dropped object types we can accept.
         sidebarOutlineView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
@@ -68,6 +48,31 @@ class SideBarWindowController: NSWindowController, NSMenuDelegate {
         
         sidebarOutlineView.rowSizeStyle = .default
         sidebarOutlineView.expandItem(nil, expandChildren: true)
+    }
+    
+    func initData() {
+        let account1 = Account(name:"Account 1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView1", badge: "-10", colorBadge: NSColor.red)
+        let account2 = Account(name:"Account 2", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView2", badge: "7", colorBadge: NSColor.blue)
+        let account3 = Account(name:"Account 3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView3", badge: "5", colorBadge: NSColor.blue)
+        let account4 = Account(name:"Account 4", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4", badge: "-10", colorBadge: NSColor.red)
+        let account5 = Account(name:"Account 5", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView5", badge: "7", colorBadge: NSColor.blue)
+        let account6 = Account(name:"Account 6", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView6", badge: "5", colorBadge: NSColor.blue)
+        let account7 = Account(name:"Account 7", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView7", badge: "5", colorBadge: NSColor.blue)
+        
+        favorites.accounts.append(account1)
+        favorites.accounts.append(account2)
+        favorites.accounts.append(account3)
+        
+        mailboxes.accounts.append(account4)
+        mailboxes.accounts.append(account5)
+        mailboxes.accounts.append(account6)
+        mailboxes.accounts.append(account7)
+        
+        allSection.sections.append(favorites)
+        allSection.sections.append(mailboxes)
+        
+        allSection.dump()
+
     }
     
     func setContentView(toName name: String) {
