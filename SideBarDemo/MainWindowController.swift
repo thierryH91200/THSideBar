@@ -66,7 +66,11 @@ class MainWindowController: NSWindowController {
     func initData1() {
         
         let item1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
+        item1.isHidden = true
+
         let item2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
+        item2.isHidden = true
+
         let item3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
         let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
         
@@ -82,7 +86,6 @@ class MainWindowController: NSWindowController {
         sideBarViewController?.initData( allSection: allSection )
     }
 
-    
     func setUpSourceList2()
     {
         self.sideBarViewController1 = THSideBarViewController()
@@ -97,10 +100,13 @@ class MainWindowController: NSWindowController {
     
     func initData2() {
         
-        let item1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "3", colorBadge: NSColor.blue)
+        let item1 = Account(name:"ContentView5Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView5Controller", badge: "3", colorBadge: NSColor.blue)
         item1.isHidden = true
-        let item2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView2Controller", badge: "-3", colorBadge: NSColor.red)
-        let item3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView3Controller", badge: "-2", colorBadge: NSColor.red)
+        
+        let item2 = Account(name:"ContentView6Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView6Controller", badge: "-3", colorBadge: NSColor.red)
+        item2.isHidden = true
+
+        let item3 = Account(name:"ContentView7Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView7Controller", badge: "-2", colorBadge: NSColor.red)
         let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "0", colorBadge: NSColor.blue)
         
         account3.accounts.append(item1)

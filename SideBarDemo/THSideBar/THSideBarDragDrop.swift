@@ -105,7 +105,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
     }
 
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
-        //debugPrint("Drag session ended")
+        debugPrint("Drag session ended")
         self.draggedNode = nil
     }
 

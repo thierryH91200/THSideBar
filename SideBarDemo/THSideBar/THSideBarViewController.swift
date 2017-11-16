@@ -17,10 +17,10 @@ class THSideBarViewController: NSViewController {
     var mainWindowController: MainWindowController?
     
     var draggedNode:AnyObject? = nil
-    
+    var fromIndex: Int? = nil
+
     var allSection = AllSection()
     
-    var fromIndex: Int? = nil    
     var selectIndex = [1]
     
     override func viewDidLoad() {
@@ -55,10 +55,6 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.sizeLastColumnToFit()
         sidebarOutlineView.reloadData()
         sidebarOutlineView.floatsGroupRows = false
-        
-        let showHideButton = sidebarOutlineView.makeView(withIdentifier: NSOutlineView.showHideButtonIdentifier, owner: sidebarOutlineView.delegate) as? NSButton
-        showHideButton?.alternateTitle = "Cacher"
-        showHideButton?.title = "Montrer"
         
         sidebarOutlineView.rowSizeStyle = .default
         sidebarOutlineView.expandItem(nil, expandChildren: true)
