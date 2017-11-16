@@ -12,6 +12,8 @@ NSOutlineView and badge
 
 # Usage
 
+### look at example
+
 ## Initialize the THSideBar
 
 ```
