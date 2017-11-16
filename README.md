@@ -6,6 +6,8 @@ NSOutlineView and badge
 
 
     THSideBar framework written in Swift for OS X
+    
+    ![Alt text](https://github.com/thierryH91200/THCalendar/blob/master/THCalendar.jpg)
 
 
 
