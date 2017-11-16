@@ -54,6 +54,7 @@ NSOutlineView and badge
 create all the viewController
 
 
+```
 func changeView(feedItem : Account)
     {
         let item = feedItem.nameView
@@ -95,3 +96,4 @@ func changeView(feedItem : Account)
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
     }
+```
