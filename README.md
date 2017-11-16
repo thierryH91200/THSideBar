@@ -2,7 +2,7 @@
 NSOutlineView and badge
 
 
-# THCalendar
+# THSideBar
 
 
     THSideBar framework written in Swift for OS X
@@ -50,3 +50,48 @@ NSOutlineView and badge
         sideBarViewController?.initData( allSection: allSection )
     
 ```
+
+create all the viewController
+
+
+func changeView(feedItem : Account)
+    {
+        let item = feedItem.nameView
+        
+        var  vc = NSView()
+        
+        switch item
+        {
+        case "ContentView1Controller":
+            vc = contentView1Controller.view
+            
+        case "ContentView2Controller":
+            vc = contentView2Controller.view
+
+        case "ContentView3Controller":
+            vc = contentView3Controller.view
+
+        case "ContentView4Controller":
+            vc = contentView4Controller.view
+
+        case "ContentView5Controller":
+            vc = contentView5Controller.view
+            
+        case "ContentView6Controller":
+            vc = contentView6Controller.view
+            
+        case "ContentView7Controller":
+            vc = contentView7Controller.view
+            
+        default:
+            vc = contentView1Controller.view
+        }
+        
+        addSubview(subView: vc, toView: tableTargetView)
+        vc.translatesAutoresizingMaskIntoConstraints = false
+        
+        var viewBindingsDict = [String: AnyObject]()
+        viewBindingsDict["vc"] = vc
+        tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
+        tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
+    }
