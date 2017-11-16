@@ -13,7 +13,6 @@ let REORDER_PASTEBOARD_TYPE = "com.outline.item"
 
 extension THSideBarViewController: NSPasteboardItemDataProvider {
 
-
     func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {
         let pbItem:NSPasteboardItem = NSPasteboardItem()
         pbItem.setDataProvider(self, forTypes: [NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
