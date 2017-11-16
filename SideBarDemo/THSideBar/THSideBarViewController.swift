@@ -60,6 +60,7 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.expandItem(nil, expandChildren: true)
         sidebarOutlineView.selectRowIndexes(IndexSet(selectIndex), byExtendingSelection: false)
     }
+    
 }
 
 
