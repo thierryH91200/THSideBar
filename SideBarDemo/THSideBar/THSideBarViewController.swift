@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SideBarViewController: NSViewController {
+class THSideBarViewController: NSViewController {
     
     @IBOutlet var sidebarOutlineView: NSOutlineView!
     @IBOutlet weak var group: NSButton!

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension SideBarViewController: NSOutlineViewDelegate {
+extension THSideBarViewController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for FAVORITES. This hides the "Show/Hide" button and disables the tracking area for that row.

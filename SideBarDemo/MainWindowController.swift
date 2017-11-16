@@ -22,8 +22,8 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var tableTargetView: NSView!
     @IBOutlet weak var splitView: NSSplitView!
     
-    var sideBarViewController :  SideBarViewController?
-    var sideBarViewController1 :  SideBarViewController?
+    var sideBarViewController :  THSideBarViewController?
+    var sideBarViewController1 :  THSideBarViewController?
 
     var contentView1Controller =  ContentView1Controller()
     var contentView2Controller =  ContentView2Controller()
@@ -33,9 +33,9 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var weather     = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
-    var weather11   = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
-    var weather10   = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var account1     = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var account2   = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
+    var account3   = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
     var allSection  = AllSection()
     var allSection1 = AllSection()
 
@@ -53,7 +53,7 @@ class MainWindowController: NSWindowController {
     
     func setUpSourceList1()
     {
-        self.sideBarViewController = SideBarViewController()
+        self.sideBarViewController = THSideBarViewController()
         addSubview(subView: (sideBarViewController?.view)!, toView: sourceView)
         
         sideBarViewController?.mainWindowController = self
@@ -65,19 +65,19 @@ class MainWindowController: NSWindowController {
     
     func initData1() {
         
-        let weather1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
-        let weather2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
-        let weather3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
-        let weather4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
+        let item1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
+        let item2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
+        let item3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
+        let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
         
-        weather.accounts.append(weather1)
-        weather.accounts.append(weather2)
-        weather11.accounts.append(weather3)
-        weather11.accounts.append(weather4)
+        account1.accounts.append(item1)
+        account1.accounts.append(item2)
+        account2.accounts.append(item3)
+        account2.accounts.append(item4)
         
         allSection.sections.removeAll()
-        allSection.sections.append(weather)
-        allSection.sections.append(weather11)
+        allSection.sections.append(account1)
+        allSection.sections.append(account2)
         allSection.dump()
         sideBarViewController?.initData( allSection: allSection )
     }
@@ -85,7 +85,7 @@ class MainWindowController: NSWindowController {
     
     func setUpSourceList2()
     {
-        self.sideBarViewController1 = SideBarViewController()
+        self.sideBarViewController1 = THSideBarViewController()
         addSubview(subView: (sideBarViewController1?.view)!, toView: sourceView1)
         
         sideBarViewController1?.mainWindowController = self
@@ -97,19 +97,19 @@ class MainWindowController: NSWindowController {
     
     func initData2() {
         
-        let weather1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "3", colorBadge: NSColor.blue)
-        weather1.isHidden = true
-        let weather2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView2Controller", badge: "-3", colorBadge: NSColor.red)
-        let weather3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView3Controller", badge: "-2", colorBadge: NSColor.red)
-        let weather4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "0", colorBadge: NSColor.blue)
+        let item1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "3", colorBadge: NSColor.blue)
+        item1.isHidden = true
+        let item2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView2Controller", badge: "-3", colorBadge: NSColor.red)
+        let item3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView3Controller", badge: "-2", colorBadge: NSColor.red)
+        let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "0", colorBadge: NSColor.blue)
         
-        weather10.accounts.append(weather1)
-        weather10.accounts.append(weather2)
-        weather10.accounts.append(weather3)
-        weather10.accounts.append(weather4)
+        account3.accounts.append(item1)
+        account3.accounts.append(item2)
+        account3.accounts.append(item3)
+        account3.accounts.append(item4)
         
         allSection1.sections.removeAll()
-        allSection1.sections.append(weather10)
+        allSection1.sections.append(account3)
         allSection1.dump()
         sideBarViewController1?.initData( allSection: allSection1 )
         sideBarViewController1?.group.title = "Account"

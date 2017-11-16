@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-extension SideBarViewController: NSOutlineViewDataSource {
+extension THSideBarViewController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         
