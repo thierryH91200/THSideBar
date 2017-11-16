@@ -33,10 +33,10 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var weather    = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
-    var weather11    = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
-    var weather10    = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
-    var allSection = AllSection()
+    var weather     = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var weather11   = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
+    var weather10   = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var allSection  = AllSection()
     var allSection1 = AllSection()
 
 
@@ -227,7 +227,6 @@ class MainWindowController: NSWindowController {
 
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex!  ) as IndexSet, byExtendingSelection: false)
     }
-
 }
 
 // just for the debug
