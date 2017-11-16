@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension SideBarWindowController: NSOutlineViewDelegate {
+extension SideBarViewController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for FAVORITES. This hides the "Show/Hide" button and disables the tracking area for that row.
@@ -48,7 +48,6 @@ extension SideBarWindowController: NSOutlineViewDelegate {
             cell?.title = account.badge
             cell?.backgroundColor = account.colorBadge.cgColor
             
-//            cell?.button.sizeToFit()
             cell?.button?.bezelStyle = .inline // Make it appear as a normal label and not a button
             return cell
         }
@@ -60,12 +59,9 @@ extension SideBarWindowController: NSOutlineViewDelegate {
         guard let outlineView = notification.object as? NSOutlineView else { return }
         
         let selectedIndex = outlineView.selectedRow
-
         if let feedItem = outlineView.item(atRow: selectedIndex) as? Account
         {
-            let item = feedItem.nameView
-            setContentView(toName: item)
-            print(item)
+            mainWindowController?.changeView( feedItem : feedItem)
         }
     }
 

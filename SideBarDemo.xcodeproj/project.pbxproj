@@ -12,16 +12,14 @@
 		0305FAC91F80AE3900D9B979 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAC71F80AE3900D9B979 /* MainMenu.xib */; };
 		0305FAD51F80AE3900D9B979 /* SideBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FAD41F80AE3900D9B979 /* SideBarDemoTests.swift */; };
 		0305FAE01F80AE3900D9B979 /* SideBarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FADF1F80AE3900D9B979 /* SideBarDemoUITests.swift */; };
-		0305FAEF1F80AEAD00D9B979 /* SideBarWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */; };
-		0305FAF01F80AEAD00D9B979 /* SideBarWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */; };
 		0305FAF21F80BBA500D9B979 /* SidebarTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */; };
-		0305FAF41F8117A600D9B979 /* ContentView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF31F8117A600D9B979 /* ContentView1.xib */; };
-		0305FAF61F8117BC00D9B979 /* ContentView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF51F8117BC00D9B979 /* ContentView2.xib */; };
-		0305FAF81F8117D500D9B979 /* ContentView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF71F8117D500D9B979 /* ContentView3.xib */; };
-		032081E01FA309BB000925C6 /* ContentView5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DC1FA309BB000925C6 /* ContentView5.xib */; };
-		032081E11FA309BB000925C6 /* ContentView4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DD1FA309BB000925C6 /* ContentView4.xib */; };
-		032081E21FA309BB000925C6 /* ContentView7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DE1FA309BB000925C6 /* ContentView7.xib */; };
-		032081E31FA309BB000925C6 /* ContentView6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DF1FA309BB000925C6 /* ContentView6.xib */; };
+		0305FAF41F8117A600D9B979 /* ContentView1Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF31F8117A600D9B979 /* ContentView1Controller.xib */; };
+		0305FAF61F8117BC00D9B979 /* ContentView2Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF51F8117BC00D9B979 /* ContentView2Controller.xib */; };
+		0305FAF81F8117D500D9B979 /* ContentView3Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305FAF71F8117D500D9B979 /* ContentView3Controller.xib */; };
+		032081E01FA309BB000925C6 /* ContentView5Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DC1FA309BB000925C6 /* ContentView5Controller.xib */; };
+		032081E11FA309BB000925C6 /* ContentView4Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DD1FA309BB000925C6 /* ContentView4Controller.xib */; };
+		032081E21FA309BB000925C6 /* ContentView7Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DE1FA309BB000925C6 /* ContentView7Controller.xib */; };
+		032081E31FA309BB000925C6 /* ContentView6Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032081DF1FA309BB000925C6 /* ContentView6Controller.xib */; };
 		032081EB1FA30C97000925C6 /* abundance-church-family.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032081E41FA30C96000925C6 /* abundance-church-family.jpg */; };
 		032081EC1FA30C97000925C6 /* mobile-phone-and-headphones-on-white-wooden-table.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032081E51FA30C96000925C6 /* mobile-phone-and-headphones-on-white-wooden-table.jpg */; };
 		032081ED1FA30C97000925C6 /* hand-tuning-peg-instrument.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032081E61FA30C96000925C6 /* hand-tuning-peg-instrument.jpg */; };
@@ -33,7 +31,18 @@
 		0324E0901FA085EF00D0AB52 /* SideBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */; };
 		0324E0921FA0867400D0AB52 /* SideBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */; };
 		0324E0941FA0D96600D0AB52 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */; };
+		034D65631FBD6C0F00D980A9 /* ContentView1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */; };
+		034D65651FBD6C3100D980A9 /* ContentView2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */; };
+		034D65671FBD6C5800D980A9 /* ContentView3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */; };
+		034D65691FBD6C7B00D980A9 /* ContentView4Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65681FBD6C7B00D980A9 /* ContentView4Controller.swift */; };
+		034D656B1FBD6CA700D980A9 /* ContentView5Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D656A1FBD6CA700D980A9 /* ContentView5Controller.swift */; };
+		034D656D1FBD6CC100D980A9 /* ContentView6Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D656C1FBD6CC100D980A9 /* ContentView6Controller.swift */; };
+		034D656F1FBD6CD800D980A9 /* ContentView7Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D656E1FBD6CD800D980A9 /* ContentView7Controller.swift */; };
+		034D65721FBD72A300D980A9 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65701FBD72A300D980A9 /* SideBarViewController.swift */; };
+		034D65731FBD72A300D980A9 /* SideBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034D65711FBD72A300D980A9 /* SideBarViewController.xib */; };
 		0361A1281F9FD05B00FED796 /* SideBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0361A1271F9FD05B00FED796 /* SideBarData.swift */; };
+		0373C89D1FBC03F40000757D /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0373C89C1FBC03F40000757D /* MainWindowController.xib */; };
+		0373C89F1FBC04020000757D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373C89E1FBC04020000757D /* MainWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,16 +75,14 @@
 		0305FADB1F80AE3900D9B979 /* SideBarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideBarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0305FADF1F80AE3900D9B979 /* SideBarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDemoUITests.swift; sourceTree = "<group>"; };
 		0305FAE11F80AE3900D9B979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarWindowController.swift; sourceTree = "<group>"; };
-		0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideBarWindowController.xib; sourceTree = "<group>"; };
 		0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarTableCellView.swift; sourceTree = "<group>"; };
-		0305FAF31F8117A600D9B979 /* ContentView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView1.xib; sourceTree = "<group>"; };
-		0305FAF51F8117BC00D9B979 /* ContentView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView2.xib; sourceTree = "<group>"; };
-		0305FAF71F8117D500D9B979 /* ContentView3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView3.xib; sourceTree = "<group>"; };
-		032081DC1FA309BB000925C6 /* ContentView5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView5.xib; sourceTree = "<group>"; };
-		032081DD1FA309BB000925C6 /* ContentView4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView4.xib; sourceTree = "<group>"; };
-		032081DE1FA309BB000925C6 /* ContentView7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView7.xib; sourceTree = "<group>"; };
-		032081DF1FA309BB000925C6 /* ContentView6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView6.xib; sourceTree = "<group>"; };
+		0305FAF31F8117A600D9B979 /* ContentView1Controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView1Controller.xib; sourceTree = "<group>"; };
+		0305FAF51F8117BC00D9B979 /* ContentView2Controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView2Controller.xib; sourceTree = "<group>"; };
+		0305FAF71F8117D500D9B979 /* ContentView3Controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView3Controller.xib; sourceTree = "<group>"; };
+		032081DC1FA309BB000925C6 /* ContentView5Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView5Controller.xib; sourceTree = "<group>"; };
+		032081DD1FA309BB000925C6 /* ContentView4Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView4Controller.xib; sourceTree = "<group>"; };
+		032081DE1FA309BB000925C6 /* ContentView7Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView7Controller.xib; sourceTree = "<group>"; };
+		032081DF1FA309BB000925C6 /* ContentView6Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentView6Controller.xib; sourceTree = "<group>"; };
 		032081E41FA30C96000925C6 /* abundance-church-family.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "abundance-church-family.jpg"; sourceTree = "<group>"; };
 		032081E51FA30C96000925C6 /* mobile-phone-and-headphones-on-white-wooden-table.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mobile-phone-and-headphones-on-white-wooden-table.jpg"; sourceTree = "<group>"; };
 		032081E61FA30C96000925C6 /* hand-tuning-peg-instrument.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hand-tuning-peg-instrument.jpg"; sourceTree = "<group>"; };
@@ -87,7 +94,18 @@
 		0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDelegate.swift; sourceTree = "<group>"; };
 		0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarDataSource.swift; sourceTree = "<group>"; };
 		0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView1Controller.swift; sourceTree = "<group>"; };
+		034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2Controller.swift; sourceTree = "<group>"; };
+		034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView3Controller.swift; sourceTree = "<group>"; };
+		034D65681FBD6C7B00D980A9 /* ContentView4Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView4Controller.swift; sourceTree = "<group>"; };
+		034D656A1FBD6CA700D980A9 /* ContentView5Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView5Controller.swift; sourceTree = "<group>"; };
+		034D656C1FBD6CC100D980A9 /* ContentView6Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView6Controller.swift; sourceTree = "<group>"; };
+		034D656E1FBD6CD800D980A9 /* ContentView7Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView7Controller.swift; sourceTree = "<group>"; };
+		034D65701FBD72A300D980A9 /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		034D65711FBD72A300D980A9 /* SideBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBarViewController.xib; sourceTree = "<group>"; };
 		0361A1271F9FD05B00FED796 /* SideBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarData.swift; sourceTree = "<group>"; };
+		0373C89C1FBC03F40000757D /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		0373C89E1FBC04020000757D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +156,13 @@
 		0305FAC21F80AE3900D9B979 /* SideBarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				034D65611FBD6BDB00D980A9 /* View */,
 				0324E08E1FA0847700D0AB52 /* SideBar */,
 				0305FAC31F80AE3900D9B979 /* AppDelegate.swift */,
 				0305FAC51F80AE3900D9B979 /* Assets.xcassets */,
 				0305FACA1F80AE3900D9B979 /* Info.plist */,
+				0373C89E1FBC04020000757D /* MainWindowController.swift */,
+				0373C89C1FBC03F40000757D /* MainWindowController.xib */,
 				0305FAC71F80AE3900D9B979 /* MainMenu.xib */,
 				032081DB1FA3098E000925C6 /* Resource */,
 				0305FACB1F80AE3900D9B979 /* SideBarDemo.entitlements */,
@@ -177,13 +198,6 @@
 				032081EA1FA30C96000925C6 /* record-vinyl-turntable.jpg */,
 				032081E71FA30C96000925C6 /* vintage-radio-on-glass-table.jpg */,
 				032081E81FA30C96000925C6 /* woman-writing-in-music-sheet.jpg */,
-				0305FAF31F8117A600D9B979 /* ContentView1.xib */,
-				0305FAF51F8117BC00D9B979 /* ContentView2.xib */,
-				0305FAF71F8117D500D9B979 /* ContentView3.xib */,
-				032081DD1FA309BB000925C6 /* ContentView4.xib */,
-				032081DC1FA309BB000925C6 /* ContentView5.xib */,
-				032081DF1FA309BB000925C6 /* ContentView6.xib */,
-				032081DE1FA309BB000925C6 /* ContentView7.xib */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -191,16 +205,37 @@
 		0324E08E1FA0847700D0AB52 /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
-				032081F21FA31F2B000925C6 /* SideBarDragDrop.swift */,
 				0361A1271F9FD05B00FED796 /* SideBarData.swift */,
 				0324E0911FA0867400D0AB52 /* SideBarDataSource.swift */,
 				0324E08F1FA085EF00D0AB52 /* SideBarDelegate.swift */,
+				032081F21FA31F2B000925C6 /* SideBarDragDrop.swift */,
 				0305FAF11F80BBA500D9B979 /* SidebarTableCellView.swift */,
-				0305FAEE1F80AEAD00D9B979 /* SideBarWindowController.xib */,
+				034D65701FBD72A300D980A9 /* SideBarViewController.swift */,
+				034D65711FBD72A300D980A9 /* SideBarViewController.xib */,
 				0324E0931FA0D96500D0AB52 /* TextFieldDelegate.swift */,
-				0305FAED1F80AEAD00D9B979 /* SideBarWindowController.swift */,
 			);
 			path = SideBar;
+			sourceTree = "<group>";
+		};
+		034D65611FBD6BDB00D980A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */,
+				0305FAF31F8117A600D9B979 /* ContentView1Controller.xib */,
+				034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */,
+				0305FAF51F8117BC00D9B979 /* ContentView2Controller.xib */,
+				034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */,
+				0305FAF71F8117D500D9B979 /* ContentView3Controller.xib */,
+				034D65681FBD6C7B00D980A9 /* ContentView4Controller.swift */,
+				032081DD1FA309BB000925C6 /* ContentView4Controller.xib */,
+				034D656A1FBD6CA700D980A9 /* ContentView5Controller.swift */,
+				032081DC1FA309BB000925C6 /* ContentView5Controller.xib */,
+				034D656C1FBD6CC100D980A9 /* ContentView6Controller.swift */,
+				032081DF1FA309BB000925C6 /* ContentView6Controller.xib */,
+				034D656E1FBD6CD800D980A9 /* ContentView7Controller.swift */,
+				032081DE1FA309BB000925C6 /* ContentView7Controller.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,23 +345,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0305FAF41F8117A600D9B979 /* ContentView1.xib in Resources */,
+				0305FAF41F8117A600D9B979 /* ContentView1Controller.xib in Resources */,
 				032081EB1FA30C97000925C6 /* abundance-church-family.jpg in Resources */,
-				032081E31FA309BB000925C6 /* ContentView6.xib in Resources */,
-				0305FAF61F8117BC00D9B979 /* ContentView2.xib in Resources */,
-				0305FAF81F8117D500D9B979 /* ContentView3.xib in Resources */,
+				032081E31FA309BB000925C6 /* ContentView6Controller.xib in Resources */,
+				0305FAF61F8117BC00D9B979 /* ContentView2Controller.xib in Resources */,
+				0305FAF81F8117D500D9B979 /* ContentView3Controller.xib in Resources */,
 				032081EC1FA30C97000925C6 /* mobile-phone-and-headphones-on-white-wooden-table.jpg in Resources */,
-				032081E11FA309BB000925C6 /* ContentView4.xib in Resources */,
-				0305FAF01F80AEAD00D9B979 /* SideBarWindowController.xib in Resources */,
+				032081E11FA309BB000925C6 /* ContentView4Controller.xib in Resources */,
 				032081F01FA30C97000925C6 /* rayban-ray-bans-spectacles.jpg in Resources */,
 				032081ED1FA30C97000925C6 /* hand-tuning-peg-instrument.jpg in Resources */,
+				0373C89D1FBC03F40000757D /* MainWindowController.xib in Resources */,
 				0305FAC61F80AE3900D9B979 /* Assets.xcassets in Resources */,
 				032081F11FA30C97000925C6 /* record-vinyl-turntable.jpg in Resources */,
-				032081E01FA309BB000925C6 /* ContentView5.xib in Resources */,
+				032081E01FA309BB000925C6 /* ContentView5Controller.xib in Resources */,
 				0305FAC91F80AE3900D9B979 /* MainMenu.xib in Resources */,
 				032081EE1FA30C97000925C6 /* vintage-radio-on-glass-table.jpg in Resources */,
 				032081EF1FA30C97000925C6 /* woman-writing-in-music-sheet.jpg in Resources */,
-				032081E21FA309BB000925C6 /* ContentView7.xib in Resources */,
+				034D65731FBD72A300D980A9 /* SideBarViewController.xib in Resources */,
+				032081E21FA309BB000925C6 /* ContentView7Controller.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +390,19 @@
 				0305FAF21F80BBA500D9B979 /* SidebarTableCellView.swift in Sources */,
 				0361A1281F9FD05B00FED796 /* SideBarData.swift in Sources */,
 				0324E0941FA0D96600D0AB52 /* TextFieldDelegate.swift in Sources */,
-				0305FAEF1F80AEAD00D9B979 /* SideBarWindowController.swift in Sources */,
+				034D656D1FBD6CC100D980A9 /* ContentView6Controller.swift in Sources */,
+				034D65721FBD72A300D980A9 /* SideBarViewController.swift in Sources */,
+				034D65671FBD6C5800D980A9 /* ContentView3Controller.swift in Sources */,
+				034D65651FBD6C3100D980A9 /* ContentView2Controller.swift in Sources */,
+				034D65631FBD6C0F00D980A9 /* ContentView1Controller.swift in Sources */,
+				034D656F1FBD6CD800D980A9 /* ContentView7Controller.swift in Sources */,
 				0324E0921FA0867400D0AB52 /* SideBarDataSource.swift in Sources */,
 				032081F31FA31F2B000925C6 /* SideBarDragDrop.swift in Sources */,
 				0324E0901FA085EF00D0AB52 /* SideBarDelegate.swift in Sources */,
 				0305FAC41F80AE3900D9B979 /* AppDelegate.swift in Sources */,
+				0373C89F1FBC04020000757D /* MainWindowController.swift in Sources */,
+				034D656B1FBD6CA700D980A9 /* ContentView5Controller.swift in Sources */,
+				034D65691FBD6C7B00D980A9 /* ContentView4Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

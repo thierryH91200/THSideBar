@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-extension SideBarWindowController: NSOutlineViewDataSource {
+extension SideBarViewController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         
@@ -20,11 +20,10 @@ extension SideBarWindowController: NSOutlineViewDataSource {
             default:
                 return 0
             }
-        } else {
-            return allSection.sections.count
         }
-   }
-    
+        return allSection.sections.count
+    }
+
     // Returns the child item at the specified index of a given item
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         if let item: Any = item {
@@ -34,14 +33,8 @@ extension SideBarWindowController: NSOutlineViewDataSource {
             default:
                 return self
             }
-        } else {
-            switch index {
-            case 0:
-                return allSection.sections[0]
-            default:
-                return allSection.sections[1]
-            }
         }
+        return allSection.sections[index]
     }
     
     // ok

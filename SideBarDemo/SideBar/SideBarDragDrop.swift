@@ -11,7 +11,7 @@ import Cocoa
 
 let REORDER_PASTEBOARD_TYPE = "com.outline.item"
 
-extension SideBarWindowController: NSPasteboardItemDataProvider {
+extension SideBarViewController: NSPasteboardItemDataProvider {
 
 
     func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {

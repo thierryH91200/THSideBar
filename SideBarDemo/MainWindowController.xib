@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13770" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13770"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="SideBarDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="sourceView" destination="DmG-hk-Pct" id="Pwz-VA-f4l"/>
+                <outlet property="sourceView1" destination="OYM-wV-zth" id="2t0-eY-PcV"/>
+                <outlet property="splitView" destination="x8A-bA-W1k" id="GPt-xd-Td5"/>
+                <outlet property="tableTargetView" destination="uAT-Vs-nSb" id="RGs-Yb-lLI"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="windowSave" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="766" height="588"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="766" height="588"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView arrangesAllSubviews="NO" autosaveName="splitView" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-bA-W1k">
+                        <rect key="frame" x="0.0" y="30" width="766" height="558"/>
+                        <subviews>
+                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" id="Rpl-5f-YVc">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="558"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="DmG-hk-Pct">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="271"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="OYM-wV-zth">
+                                        <rect key="frame" x="0.0" y="272" width="230" height="286"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                            <customView fixedFrame="YES" id="uAT-Vs-nSb">
+                                <rect key="frame" x="231" y="0.0" width="535" height="558"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FsK-7q-zDP">
+                        <rect key="frame" x="69" y="-1" width="85" height="32"/>
+                        <buttonCell key="cell" type="push" title="Badge-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6re-69-jNt">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonBadgeM:" target="-2" id="ZHe-V3-gVD"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LWB-5f-heH">
+                        <rect key="frame" x="143" y="-1" width="88" height="32"/>
+                        <buttonCell key="cell" type="push" title="Badge+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y5D-K5-SID">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonBadgeP:" target="-2" id="3Va-O4-ZST"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="866-Tk-KUo">
+                        <rect key="frame" x="-6" y="-1" width="75" height="32"/>
+                        <buttonCell key="cell" type="push" title="Item+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dRD-Tb-j66">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ItemPlus:" target="-2" id="ySM-4y-kXp"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FsK-7q-zDP" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="75" id="41u-Lt-A4v"/>
+                    <constraint firstItem="x8A-bA-W1k" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="5gv-hN-fH0"/>
+                    <constraint firstItem="866-Tk-KUo" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="A8w-ww-668"/>
+                    <constraint firstItem="LWB-5f-heH" firstAttribute="leading" secondItem="FsK-7q-zDP" secondAttribute="trailing" constant="1" id="BKV-h7-jDS"/>
+                    <constraint firstItem="LWB-5f-heH" firstAttribute="top" secondItem="x8A-bA-W1k" secondAttribute="bottom" constant="3" id="Wd5-ud-88M"/>
+                    <constraint firstItem="866-Tk-KUo" firstAttribute="top" secondItem="x8A-bA-W1k" secondAttribute="bottom" constant="3" id="aaT-BS-Lp0"/>
+                    <constraint firstAttribute="bottom" secondItem="x8A-bA-W1k" secondAttribute="bottom" constant="30" id="kXq-ot-TaT"/>
+                    <constraint firstItem="FsK-7q-zDP" firstAttribute="top" secondItem="x8A-bA-W1k" secondAttribute="bottom" constant="3" id="wHu-eG-3LH"/>
+                    <constraint firstItem="x8A-bA-W1k" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="xDF-ab-UiA"/>
+                    <constraint firstAttribute="trailing" secondItem="x8A-bA-W1k" secondAttribute="trailing" id="y9k-uo-eTX"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="53" y="-217"/>
+        </window>
+    </objects>
+</document>

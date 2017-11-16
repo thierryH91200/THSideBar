@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension SideBarWindowController: NSTextFieldDelegate {
+extension SideBarViewController: NSTextFieldDelegate {
     
     override func controlTextDidEndEditing(_ obj: Notification) {
         
