@@ -136,6 +136,7 @@
 		0305FAB71F80AE3900D9B979 = {
 			isa = PBXGroup;
 			children = (
+				0324E08E1FA0847700D0AB52 /* THSideBar */,
 				0305FAC21F80AE3900D9B979 /* SideBarDemo */,
 				0305FAD31F80AE3900D9B979 /* SideBarDemoTests */,
 				0305FADE1F80AE3900D9B979 /* SideBarDemoUITests */,
@@ -157,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				034D65611FBD6BDB00D980A9 /* View */,
-				0324E08E1FA0847700D0AB52 /* THSideBar */,
 				0305FAC31F80AE3900D9B979 /* AppDelegate.swift */,
 				0305FAC51F80AE3900D9B979 /* Assets.xcassets */,
 				0305FACA1F80AE3900D9B979 /* Info.plist */,
