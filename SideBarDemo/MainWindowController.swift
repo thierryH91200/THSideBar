@@ -8,10 +8,6 @@
 
 import Cocoa
 
-var id = "6618607"
-
-private var defaultsContext = 0
-
 class MainWindowController: NSWindowController {
     
     var delegate: AppDelegate?
@@ -38,7 +34,6 @@ class MainWindowController: NSWindowController {
     var account3   = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
     var allSection  = AllSection()
     var allSection1 = AllSection()
-
 
     override func windowDidLoad() {
         super.windowDidLoad()
