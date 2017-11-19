@@ -13,13 +13,14 @@ class THSideBarViewController: NSViewController {
     @IBOutlet var sidebarOutlineView: NSOutlineView!
     @IBOutlet weak var group: NSButton!
     
-    var delegate: AppDelegate?
     var mainWindowController: MainWindowController?
     
     var draggedNode:AnyObject? = nil
     var fromIndex: Int? = nil
     
     var allSection = AllSection()
+    var allowDragAndDrop = true
+    var saveSection = true
     
     var selectIndex = [1]
     
@@ -27,19 +28,22 @@ class THSideBarViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        // Register for the dropped object types we can accept.
-        sidebarOutlineView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
-        
-        // Disable dragging items from our view to other applications.
-        sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation(), forLocal: false)
-        
-        // Enable dragging items within and into our view.
-        sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation.every, forLocal: true)
-    }
+     }
     
     override open func viewDidAppear()
     {
         super.viewDidAppear()
+        
+        if allowDragAndDrop == true {
+            // Register for the dropped object types we can accept.
+            sidebarOutlineView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
+            
+            // Disable dragging items from our view to other applications.
+            sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation(), forLocal: false)
+            
+            // Enable dragging items within and into our view.
+            sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation.every, forLocal: true)
+        }
         
         let index = sidebarOutlineView.row(forItem: 1)
         sidebarOutlineView.scrollRowToVisible(index)
@@ -89,12 +93,7 @@ class THSideBarViewController: NSViewController {
         }
         return false
     }
-
+    
 }
-
-
-
-
-
 
 

@@ -22,6 +22,16 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItems draggedItems: [Any]) {
         draggedNode = draggedItems[0] as AnyObject?
         session.draggingPasteboard.setData(Data(), forType: NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE))
+        debugPrint("Drag session begin")
+
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+        debugPrint("Drag session ended")
+        self.draggedNode = nil
+        if saveSection == true {
+            save()
+        }
     }
 
     func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
@@ -101,12 +111,6 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
 //            allSection.dump()
         }
         return retVal
-    }
-
-    func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
-        debugPrint("Drag session ended")
-        self.draggedNode = nil
-        save()
     }
 
     // MARK: NSPasteboardItemDataProvider

@@ -52,6 +52,7 @@ class MainWindowController: NSWindowController {
         addSubview(subView: (sideBarViewController?.view)!, toView: sourceView)
         
         sideBarViewController?.mainWindowController = self
+        sideBarViewController?.allowDragAndDrop = false
         setUpLayoutConstraints(item: sideBarViewController!.view, toItem: sourceView)
         self.sideBarViewController!.view.setFrameSize( NSMakeSize(100, 200))
         initData1()
@@ -60,14 +61,14 @@ class MainWindowController: NSWindowController {
     
     func initData1() {
         
-        let item1 = Account(name:"ContentView1", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
+        let item1 = Account(name:"ContentView1", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
         item1.isHidden = true
         
-        let item2 = Account(name:"ContentView2", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
+        let item2 = Account(name:"ContentView2", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
         item2.isHidden = true
         
-        let item3 = Account(name:"ContentView3", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
-        let item4 = Account(name:"ContentView4", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
+        let item3 = Account(name:"ContentView3", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
+        let item4 = Account(name:"ContentView4", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
         
         account1.accounts.append(item1)
         account1.accounts.append(item2)
