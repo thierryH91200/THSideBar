@@ -131,6 +131,7 @@ class Account: BaseItem {
 
 
 // Start Base
+// Just for debug
 class BaseItemMini  {
     
     var name: String
