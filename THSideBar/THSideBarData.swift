@@ -122,3 +122,41 @@ class Account: BaseItem {
     }
 }
 
+
+
+
+
+
+
+
+
+// Start Base
+class BaseItemMini  {
+    
+    var name: String
+    var nameView: String
+    var icon : NSImage?
+    var badge: String
+    var colorBadge : NSColor
+    var isHidden = false
+    
+    init(name: String, icon: NSImage,  nameView : String, badge : String, colorBadge : NSColor) {
+        self.name       = name
+        self.nameView   = nameView
+        self.icon       = icon
+        self.badge      = badge
+        self.colorBadge = colorBadge
+    }
+}
+
+class AllSectionMini: BaseItem {
+    var sections:[SectionMini] = []
+}
+
+class SectionMini: BaseItem {
+    var accounts: [AccountMini] = []
+}
+
+class AccountMini: BaseItem {
+}
+
