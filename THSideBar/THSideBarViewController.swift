@@ -69,18 +69,20 @@ class THSideBarViewController: NSViewController {
     {
         let Defaults = UserDefaults.standard
         let account = allSection.sections[0].accounts
+        let name = allSection.sections[0].name
         
         let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
-        Defaults.set(archiver, forKey: "account")
+        Defaults.set(archiver, forKey: name)
         Defaults.synchronize()
     }
     
     func load(allSection: AllSection) -> Bool
     {
         self.allSection = allSection
-        
+        let name = allSection.sections[0].name
+
         let Defaults = UserDefaults.standard
-        let retrievedData = Defaults.object(forKey: "account") as? Data
+        let retrievedData = Defaults.object(forKey: name) as? Data
         if retrievedData != nil
         {
             let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)

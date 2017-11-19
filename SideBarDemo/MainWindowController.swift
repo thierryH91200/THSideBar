@@ -53,6 +53,8 @@ class MainWindowController: NSWindowController {
         
         sideBarViewController?.mainWindowController = self
         sideBarViewController?.allowDragAndDrop = false
+        sideBarViewController?.saveSection = false
+        
         setUpLayoutConstraints(item: sideBarViewController!.view, toItem: sourceView)
         self.sideBarViewController!.view.setFrameSize( NSMakeSize(100, 200))
         initData1()
@@ -101,7 +103,7 @@ class MainWindowController: NSWindowController {
         allSection1.sections.removeAll()
         allSection1.sections.append(account3)
         if sideBarViewController1?.load(allSection: allSection1) == false {
-            
+        
             let Human_resource = NSImage (named: NSImage.Name(rawValue: "Human_resource"))!
             let employee = NSImage (named: NSImage.Name(rawValue: "employee"))!
             
