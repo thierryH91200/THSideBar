@@ -9,26 +9,45 @@
 import Foundation
 import Cocoa
 
-class BaseItem {
+class BaseItem : NSObject, NSCoding {
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.name, forKey:"name")
+        aCoder.encode(self.nameView, forKey:"nameView")
+        aCoder.encode(self.icon, forKey:"icon")
+        aCoder.encode(self.badge, forKey:"badge")
+        aCoder.encode(self.colorBadge, forKey:"colorBadge")
+        aCoder.encode(self.isHidden, forKey:"isHidden")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.name = (aDecoder.decodeObject(forKey: "name") as? String)!
+        self.nameView = (aDecoder.decodeObject(forKey: "nameView") as? String)!
+        self.icon = (aDecoder.decodeObject(forKey: "icon") as? NSImage)!
+        self.badge = (aDecoder.decodeObject(forKey: "badge") as? String)!
+        self.colorBadge = (aDecoder.decodeObject(forKey: "colorBadge") as? NSColor)!
+        self.isHidden = aDecoder.decodeBool(forKey: "isHidden")
+    }
+    
     var name: String
-    var icon : NSImage?
     var nameView: String
+    var icon : NSImage?
     var badge: String
     var colorBadge : NSColor
     var isHidden = false
     
     init(name: String, icon: NSImage,  nameView : String = "", badge : String = "", colorBadge : NSColor = .blue) {
-        self.icon       = icon
         self.name       = name
         self.nameView   = nameView
+        self.icon       = icon
         self.badge      = badge
         self.colorBadge = colorBadge
     }
     
-    init() {
-        self.icon       = NSImage (named: NSImage.Name(rawValue: "account"))!
+    override init() {
         self.name       = ""
         self.nameView   = ""
+        self.icon       = NSImage (named: NSImage.Name(rawValue: "account"))!
         self.badge      = ""
         self.colorBadge = NSColor.blue
     }

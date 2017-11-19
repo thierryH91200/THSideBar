@@ -14,13 +14,13 @@ class MainWindowController: NSWindowController {
     
     @IBOutlet weak var sourceView: NSView!
     @IBOutlet weak var sourceView1: NSView!
-
+    
     @IBOutlet weak var tableTargetView: NSView!
     @IBOutlet weak var splitView: NSSplitView!
     
     var sideBarViewController :  THSideBarViewController?
     var sideBarViewController1 :  THSideBarViewController?
-
+    
     var contentView1Controller =  ContentView1Controller()
     var contentView2Controller =  ContentView2Controller()
     var contentView3Controller =  ContentView3Controller()
@@ -29,19 +29,19 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var account1     = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
-    var account2   = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
-    var account3   = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var account1    = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var account2    = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
+    var account3    = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
     var allSection  = AllSection()
     var allSection1 = AllSection()
-
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         
         splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
         splitView.minPossiblePositionOfDivider(at: 0)
         splitView.maxPossiblePositionOfDivider(at: 999)
-
+        
         setUpSourceList1()
         setUpSourceList2()
     }
@@ -60,14 +60,14 @@ class MainWindowController: NSWindowController {
     
     func initData1() {
         
-        let item1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
+        let item1 = Account(name:"ContentView1", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
         item1.isHidden = true
-
-        let item2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
+        
+        let item2 = Account(name:"ContentView2", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
         item2.isHidden = true
-
-        let item3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
-        let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
+        
+        let item3 = Account(name:"ContentView3", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
+        let item4 = Account(name:"ContentView4", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
         
         account1.accounts.append(item1)
         account1.accounts.append(item2)
@@ -80,7 +80,7 @@ class MainWindowController: NSWindowController {
         allSection.dump()
         sideBarViewController?.initData( allSection: allSection )
     }
-
+    
     func setUpSourceList2()
     {
         self.sideBarViewController1 = THSideBarViewController()
@@ -95,27 +95,36 @@ class MainWindowController: NSWindowController {
     
     func initData2() {
         
-        let item1 = Account(name:"ContentView5Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView5Controller", badge: "3", colorBadge: NSColor.blue)
-        item1.isHidden = true
-        
-        let item2 = Account(name:"ContentView6Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView6Controller", badge: "-3", colorBadge: NSColor.red)
-        item2.isHidden = true
-
-        let item3 = Account(name:"ContentView7Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView7Controller", badge: "-2", colorBadge: NSColor.red)
-        let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "0", colorBadge: NSColor.blue)
-        
-        account3.accounts.append(item1)
-        account3.accounts.append(item2)
-        account3.accounts.append(item3)
-        account3.accounts.append(item4)
+        sideBarViewController1?.group.title = "Account"
         
         allSection1.sections.removeAll()
         allSection1.sections.append(account3)
-        allSection1.dump()
-        sideBarViewController1?.initData( allSection: allSection1 )
-        sideBarViewController1?.group.title = "Account"
+        if sideBarViewController1?.load(allSection: allSection1) == false {
+            
+            let Human_resource = NSImage (named: NSImage.Name(rawValue: "Human_resource"))!
+            let employee = NSImage (named: NSImage.Name(rawValue: "employee"))!
+            
+            let item1 = Account(name:"ContentView5", icon: Human_resource, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
+            item1.isHidden = true
+            
+            let item2 = Account(name:"ContentView6", icon: employee, nameView: "ContentView6Controller", badge: "-3", colorBadge: .red)
+            item2.isHidden = true
+            
+            let item3 = Account(name:"ContentView7", icon: Human_resource, nameView: "ContentView7Controller", badge: "-2", colorBadge: .red)
+            let item4 = Account(name:"ContentView4", icon: employee, nameView: "ContentView4Controller", badge: "0", colorBadge: .blue)
+            
+            account3.accounts.append(item1)
+            account3.accounts.append(item2)
+            account3.accounts.append(item3)
+            account3.accounts.append(item4)
+            
+            allSection1.sections.removeAll()
+            allSection1.sections.append(account3)
+            allSection1.dump()
+            sideBarViewController1?.initData( allSection: allSection1 )
+        }
     }
-
+    
     func addSubview(subView: NSView, toView parentView : NSView)
     {
         let myView = parentView.subviews
@@ -155,13 +164,13 @@ class MainWindowController: NSWindowController {
             
         case "ContentView2Controller":
             vc = contentView2Controller.view
-
+            
         case "ContentView3Controller":
             vc = contentView3Controller.view
-
+            
         case "ContentView4Controller":
             vc = contentView4Controller.view
-
+            
         case "ContentView5Controller":
             vc = contentView5Controller.view
             
@@ -204,7 +213,7 @@ class MainWindowController: NSWindowController {
         let selectedIndex = sideBarViewController1?.sidebarOutlineView.selectedRow
         let badge = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].badge
         var numBadge = Int(badge!)
-
+        
         numBadge = numBadge! + 1
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].badge = String(describing: numBadge!)
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].colorBadge = numBadge! >= 0 ? .blue : .red
@@ -225,7 +234,7 @@ class MainWindowController: NSWindowController {
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
-
+        
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex!  ) as IndexSet, byExtendingSelection: false)
     }
 }

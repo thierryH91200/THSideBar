@@ -18,7 +18,7 @@ class THSideBarViewController: NSViewController {
     
     var draggedNode:AnyObject? = nil
     var fromIndex: Int? = nil
-
+    
     var allSection = AllSection()
     
     var selectIndex = [1]
@@ -48,7 +48,7 @@ class THSideBarViewController: NSViewController {
     
     func initData( allSection: AllSection) {
         self.allSection = allSection
-     }
+    }
     
     func reloadData() {
         
@@ -61,6 +61,35 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.selectRowIndexes(IndexSet(selectIndex), byExtendingSelection: false)
     }
     
+    func save()
+    {
+        let Defaults = UserDefaults.standard
+        let account = allSection.sections[0].accounts
+        
+        let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
+        Defaults.set(archiver, forKey: "account")
+        Defaults.synchronize()
+    }
+    
+    func load(allSection: AllSection) -> Bool
+    {
+        self.allSection = allSection
+        
+        let Defaults = UserDefaults.standard
+        let retrievedData = Defaults.object(forKey: "account") as? Data
+        if retrievedData != nil
+        {
+            let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)
+            let accounts = unarchivedObject  as! [Account]
+            for account in accounts
+            {
+                allSection.sections[0].accounts.append( account )
+            }
+            return true
+        }
+        return false
+    }
+
 }
 
 
