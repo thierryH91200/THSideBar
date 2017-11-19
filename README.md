@@ -103,3 +103,6 @@ func changeView(feedItem : Account)
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
     }
 ```
+
+## Ability to save / load Account
+Ideal for dynamic sections
