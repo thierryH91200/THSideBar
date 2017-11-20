@@ -29,7 +29,7 @@ class THSideBarViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-     }
+    }
     
     override open func viewDidAppear()
     {
@@ -68,11 +68,13 @@ class THSideBarViewController: NSViewController {
     
     func save()
     {
-        let account = allSection.sections[0].accounts
-        let name = allSection.sections[0].name
-        
-        let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
-        Defaults.set(archiver, forKey: name)
+        for section in allSection.sections {
+            let account = section.accounts
+            let name = section.name
+            
+            let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
+            Defaults.set(archiver, forKey: name)
+        }
         Defaults.synchronize()
     }
     
@@ -80,7 +82,7 @@ class THSideBarViewController: NSViewController {
     {
         self.allSection = allSection
         let name = allSection.sections[0].name
-
+        
         let retrievedData = Defaults.object(forKey: name) as? Data
         if retrievedData != nil
         {
