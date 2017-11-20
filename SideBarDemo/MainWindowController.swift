@@ -40,9 +40,9 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-//        splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
-//        splitView.minPossiblePositionOfDivider(at: 0)
-//        splitView.maxPossiblePositionOfDivider(at: 999)
+        splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
+        splitView.minPossiblePositionOfDivider(at: 0)
+        splitView.maxPossiblePositionOfDivider(at: 999)
         
         setUpSourceList1()
         setUpSourceList2()
@@ -58,7 +58,6 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.saveSection = false
         
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
-//        self.sideBarViewController1!.view.setFrameSize( NSMakeSize(100, 200))
         initData1()
         sideBarViewController1?.reloadData()
     }
@@ -66,7 +65,6 @@ class MainWindowController: NSWindowController {
     func initData1() {
         
         let item1 = Account(name:"ContentView1", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
-        item1.isHidden = true
         
         let item2 = Account(name:"ContentView2", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
         item2.isHidden = true
@@ -86,7 +84,6 @@ class MainWindowController: NSWindowController {
         account2.accounts.append(item6)
         account2.accounts.append(item7)
 
-        
         allSection1.sections.removeAll()
         allSection1.sections.append(account1)
         allSection1.sections.append(account2)
@@ -102,7 +99,6 @@ class MainWindowController: NSWindowController {
         sideBarViewController2?.delegate = self
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
-//        self.sideBarViewController2!.view.setFrameSize( NSMakeSize(100, 200))
         initData2()
         sideBarViewController2?.reloadData()
     }
@@ -186,32 +182,32 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func buttonBadgeP(_ sender: Any) {
-        let selectedIndex = sideBarViewController1?.sidebarOutlineView.selectedRow
-        let badge = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].badge
+        let selectedIndex = 1
+        let badge = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge
         var numBadge = Int(badge!)
-        
+
         numBadge = numBadge! + 1
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].badge = String(describing: numBadge!)
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].colorBadge = numBadge! >= 0 ? .blue : .red
-        
+        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
+        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
-        sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex!  ) as IndexSet, byExtendingSelection: false)
+        sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)
     }
     
     @IBAction func buttonBadgeM(_ sender: Any) {
-        let selectedIndex = sideBarViewController1?.sidebarOutlineView.selectedRow
-        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1]
+        let selectedIndex = 1
+        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
         var numBadge = Int((item?.badge)!)
         
         numBadge = numBadge! - 1
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].badge = String(describing: numBadge!)
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex! - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
+        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
         
-        sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex!  ) as IndexSet, byExtendingSelection: false)
+        sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)
     }
 }
 
