@@ -195,14 +195,6 @@ class MainWindowController: NSWindowController {
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
     }
     
-    @IBAction func actionRefresh(_ sender: Any)
-    {
-        let Defaults = UserDefaults.standard
-        Defaults.set("anime", forKey: "THEKEY3")
-        Defaults.set("anime", forKey: "THEKEY4")
-        Defaults.set("anime", forKey: "THEKEY5")
-    }
-    
     @IBAction func ItemPlus(_ sender: Any) {
         let account8 = Account(name:"Account 8", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4Controller", badge: "5", colorBadge: NSColor.blue)
         sideBarViewController1?.allSection.sections[0].accounts.append(account8)
