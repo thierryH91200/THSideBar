@@ -5,28 +5,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="ContentView4Controller" customModule="SideBarDemo" customModuleProvider="target">
             <connections>
+                <outlet property="titleView" destination="LKd-N0-N6F" id="WeU-lm-huG"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ea8-KE-wv9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="view4" id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="LKd-N0-N6F">
+                    <rect key="frame" x="0.0" y="400" width="600" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Xm3-HW-ple"/>
+                    </constraints>
+                </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qst-58-0D5">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rayban-ray-bans-spectacles" id="aHM-wV-OLx"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="rayban-ray-bans-spectacles" id="aHM-wV-OLx"/>
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="qst-58-0D5" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="1b5-jj-bOc"/>
-                <constraint firstAttribute="bottom" secondItem="qst-58-0D5" secondAttribute="bottom" id="8x1-ac-OUU"/>
+                <constraint firstItem="qst-58-0D5" firstAttribute="top" secondItem="LKd-N0-N6F" secondAttribute="bottom" id="1b5-jj-bOc"/>
+                <constraint firstItem="LKd-N0-N6F" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="7Vc-gk-jVP"/>
+                <constraint firstAttribute="trailing" secondItem="LKd-N0-N6F" secondAttribute="trailing" id="KQ2-cW-E3u"/>
+                <constraint firstItem="LKd-N0-N6F" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="KqE-yY-68y"/>
+                <constraint firstItem="LKd-N0-N6F" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="OY7-MQ-EPL"/>
+                <constraint firstAttribute="bottom" secondItem="qst-58-0D5" secondAttribute="bottom" id="P0p-Fn-KVI"/>
+                <constraint firstItem="LKd-N0-N6F" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="SWu-hF-IKv"/>
+                <constraint firstAttribute="trailing" secondItem="LKd-N0-N6F" secondAttribute="trailing" id="e3h-AJ-cna"/>
                 <constraint firstAttribute="trailing" secondItem="qst-58-0D5" secondAttribute="trailing" id="emA-PE-o4D"/>
                 <constraint firstItem="qst-58-0D5" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="lD6-21-NFe"/>
             </constraints>
+            <point key="canvasLocation" x="139" y="170"/>
         </customView>
     </objects>
     <resources>

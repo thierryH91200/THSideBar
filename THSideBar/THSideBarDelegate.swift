@@ -13,7 +13,6 @@ public protocol THSideBarViewDelegate
 {
     /// Called when a value has been selected inside the outline.
     @objc optional func changeView( item : Account)
-    
 }
 
 extension THSideBarViewController: NSOutlineViewDelegate {
@@ -23,7 +22,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         let item = item as? Section
         if item != nil
         {
-            if item?.name == "Favorites" {
+            if item?.name == "Account3" {
                 return false
             }
             else {

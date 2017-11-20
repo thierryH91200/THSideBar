@@ -8,6 +8,8 @@
 
 import Cocoa
 
+var nameCity = ""
+
 class MainWindowController: NSWindowController {
     
     var delegate: AppDelegate?
@@ -31,7 +33,7 @@ class MainWindowController: NSWindowController {
     
     var account1               = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
     var account2               = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
-    var account3               = Section (name:"Account3", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var account3               = Section (name:"Cities", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
     var allSection1            = AllSection()
     var allSection2            = AllSection()
     
@@ -39,8 +41,8 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         
         splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
-        splitView.minPossiblePositionOfDivider(at: 0)
-        splitView.maxPossiblePositionOfDivider(at: 999)
+//        splitView.minPossiblePositionOfDivider(at: 0)
+//        splitView.maxPossiblePositionOfDivider(at: 999)
         
         setUpSourceList1()
         setUpSourceList2()
@@ -56,7 +58,7 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.saveSection = false
         
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
-        self.sideBarViewController1!.view.setFrameSize( NSMakeSize(100, 200))
+//        self.sideBarViewController1!.view.setFrameSize( NSMakeSize(100, 200))
         initData1()
         sideBarViewController1?.reloadData()
     }
@@ -71,11 +73,19 @@ class MainWindowController: NSWindowController {
         
         let item3 = Account(name:"ContentView3", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
         let item4 = Account(name:"ContentView4", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
+        let item5 = Account(name:"ContentView5", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
+        let item6 = Account(name:"ContentView6", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView6Controller", badge: "8", colorBadge: .blue)
+        let item7 = Account(name:"ContentView7", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
+
         
         account1.accounts.append(item1)
         account1.accounts.append(item2)
         account2.accounts.append(item3)
         account2.accounts.append(item4)
+        account2.accounts.append(item5)
+        account2.accounts.append(item6)
+        account2.accounts.append(item7)
+
         
         allSection1.sections.removeAll()
         allSection1.sections.append(account1)
@@ -92,14 +102,14 @@ class MainWindowController: NSWindowController {
         sideBarViewController2?.delegate = self
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
-        self.sideBarViewController2!.view.setFrameSize( NSMakeSize(100, 200))
+//        self.sideBarViewController2!.view.setFrameSize( NSMakeSize(100, 200))
         initData2()
         sideBarViewController2?.reloadData()
     }
     
     func initData2() {
         
-        sideBarViewController2?.group.title = "Account"
+        sideBarViewController2?.group.title = "City"
         
         allSection2.sections.removeAll()
         allSection2.sections.append(account3)
@@ -108,24 +118,36 @@ class MainWindowController: NSWindowController {
             let Human_resource = NSImage (named: NSImage.Name(rawValue: "Human_resource"))!
             let employee = NSImage (named: NSImage.Name(rawValue: "employee"))!
             
-            let item1 = Account(name:"ContentView5", icon: Human_resource, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
+            let item1 = Account(name:"London", icon: Human_resource, nameView: "City", badge: "3", colorBadge: .blue)
             item1.isHidden = true
             
-            let item2 = Account(name:"ContentView6", icon: employee, nameView: "ContentView6Controller", badge: "-8", colorBadge: .red)
+            let item2 = Account(name:"Paris", icon: employee, nameView: "City", badge: "-8", colorBadge: .red)
             item2.isHidden = true
             
-            let item3 = Account(name:"ContentView7", icon: Human_resource, nameView: "ContentView7Controller", badge: "-2", colorBadge: .red)
-            let item4 = Account(name:"ContentView4", icon: employee, nameView: "ContentView4Controller", badge: "0", colorBadge: .blue)
-            
+            let item3 = Account(name:"Tokyo", icon: Human_resource, nameView: "City", badge: "-2", colorBadge: .red)
+            let item4 = Account(name:"Mexico", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item5 = Account(name:"Ottawa", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item6 = Account(name:"Berlin", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item7 = Account(name:"Madrid", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item8 = Account(name:"Bruxelles", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item9 = Account(name:"New Delhi", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item10 = Account(name:"Washington", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+
             account3.accounts.append(item1)
             account3.accounts.append(item2)
             account3.accounts.append(item3)
             account3.accounts.append(item4)
-            
+            account3.accounts.append(item5)
+            account3.accounts.append(item6)
+            account3.accounts.append(item7)
+            account3.accounts.append(item8)
+            account3.accounts.append(item9)
+            account3.accounts.append(item10)
+
             allSection2.sections.removeAll()
             allSection2.sections.append(account3)
             allSection2.dump()
-            sideBarViewController2?.initData( allSection: allSection1 )
+            sideBarViewController2?.initData( allSection: allSection2 )
         }
     }
     
@@ -204,11 +226,24 @@ extension NSView {
 
 extension MainWindowController: THSideBarViewDelegate
 {
-    
     func changeView(item : Account)
     {
         var  vc = NSView()
         
+        if item.nameView == "City" {
+            nameCity = item.name
+            let Defaults = UserDefaults.standard
+            Defaults.set("anime", forKey: "THEKEY1")
+            Defaults.set("anime", forKey: "THEKEY2")
+            Defaults.set("anime", forKey: "THEKEY3")
+            Defaults.set("anime", forKey: "THEKEY4")
+            Defaults.set("anime", forKey: "THEKEY5")
+            Defaults.set("anime", forKey: "THEKEY6")
+            Defaults.set("anime", forKey: "THEKEY7")
+
+            return
+        }
+
         switch item.nameView
         {
         case "ContentView1Controller":
@@ -245,5 +280,11 @@ extension MainWindowController: THSideBarViewDelegate
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
     }
 }
+
+func constraint(attribute: CAConstraintAttribute, relativeTo: String, attribute2: CAConstraintAttribute) -> CAConstraint
+{
+    return CAConstraint(attribute: attribute, relativeTo: relativeTo, attribute: attribute2)
+}
+
 
 

@@ -5,28 +5,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="ContentView6Controller" customModule="SideBarDemo" customModuleProvider="target">
             <connections>
+                <outlet property="titleView" destination="z7f-wi-3ry" id="IZU-WX-sck"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ea8-KE-wv9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="view6" id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="z7f-wi-3ry">
+                    <rect key="frame" x="0.0" y="404" width="600" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="3OG-ln-e5c"/>
+                    </constraints>
+                </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rbI-MY-XpM">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="hand-tuning-peg-instrument" id="63r-6n-dIb"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="404"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="hand-tuning-peg-instrument" id="63r-6n-dIb"/>
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="rbI-MY-XpM" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="F4M-oM-AYA"/>
-                <constraint firstItem="rbI-MY-XpM" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="MOj-PT-fPD"/>
-                <constraint firstAttribute="bottom" secondItem="rbI-MY-XpM" secondAttribute="bottom" id="YDT-Px-Yjh"/>
-                <constraint firstAttribute="trailing" secondItem="rbI-MY-XpM" secondAttribute="trailing" id="kFn-pp-33q"/>
+                <constraint firstItem="rbI-MY-XpM" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="56b-gD-xpD"/>
+                <constraint firstItem="z7f-wi-3ry" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="6Gc-PL-m2d"/>
+                <constraint firstItem="z7f-wi-3ry" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="6dI-kX-z8Q"/>
+                <constraint firstAttribute="trailing" secondItem="rbI-MY-XpM" secondAttribute="trailing" id="Ivy-KA-f44"/>
+                <constraint firstItem="rbI-MY-XpM" firstAttribute="top" secondItem="z7f-wi-3ry" secondAttribute="bottom" id="Twy-Pt-1DT"/>
+                <constraint firstAttribute="bottom" secondItem="rbI-MY-XpM" secondAttribute="bottom" id="Y4M-a4-2wG"/>
+                <constraint firstAttribute="trailing" secondItem="z7f-wi-3ry" secondAttribute="trailing" id="h0J-Ge-QiL"/>
             </constraints>
+            <point key="canvasLocation" x="139" y="117"/>
         </customView>
     </objects>
     <resources>

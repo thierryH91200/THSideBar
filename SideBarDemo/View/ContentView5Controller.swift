@@ -1,5 +1,5 @@
 //
-//  ContentView5Controller.swift
+//  ContentView3Controller.swift
 //  SideBarDemo
 //
 //  Created by thierryH24 on 16/11/2017.
@@ -8,11 +8,47 @@
 
 import Cocoa
 
-class ContentView5Controller: NSViewController {
+private var defaultsContext = 0
 
+
+class ContentView5Controller: NSViewController {
+    
+    @IBOutlet weak var titleView: NSView!
+    
+    let key = "THEKEY5"
+    let Defaults = UserDefaults.standard
+    
+    let textLayer = CATextLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        Defaults.set("", forKey: key )
+        Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
+        
+        CommunController.sharedInstance.initLayer(titleView: titleView, textLayer: textLayer)
+        UpdateView()
+    }
+    
+    open  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
+    {
+        if Defaults.object(forKey: key) as? NSString == "anime"
+        {
+            Defaults.set("", forKey: key)
+            UpdateView()
+        }
+    }
+    deinit
+    {
+        Defaults.removeObserver(self, forKeyPath: key)
+    }
+    
+    func UpdateView() {
+        self.textLayer.string = nameCity
     }
     
 }
+
+
+

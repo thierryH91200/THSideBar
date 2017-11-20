@@ -5,28 +5,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="ContentView5Controller" customModule="SideBarDemo" customModuleProvider="target">
             <connections>
+                <outlet property="titleView" destination="E38-Gs-suE" id="n7t-Wl-Oqu"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ea8-KE-wv9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="view5" id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="E38-Gs-suE">
+                    <rect key="frame" x="0.0" y="400" width="600" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="en7-vR-CCt"/>
+                    </constraints>
+                </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-NO-moP">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="mobile-phone-and-headphones-on-white-wooden-table" id="vfu-GV-gcx"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="mobile-phone-and-headphones-on-white-wooden-table" id="vfu-GV-gcx"/>
                 </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="a8d-NO-moP" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="LVe-eB-Ic2"/>
+                <constraint firstItem="E38-Gs-suE" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="NZS-UG-zYs"/>
+                <constraint firstItem="E38-Gs-suE" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="PAu-gC-BaH"/>
                 <constraint firstAttribute="bottom" secondItem="a8d-NO-moP" secondAttribute="bottom" id="YUu-ka-CPJ"/>
                 <constraint firstAttribute="trailing" secondItem="a8d-NO-moP" secondAttribute="trailing" id="av3-m6-WxA"/>
-                <constraint firstItem="a8d-NO-moP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="mLK-Hd-5D8"/>
+                <constraint firstItem="a8d-NO-moP" firstAttribute="top" secondItem="E38-Gs-suE" secondAttribute="bottom" id="mLK-Hd-5D8"/>
+                <constraint firstAttribute="trailing" secondItem="E38-Gs-suE" secondAttribute="trailing" id="v8O-P2-RNe"/>
             </constraints>
+            <point key="canvasLocation" x="139" y="124"/>
         </customView>
     </objects>
     <resources>
