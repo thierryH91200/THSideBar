@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 extension THSideBarViewController: NSTextFieldDelegate {
     
     override func controlTextDidEndEditing(_ obj: Notification) {

@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class KSHeaderCellView : NSTableCellView {
     
     @IBOutlet weak var headerInfo : NSTextField!

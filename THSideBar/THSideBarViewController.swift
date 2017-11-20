@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class THSideBarViewController: NSViewController {
     
     @IBOutlet var sidebarOutlineView: NSOutlineView!
@@ -25,10 +26,11 @@ class THSideBarViewController: NSViewController {
     var selectIndex = [1]
     let Defaults = UserDefaults.standard
     
+    let REORDER_PASTEBOARD_TYPE = "com.outline.item"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
     }
     
     override open func viewDidAppear()

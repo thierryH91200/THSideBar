@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 extension THSideBarViewController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
@@ -59,9 +60,9 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         guard let outlineView = notification.object as? NSOutlineView else { return }
         
         let selectedIndex = outlineView.selectedRow
-        if let feedItem = outlineView.item(atRow: selectedIndex) as? Account
+        if let item = outlineView.item(atRow: selectedIndex) as? Account
         {
-            mainWindowController?.changeView( feedItem : feedItem)
+            mainWindowController?.changeView( item : item)
         }
     }
 

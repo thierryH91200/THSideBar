@@ -18,8 +18,8 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var tableTargetView: NSView!
     @IBOutlet weak var splitView: NSSplitView!
     
-    var sideBarViewController :  THSideBarViewController?
-    var sideBarViewController1 :  THSideBarViewController?
+    var sideBarViewController1  :  THSideBarViewController?
+    var sideBarViewController2 :  THSideBarViewController?
     
     var contentView1Controller =  ContentView1Controller()
     var contentView2Controller =  ContentView2Controller()
@@ -48,17 +48,17 @@ class MainWindowController: NSWindowController {
     
     func setUpSourceList1()
     {
-        self.sideBarViewController = THSideBarViewController()
-        addSubview(subView: (sideBarViewController?.view)!, toView: sourceView)
+        self.sideBarViewController1 = THSideBarViewController()
+        addSubview(subView: (sideBarViewController1?.view)!, toView: sourceView)
         
-        sideBarViewController?.mainWindowController = self
-        sideBarViewController?.allowDragAndDrop = false
-        sideBarViewController?.saveSection = false
+        sideBarViewController1?.mainWindowController = self
+        sideBarViewController1?.allowDragAndDrop = false
+        sideBarViewController1?.saveSection = false
         
-        setUpLayoutConstraints(item: sideBarViewController!.view, toItem: sourceView)
-        self.sideBarViewController!.view.setFrameSize( NSMakeSize(100, 200))
+        setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
+        self.sideBarViewController1!.view.setFrameSize( NSMakeSize(100, 200))
         initData1()
-        sideBarViewController?.reloadData()
+        sideBarViewController1?.reloadData()
     }
     
     func initData1() {
@@ -81,24 +81,24 @@ class MainWindowController: NSWindowController {
         allSection.sections.append(account1)
         allSection.sections.append(account2)
         allSection.dump()
-        sideBarViewController?.initData( allSection: allSection )
+        sideBarViewController1?.initData( allSection: allSection )
     }
     
     func setUpSourceList2()
     {
-        self.sideBarViewController1 = THSideBarViewController()
-        addSubview(subView: (sideBarViewController1?.view)!, toView: sourceView1)
+        self.sideBarViewController2 = THSideBarViewController()
+        addSubview(subView: (sideBarViewController2?.view)!, toView: sourceView1)
         
-        sideBarViewController1?.mainWindowController = self
-        setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView1)
-        self.sideBarViewController1!.view.setFrameSize( NSMakeSize(100, 200))
+        sideBarViewController2?.mainWindowController = self
+        setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
+        self.sideBarViewController2!.view.setFrameSize( NSMakeSize(100, 200))
         initData2()
-        sideBarViewController1?.reloadData()
+        sideBarViewController2?.reloadData()
     }
     
     func initData2() {
         
-        sideBarViewController1?.group.title = "Account"
+        sideBarViewController2?.group.title = "Account"
         
         allSection1.sections.removeAll()
         allSection1.sections.append(account3)
@@ -124,7 +124,7 @@ class MainWindowController: NSWindowController {
             allSection1.sections.removeAll()
             allSection1.sections.append(account3)
             allSection1.dump()
-            sideBarViewController1?.initData( allSection: allSection1 )
+            sideBarViewController2?.initData( allSection: allSection1 )
         }
     }
     
@@ -154,13 +154,12 @@ class MainWindowController: NSWindowController {
         NSLayoutConstraint.activate(sourceListLayoutConstraints)
     }
     
-    func changeView(feedItem : Account)
+    func changeView(item : Account)
     {
-        let item = feedItem.nameView
-        
+        let nameView = item.nameView
         var  vc = NSView()
         
-        switch item
+        switch nameView
         {
         case "ContentView1Controller":
             vc = contentView1Controller.view
@@ -206,10 +205,10 @@ class MainWindowController: NSWindowController {
     
     @IBAction func ItemPlus(_ sender: Any) {
         let account8 = Account(name:"Account 8", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4Controller", badge: "5", colorBadge: NSColor.blue)
-        sideBarViewController?.allSection.sections[0].accounts.append(account8)
+        sideBarViewController1?.allSection.sections[0].accounts.append(account8)
         
-        sideBarViewController?.sidebarOutlineView.sizeLastColumnToFit()
-        sideBarViewController?.sidebarOutlineView.reloadData()
+        sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
+        sideBarViewController1?.sidebarOutlineView.reloadData()
     }
     
     @IBAction func buttonBadgeP(_ sender: Any) {

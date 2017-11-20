@@ -9,7 +9,6 @@
 import Foundation
 import Cocoa
 
-let REORDER_PASTEBOARD_TYPE = "com.outline.item"
 
 extension THSideBarViewController: NSPasteboardItemDataProvider {
 
