@@ -31,7 +31,7 @@ NSOutlineView and badge
         self.sideBarViewController = THSideBarViewController()
         addSubview(subView: (sideBarViewController?.view)!, toView: sourceView)
         
-        sideBarViewController?.mainWindowController = self
+        sideBarViewController?.delegate = self
         setUpLayoutConstraints(item: sideBarViewController!.view, toItem: sourceView)
         self.sideBarViewController!.view.setFrameSize( NSMakeSize(100, 200))
 ```
@@ -61,26 +61,27 @@ NSOutlineView and badge
 
 
 ```
-func changeView(feedItem : Account)
+extension MainWindowController: THSideBarViewDelegate
+{
+    
+    func changeView(item : Account)
     {
-        let item = feedItem.nameView
-        
         var  vc = NSView()
         
-        switch item
+        switch item.nameView
         {
         case "ContentView1Controller":
             vc = contentView1Controller.view
             
         case "ContentView2Controller":
             vc = contentView2Controller.view
-
+            
         case "ContentView3Controller":
             vc = contentView3Controller.view
-
+            
         case "ContentView4Controller":
             vc = contentView4Controller.view
-
+            
         case "ContentView5Controller":
             vc = contentView5Controller.view
             
@@ -102,6 +103,7 @@ func changeView(feedItem : Account)
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
     }
+
 ```
 
 ## Ability to save / load Account
