@@ -81,20 +81,25 @@ class THSideBarViewController: NSViewController {
     func load(allSection: AllSection) -> Bool
     {
         self.allSection = allSection
-        let name = allSection.sections[0].name
         
-        let retrievedData = Defaults.object(forKey: name) as? Data
-        if retrievedData != nil
-        {
-            let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)
-            let accounts = unarchivedObject  as! [Account]
-            for account in accounts
+        for section in allSection.sections {
+            
+            let name = section.name
+            let retrievedData = Defaults.object(forKey: name) as? Data
+            if retrievedData != nil
             {
-                allSection.sections[0].accounts.append( account )
+                let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)
+                let accounts = unarchivedObject  as! [Account]
+                for account in accounts
+                {
+                    section.accounts.append( account )
+                }
             }
-            return true
+            else {
+                return false
+            }
         }
-        return false
+        return true
     }
     
 }
