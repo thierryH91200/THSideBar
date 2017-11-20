@@ -23,6 +23,7 @@ class THSideBarViewController: NSViewController {
     var saveSection = true
     
     var selectIndex = [1]
+    let Defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,6 @@ class THSideBarViewController: NSViewController {
     
     func save()
     {
-        let Defaults = UserDefaults.standard
         let account = allSection.sections[0].accounts
         let name = allSection.sections[0].name
         
@@ -81,7 +81,6 @@ class THSideBarViewController: NSViewController {
         self.allSection = allSection
         let name = allSection.sections[0].name
 
-        let Defaults = UserDefaults.standard
         let retrievedData = Defaults.object(forKey: name) as? Data
         if retrievedData != nil
         {
