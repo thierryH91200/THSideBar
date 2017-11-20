@@ -37,7 +37,6 @@
                 <constraint firstAttribute="bottom" secondItem="qst-58-0D5" secondAttribute="bottom" id="P0p-Fn-KVI"/>
                 <constraint firstItem="LKd-N0-N6F" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="SWu-hF-IKv"/>
                 <constraint firstAttribute="trailing" secondItem="LKd-N0-N6F" secondAttribute="trailing" id="e3h-AJ-cna"/>
-                <constraint firstAttribute="trailing" secondItem="qst-58-0D5" secondAttribute="trailing" id="emA-PE-o4D"/>
                 <constraint firstItem="qst-58-0D5" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="lD6-21-NFe"/>
             </constraints>
             <point key="canvasLocation" x="139" y="170"/>

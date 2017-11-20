@@ -23,15 +23,15 @@ class KSHeaderCellView : NSTableCellView {
     }
 }
 
-class SidebarTableCellView: NSTableCellView {
+class THSidebarTableCellView: NSTableCellView {
     
     var attribut                  = [NSAttributedStringKey : AnyObject] ()
     
     var backgroundColor : CGColor = NSColor.green.cgColor
     var cornerRadius : CGFloat    = 8.0
-    var title                     = "indicator"
+    var title                     = "0"
     var foregroundColor           = NSColor.white
-    var font                      = NSFont(name: "Avenir", size: 12.0)!
+    var font                      = NSFont(name: "Avenir", size: 10.0)!
     
     @IBOutlet var button: NSButton!
     
@@ -64,7 +64,7 @@ class SidebarTableCellView: NSTableCellView {
             
             button.sizeToFit()
             var buttonFrame = button.frame
-            buttonFrame.origin.x = NSWidth(self.frame) - NSWidth(buttonFrame)
+            buttonFrame.origin.x = self.frame.width - buttonFrame.width
             button.frame = buttonFrame
         }
     }

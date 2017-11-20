@@ -44,18 +44,18 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         }
         else if let account = item as? Account
         {
-            let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? SidebarTableCellView
+            let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? THSidebarTableCellView
             
-            cell?.imageView!.image = account.icon
+            cell?.imageView!.image       = account.icon
 
-            cell?.textField!.delegate = self
+            cell?.textField!.delegate    = self
             cell?.textField!.stringValue = account.name
             
-            cell?.button.isHidden = account.isHidden
-            cell?.title = account.badge
-            cell?.backgroundColor = account.colorBadge.cgColor
+            cell?.button.isHidden        = account.isHidden
+            cell?.title                  = account.badge
+            cell?.backgroundColor        = account.colorBadge.cgColor
             
-            cell?.button?.bezelStyle = .inline // Make it appear as a normal label and not a button
+            cell?.button?.bezelStyle     = .inline // Make it appear as a normal label and not a button
             return cell
         }
         return nil

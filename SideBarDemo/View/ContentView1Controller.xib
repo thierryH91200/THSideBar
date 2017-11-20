@@ -30,11 +30,10 @@
             </subviews>
             <constraints>
                 <constraint firstItem="vNg-dX-8E9" firstAttribute="bottom" secondItem="c22-O7-iKe" secondAttribute="bottom" id="QZU-Ph-W8H"/>
-                <constraint firstItem="vNg-dX-8E9" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="Vih-6V-tac"/>
                 <constraint firstItem="vNg-dX-8E9" firstAttribute="top" secondItem="MgC-Zt-od4" secondAttribute="bottom" id="fXr-NY-fEm"/>
+                <constraint firstItem="vNg-dX-8E9" firstAttribute="leading" secondItem="MgC-Zt-od4" secondAttribute="leading" id="knl-NI-IYi"/>
                 <constraint firstItem="MgC-Zt-od4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="mNM-jG-upL"/>
                 <constraint firstItem="MgC-Zt-od4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="nmH-F8-c0X"/>
-                <constraint firstItem="vNg-dX-8E9" firstAttribute="trailing" secondItem="c22-O7-iKe" secondAttribute="trailing" id="sev-sY-oKp"/>
                 <constraint firstItem="MgC-Zt-od4" firstAttribute="trailing" secondItem="c22-O7-iKe" secondAttribute="trailing" id="xO8-sX-rGF"/>
             </constraints>
             <point key="canvasLocation" x="133" y="204.5"/>

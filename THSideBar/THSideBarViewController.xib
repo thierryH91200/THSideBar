@@ -76,7 +76,7 @@
                                                     <outlet property="textField" destination="yfM-7C-Fgn" id="5bg-Pw-4KT"/>
                                                 </connections>
                                             </tableCellView>
-                                            <customView identifier="FeedCell" id="MGN-mc-ofJ" userLabel="FeedCell" customClass="SidebarTableCellView" customModule="SideBarDemo" customModuleProvider="target">
+                                            <customView identifier="FeedCell" id="MGN-mc-ofJ" userLabel="FeedCell" customClass="THSidebarTableCellView" customModule="SideBarDemo" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="20" width="349" height="26"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <subviews>
@@ -85,14 +85,6 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="employee" id="LZ3-C0-ZMg"/>
                                                     </imageView>
-                                                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4U-6J-ovH">
-                                                        <rect key="frame" x="266" y="3" width="99" height="19"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                        <buttonCell key="cell" type="roundRect" title="Unread indicator" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="4i2-0K-8cE">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="cellTitle"/>
-                                                        </buttonCell>
-                                                    </button>
                                                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTu-OI-JGH">
                                                         <rect key="frame" x="41" y="6" width="209" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -102,6 +94,14 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
+                                                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4U-6J-ovH">
+                                                        <rect key="frame" x="250" y="3" width="99" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <buttonCell key="cell" type="roundRect" title="Unread indicator" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="4i2-0K-8cE">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="cellTitle"/>
+                                                        </buttonCell>
+                                                    </button>
                                                 </subviews>
                                                 <connections>
                                                     <outlet property="button" destination="x4U-6J-ovH" id="4Iw-Iy-VsK"/>
@@ -131,12 +131,12 @@
                 </scrollView>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="xy3-fS-GaM" secondAttribute="trailing" id="LI2-dc-tym"/>
+                <constraint firstAttribute="bottom" secondItem="xy3-fS-GaM" secondAttribute="bottom" id="M08-P7-KEb"/>
+                <constraint firstItem="xy3-fS-GaM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Qia-WZ-Ckw"/>
+                <constraint firstItem="xy3-fS-GaM" firstAttribute="top" secondItem="dJU-vL-XgJ" secondAttribute="bottom" id="RcH-rK-TIt"/>
                 <constraint firstItem="dJU-vL-XgJ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="UNh-D9-4yT"/>
-                <constraint firstAttribute="trailing" secondItem="dJU-vL-XgJ" secondAttribute="trailing" id="YJO-MJ-ZeL"/>
-                <constraint firstItem="xy3-fS-GaM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="che-Vr-8Ai"/>
-                <constraint firstAttribute="bottom" secondItem="xy3-fS-GaM" secondAttribute="bottom" id="i3Q-Jq-Lhn"/>
-                <constraint firstItem="xy3-fS-GaM" firstAttribute="top" secondItem="dJU-vL-XgJ" secondAttribute="bottom" id="nkI-kw-MsY"/>
-                <constraint firstAttribute="trailing" secondItem="xy3-fS-GaM" secondAttribute="trailing" id="qwL-ye-2Hg"/>
+                <constraint firstItem="dJU-vL-XgJ" firstAttribute="trailing" secondItem="Hz6-mo-xeY" secondAttribute="trailing" id="YJO-MJ-ZeL"/>
                 <constraint firstItem="dJU-vL-XgJ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="zIM-Nl-Dyj"/>
             </constraints>
             <point key="canvasLocation" x="122" y="83.5"/>

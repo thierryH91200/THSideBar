@@ -59,8 +59,6 @@ class CommunController
         let titleView = titleView
         let textLayer = textLayer
         
-        
-        
         let layer = CALayer()
         layer.frame = titleView.frame
         layer.backgroundColor = NSColor.clear.cgColor
@@ -81,7 +79,6 @@ class CommunController
         textLayer.addConstraint(constraint(attribute: .midY, relativeTo: "superlayer", attribute2: .midY))
         
         layer.addSublayer(textLayer)
-
     }
 }
 

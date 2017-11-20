@@ -30,7 +30,6 @@
             </subviews>
             <constraints>
                 <constraint firstItem="0Cl-kT-87H" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="AG3-8p-05o"/>
-                <constraint firstAttribute="trailing" secondItem="jYB-n5-eCa" secondAttribute="trailing" id="DAH-aF-6GB"/>
                 <constraint firstItem="0Cl-kT-87H" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="IWB-N5-uAv"/>
                 <constraint firstAttribute="trailing" secondItem="0Cl-kT-87H" secondAttribute="trailing" id="Ta7-ey-Ukc"/>
                 <constraint firstItem="jYB-n5-eCa" firstAttribute="top" secondItem="0Cl-kT-87H" secondAttribute="bottom" id="f56-n7-oQq"/>

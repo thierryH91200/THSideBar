@@ -32,7 +32,6 @@
                 <constraint firstItem="rbI-MY-XpM" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="56b-gD-xpD"/>
                 <constraint firstItem="z7f-wi-3ry" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="6Gc-PL-m2d"/>
                 <constraint firstItem="z7f-wi-3ry" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="6dI-kX-z8Q"/>
-                <constraint firstAttribute="trailing" secondItem="rbI-MY-XpM" secondAttribute="trailing" id="Ivy-KA-f44"/>
                 <constraint firstItem="rbI-MY-XpM" firstAttribute="top" secondItem="z7f-wi-3ry" secondAttribute="bottom" id="Twy-Pt-1DT"/>
                 <constraint firstAttribute="bottom" secondItem="rbI-MY-XpM" secondAttribute="bottom" id="Y4M-a4-2wG"/>
                 <constraint firstAttribute="trailing" secondItem="z7f-wi-3ry" secondAttribute="trailing" id="h0J-Ge-QiL"/>

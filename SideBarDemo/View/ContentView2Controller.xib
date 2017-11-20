@@ -24,12 +24,11 @@
                     </constraints>
                 </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UAv-yl-iAj">
-                    <rect key="frame" x="0.0" y="0.0" width="640" height="499"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="499"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="vintage-radio-on-glass-table" id="4e4-he-T1E"/>
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="UAv-yl-iAj" firstAttribute="trailing" secondItem="c22-O7-iKe" secondAttribute="trailing" id="Fna-2M-kYY"/>
                 <constraint firstItem="UAv-yl-iAj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="MUF-LU-dT2"/>
                 <constraint firstItem="wDg-rS-VI6" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="UoM-cy-75r"/>
                 <constraint firstItem="wDg-rS-VI6" firstAttribute="trailing" secondItem="c22-O7-iKe" secondAttribute="trailing" id="V36-AN-Rhq"/>

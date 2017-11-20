@@ -40,7 +40,7 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
+//        splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
 //        splitView.minPossiblePositionOfDivider(at: 0)
 //        splitView.maxPossiblePositionOfDivider(at: 999)
         

@@ -29,13 +29,12 @@
                 </imageView>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="bVU-r6-o5R" secondAttribute="trailing" id="3np-18-XzJ"/>
                 <constraint firstItem="5f1-ly-LSu" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="Czq-eD-URy"/>
                 <constraint firstItem="5f1-ly-LSu" firstAttribute="top" secondItem="bVU-r6-o5R" secondAttribute="bottom" id="Hw6-xW-9DM"/>
                 <constraint firstItem="bVU-r6-o5R" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="LMs-sf-22b"/>
                 <constraint firstItem="bVU-r6-o5R" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="VlK-p4-wvb"/>
-                <constraint firstAttribute="trailing" secondItem="bVU-r6-o5R" secondAttribute="trailing" id="cxX-Tq-AG0"/>
                 <constraint firstAttribute="bottom" secondItem="5f1-ly-LSu" secondAttribute="bottom" id="df2-zp-B6k"/>
-                <constraint firstAttribute="trailing" secondItem="5f1-ly-LSu" secondAttribute="trailing" id="jJU-gF-PNb"/>
             </constraints>
         </customView>
     </objects>

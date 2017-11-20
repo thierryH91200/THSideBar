@@ -28,7 +28,7 @@
                     <splitView autosaveName="splitView" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-bA-W1k">
                         <rect key="frame" x="0.0" y="30" width="766" height="558"/>
                         <subviews>
-                            <splitView fixedFrame="YES" dividerStyle="thin" id="Rpl-5f-YVc">
+                            <splitView fixedFrame="YES" autosaveName="splitGauche" dividerStyle="thin" id="Rpl-5f-YVc">
                                 <rect key="frame" x="0.0" y="0.0" width="230" height="558"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
