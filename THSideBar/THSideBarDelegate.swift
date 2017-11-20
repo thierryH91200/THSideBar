@@ -8,6 +8,13 @@
 
 import Cocoa
 
+@objc
+public protocol THSideBarViewDelegate
+{
+    /// Called when a value has been selected inside the outline.
+    @objc optional func changeView( item : Account)
+    
+}
 
 extension THSideBarViewController: NSOutlineViewDelegate {
     
@@ -62,7 +69,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         let selectedIndex = outlineView.selectedRow
         if let item = outlineView.item(atRow: selectedIndex) as? Account
         {
-            mainWindowController?.changeView( item : item)
+            delegate?.changeView!( item : item)
         }
     }
 

@@ -9,9 +9,9 @@
 import Foundation
 import Cocoa
 
-class BaseItem : NSObject, NSCoding {
+public class BaseItem : NSObject, NSCoding {
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(self.name, forKey:"name")
         aCoder.encode(self.nameView, forKey:"nameView")
         aCoder.encode(self.icon, forKey:"icon")
@@ -20,7 +20,7 @@ class BaseItem : NSObject, NSCoding {
         aCoder.encode(self.isHidden, forKey:"isHidden")
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         self.name = (aDecoder.decodeObject(forKey: "name") as? String)!
         self.nameView = (aDecoder.decodeObject(forKey: "nameView") as? String)!
         self.icon = (aDecoder.decodeObject(forKey: "icon") as? NSImage)!
@@ -114,7 +114,7 @@ class Section: BaseItem {
     }
  }
 
-class Account: BaseItem {
+public class Account: BaseItem {
     override func dump()
     {
         print("     Item: ", terminator:"")

@@ -14,7 +14,8 @@ class THSideBarViewController: NSViewController {
     @IBOutlet var sidebarOutlineView: NSOutlineView!
     @IBOutlet weak var group: NSButton!
     
-    var mainWindowController: MainWindowController?
+    /// delegate to receive events
+    @objc open weak var delegate: THSideBarViewDelegate?
     
     var draggedNode:AnyObject? = nil
     var fromIndex: Int? = nil
