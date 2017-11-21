@@ -225,7 +225,7 @@ extension MainWindowController: THSideBarViewDelegate
     func changeView(item : Account)
     {
         var  vc = NSView()
-        
+                
         if item.nameView == "City" {
             nameCity = item.name
             let Defaults = UserDefaults.standard
@@ -236,7 +236,6 @@ extension MainWindowController: THSideBarViewDelegate
             Defaults.set("anime", forKey: "THEKEY5")
             Defaults.set("anime", forKey: "THEKEY6")
             Defaults.set("anime", forKey: "THEKEY7")
-
             return
         }
 

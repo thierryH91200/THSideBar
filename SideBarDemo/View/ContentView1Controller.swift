@@ -49,7 +49,6 @@ class ContentView1Controller: NSViewController {
     
 }
 
-
 class CommunController
 {
     static let sharedInstance = CommunController()

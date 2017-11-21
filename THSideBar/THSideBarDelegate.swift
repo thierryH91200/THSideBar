@@ -12,17 +12,17 @@ import Cocoa
 public protocol THSideBarViewDelegate
 {
     /// Called when a value has been selected inside the outline.
-    @objc optional func changeView( item : Account)
+    @objc func changeView( item : Account)
 }
 
 extension THSideBarViewController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
-        // As an example, hide the "outline disclosure button" for FAVORITES. This hides the "Show/Hide" button and disables the tracking area for that row.
+        // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
         let item = item as? Section
         if item != nil
         {
-            if item?.name == "Account3" {
+            if item?.name == "Account2" {
                 return false
             }
             else {
@@ -68,7 +68,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         let selectedIndex = outlineView.selectedRow
         if let item = outlineView.item(atRow: selectedIndex) as? Account
         {
-            delegate?.changeView!( item : item)
+            delegate?.changeView( item : item)
         }
     }
 
