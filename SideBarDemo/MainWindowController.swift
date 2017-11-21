@@ -103,6 +103,7 @@ class MainWindowController: NSWindowController {
         sideBarViewController2?.reloadData()
     }
     
+    
     func initData2() {
         
         sideBarViewController2?.group.title = "City"
