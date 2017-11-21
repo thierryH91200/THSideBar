@@ -1,7 +1,7 @@
 # SideBarDemo
 NSOutlineView and badge
 
- ![Alt text](https://github.com/thierryH91200/SideBarDemo/blob/master/Capture%20d’écran%202017-11-16%20à%2018.03.54.png)
+ ![Alt text](https://github.com/thierryH91200/SideBarDemo/blob/master/Capture.jpg)
 
 
 # THSideBar
