@@ -23,9 +23,7 @@ NSOutlineView and badge
 ```
     var sideBarViewController :  THSideBarViewController?
     
-    sideBarViewController?.delegate = self
-    sideBarViewController?.allowDragAndDrop = false/true
-    sideBarViewController?.saveSection = false/true
+    
 
 ```
 
@@ -37,6 +35,8 @@ NSOutlineView and badge
         addSubview(subView: (sideBarViewController?.view)!, toView: sourceView)
         
         sideBarViewController?.delegate = self
+        sideBarViewController?.allowDragAndDrop = false/true
+        sideBarViewController?.saveSection = false/true
         setUpLayoutConstraints(item: sideBarViewController!.view, toItem: sourceView)
         self.sideBarViewController!.view.setFrameSize( NSMakeSize(100, 200))
 ```
