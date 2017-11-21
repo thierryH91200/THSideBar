@@ -22,6 +22,11 @@ NSOutlineView and badge
 
 ```
     var sideBarViewController :  THSideBarViewController?
+    
+    sideBarViewController?.delegate = self
+    sideBarViewController?.allowDragAndDrop = false
+    sideBarViewController?.saveSection = false
+
 ```
 
 
