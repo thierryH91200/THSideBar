@@ -127,7 +127,7 @@ class MainWindowController: NSWindowController {
             let item7 = Account(name:"Madrid", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
             let item8 = Account(name:"Bruxelles", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
             let item9 = Account(name:"New Delhi", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item10 = Account(name:"Washington", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+            let item10 = Account(name:"Washingtown", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
 
             account3.accounts.append(item1)
             account3.accounts.append(item2)
