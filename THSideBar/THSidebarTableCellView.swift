@@ -10,9 +10,7 @@ import Cocoa
 
 
 class KSHeaderCellView : NSTableCellView {
-    
-    @IBOutlet weak var headerInfo : NSTextField!
-    
+        
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         

@@ -71,9 +71,8 @@
                                                     </imageView>
                                                 </subviews>
                                                 <connections>
-                                                    <outlet property="headerInfo" destination="yfM-7C-Fgn" id="bQH-E0-nKf"/>
                                                     <outlet property="imageView" destination="vak-Ie-9ah" id="bvS-FP-oHQ"/>
-                                                    <outlet property="textField" destination="yfM-7C-Fgn" id="5bg-Pw-4KT"/>
+                                                    <outlet property="textField" destination="yfM-7C-Fgn" id="JIg-EI-UHS"/>
                                                 </connections>
                                             </tableCellView>
                                             <customView identifier="FeedCell" id="MGN-mc-ofJ" userLabel="FeedCell" customClass="THSidebarTableCellView" customModule="SideBarDemo" customModuleProvider="target">

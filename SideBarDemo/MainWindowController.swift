@@ -192,7 +192,7 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
-        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
+//        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
 
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
