@@ -196,8 +196,8 @@ class MainWindowController: NSWindowController {
 
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
-
 //        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
+        
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)
     }
     

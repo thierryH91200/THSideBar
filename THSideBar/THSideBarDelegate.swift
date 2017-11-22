@@ -40,8 +40,6 @@ extension THSideBarViewController: NSOutlineViewDelegate {
 
             cell.textField!.stringValue = section.name.uppercased()
             cell.imageView!.image = section.icon
-//            cell.wantsLayer = true
-//            cell.layer?.backgroundColor = NSColor.green.cgColor
             return cell
         }
         else if let account = item as? Account

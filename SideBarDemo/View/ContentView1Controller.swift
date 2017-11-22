@@ -46,7 +46,6 @@ class ContentView1Controller: NSViewController {
     func UpdateView() {
         self.textLayer.string = nameCity
     }
-    
 }
 
 class CommunController

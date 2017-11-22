@@ -59,13 +59,23 @@ extension THSideBarViewController: NSOutlineViewDataSource {
         }
     }
     
-    func outlineView(_ outlineView: NSOutlineView, objectValueFor objectValueForTableColumn: NSTableColumn?, byItem:Any?) -> Any? {
-        if let item = byItem as? Section
+    func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item :Any?) -> Any? {
+        if let item = item as? Section
         {
-            return item.name
+            return item
         }
-        return "???????"
+        if let item = item as? Account
+        {
+            return item
+        }
+        return nil
     }
+    
+//    func outlineView(_ tableView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any?
+//    {
+//
+//    }
+
     
     func isSourceGroupItem(_ item: Any) -> Bool
     {

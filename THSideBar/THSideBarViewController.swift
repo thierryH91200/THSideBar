@@ -6,6 +6,13 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
+//
+//A cell can contain only one UI element like a text cell, image view cell, button cell and a few more. The customization ability is quite poor.
+//
+//A view can contain multiple UI elements as well as other views. The customization ability is almost infinite.
+//
+//Apple recommends to use always view based table views
+
 import Cocoa
 
 
