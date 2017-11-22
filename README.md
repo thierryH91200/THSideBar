@@ -1,7 +1,7 @@
 # SideBarDemo
 NSOutlineView and badge
 
- ![Alt text](https://github.com/thierryH91200/SideBarDemo/blob/master/Capture.png)
+ ![Alt text](https://github.com/thierryH91200/SideBarDemo/blob/master/Capture1.png)
 
 
 # THSideBar
@@ -23,9 +23,7 @@ NSOutlineView and badge
 ```
     var sideBarViewController :  THSideBarViewController?
     
-    sideBarViewController?.delegate = self
-    sideBarViewController?.allowDragAndDrop = false/true
-    sideBarViewController?.saveSection = false/true
+    
 
 ```
 
@@ -37,6 +35,8 @@ NSOutlineView and badge
         addSubview(subView: (sideBarViewController?.view)!, toView: sourceView)
         
         sideBarViewController?.delegate = self
+        sideBarViewController?.allowDragAndDrop = false/true
+        sideBarViewController?.saveSection = false/true
         setUpLayoutConstraints(item: sideBarViewController!.view, toItem: sourceView)
         self.sideBarViewController!.view.setFrameSize( NSMakeSize(100, 200))
 ```
@@ -44,10 +44,10 @@ NSOutlineView and badge
 ## Init data
 
 ```
-        let item1 = Account(name:"ContentView1Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: NSColor.blue)
-        let item2 = Account(name:"ContentView2Controller", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: NSColor.red)
-        let item3 = Account(name:"ContentView3Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: NSColor.blue)
-        let item4 = Account(name:"ContentView4Controller", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: NSColor.blue)
+        let item1 = Account(name:"ContentView1", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
+        let item2 = Account(name:"ContentView2", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
+        let item3 = Account(name:"ContentView3", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
+        let item4 = Account(name:"ContentView4", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
         
         account1.accounts.append(item1)
         account1.accounts.append(item2)
@@ -68,11 +68,23 @@ NSOutlineView and badge
 ```
 extension MainWindowController: THSideBarViewDelegate
 {
-    
     func changeView(item : Account)
     {
         var  vc = NSView()
-        
+                
+        if item.nameView == "City" {
+            nameCity = item.name
+            let Defaults = UserDefaults.standard
+            Defaults.set("anime", forKey: "THEKEY1")
+            Defaults.set("anime", forKey: "THEKEY2")
+            Defaults.set("anime", forKey: "THEKEY3")
+            Defaults.set("anime", forKey: "THEKEY4")
+            Defaults.set("anime", forKey: "THEKEY5")
+            Defaults.set("anime", forKey: "THEKEY6")
+            Defaults.set("anime", forKey: "THEKEY7")
+            return
+        }
+
         switch item.nameView
         {
         case "ContentView1Controller":
