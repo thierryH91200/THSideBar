@@ -139,6 +139,8 @@ class MainWindowController: NSWindowController {
             account3.accounts.append(item8)
             account3.accounts.append(item9)
             account3.accounts.append(item10)
+            
+            account3.accounts = account3.accounts.sorted(by: { $0.name < $1.name })
 
             allSection2.sections.removeAll()
             allSection2.sections.append(account3)
@@ -189,9 +191,11 @@ class MainWindowController: NSWindowController {
         numBadge = numBadge! + 1
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+        
+        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
 
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
-        sideBarViewController1?.sidebarOutlineView.reloadData()
+        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)
     }
     
