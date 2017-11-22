@@ -195,7 +195,9 @@ class MainWindowController: NSWindowController {
         let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
 
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
-        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
+        sideBarViewController1?.sidebarOutlineView.reloadData()
+
+//        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)
     }
     
