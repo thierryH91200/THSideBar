@@ -174,7 +174,7 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func ItemPlus(_ sender: Any) {
-        let account8 = Account(name:"Account 8", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4Controller", badge: "5", colorBadge: NSColor.blue)
+        let account8 = Account(name:"Account 8", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
         sideBarViewController1?.allSection.sections[0].accounts.append(account8)
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
@@ -276,10 +276,6 @@ extension MainWindowController: THSideBarViewDelegate
     }
 }
 
-func constraint(attribute: CAConstraintAttribute, relativeTo: String, attribute2: CAConstraintAttribute) -> CAConstraint
-{
-    return CAConstraint(attribute: attribute, relativeTo: relativeTo, attribute: attribute2)
-}
 
 
 

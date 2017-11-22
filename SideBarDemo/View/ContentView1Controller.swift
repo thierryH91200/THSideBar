@@ -79,6 +79,12 @@ class CommunController
         
         layer.addSublayer(textLayer)
     }
+    
+    func constraint(attribute: CAConstraintAttribute, relativeTo: String, attribute2: CAConstraintAttribute) -> CAConstraint
+    {
+        return CAConstraint(attribute: attribute, relativeTo: relativeTo, attribute: attribute2)
+    }
+
 }
 
 

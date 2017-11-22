@@ -42,7 +42,6 @@ class THSidebarTableCellView: NSTableCellView {
     }
         
     // The standard rowSizeStyle does some specific layout for us. To customize layout for our button, we first call super and then modify things
-    
     // Overlapping accesses to 'textFrame', but modification requires exclusive access; consider copying to a local variable
     override func viewWillDraw() {
         super.viewWillDraw()
