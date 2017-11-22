@@ -68,11 +68,23 @@ NSOutlineView and badge
 ```
 extension MainWindowController: THSideBarViewDelegate
 {
-    
     func changeView(item : Account)
     {
         var  vc = NSView()
-        
+                
+        if item.nameView == "City" {
+            nameCity = item.name
+            let Defaults = UserDefaults.standard
+            Defaults.set("anime", forKey: "THEKEY1")
+            Defaults.set("anime", forKey: "THEKEY2")
+            Defaults.set("anime", forKey: "THEKEY3")
+            Defaults.set("anime", forKey: "THEKEY4")
+            Defaults.set("anime", forKey: "THEKEY5")
+            Defaults.set("anime", forKey: "THEKEY6")
+            Defaults.set("anime", forKey: "THEKEY7")
+            return
+        }
+
         switch item.nameView
         {
         case "ContentView1Controller":
