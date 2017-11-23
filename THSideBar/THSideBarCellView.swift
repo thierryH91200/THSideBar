@@ -21,7 +21,7 @@ class KSHeaderCellView : NSTableCellView {
     }
 }
 
-class THSidebarTableCellView: NSTableCellView {
+class THSideBarCellView: NSTableCellView {
     
     var attribut                  = [NSAttributedStringKey : AnyObject] ()
     

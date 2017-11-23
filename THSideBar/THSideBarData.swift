@@ -35,6 +35,8 @@ public class BaseItem : NSObject, NSCoding {
     var badge: String
     var colorBadge : NSColor
     var isHidden = false
+    var identity :AnyObject? = nil
+
     
     init(name: String, icon: NSImage,  nameView : String = "", badge : String = "", colorBadge : NSColor = .blue) {
         self.name       = name

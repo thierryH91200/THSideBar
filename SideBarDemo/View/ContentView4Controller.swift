@@ -11,15 +11,12 @@ import Cocoa
 private var defaultsContext = 0
 
 
-class ContentView4Controller: NSViewController {
+class ContentView4Controller: ContentViewController {
     
     @IBOutlet weak var titleView: NSView!
     
     let key = "THEKEY4"
-    let Defaults = UserDefaults.standard
-    
-    let textLayer = CATextLayer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -43,9 +40,5 @@ class ContentView4Controller: NSViewController {
     {
         Defaults.removeObserver(self, forKeyPath: key)
     }
-    
-    func UpdateView() {
-        self.textLayer.string = nameCity
-    }
-    
+
 }

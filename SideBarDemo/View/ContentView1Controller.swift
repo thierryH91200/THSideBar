@@ -11,25 +11,12 @@ import Cocoa
 private var defaultsContext = 0
 
 
-class ContentView1Controller: NSViewController {
+class ContentView1Controller: ContentViewController {
 
     @IBOutlet weak var titleView: NSView!
     
     let key = "THEKEY1"
-    let Defaults = UserDefaults.standard
-    
-    let textLayer = CATextLayer()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-        
-        Defaults.set("", forKey: key )
-        Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
-        
-        CommunController.sharedInstance.initLayer(titleView: titleView, textLayer: textLayer)
-    }
-    
     open  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {
         if Defaults.object(forKey: key) as? NSString == "anime"
@@ -43,10 +30,18 @@ class ContentView1Controller: NSViewController {
         Defaults.removeObserver(self, forKeyPath: key)
     }
     
+}
+
+class ContentViewController: NSViewController {
+    
+    let Defaults = UserDefaults.standard
+    let textLayer = CATextLayer()
+    
     func UpdateView() {
-        self.textLayer.string = nameCity
+        textLayer.string = nameCity
     }
 }
+
 
 class CommunController
 {

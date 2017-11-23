@@ -11,9 +11,7 @@ import Cocoa
 var nameCity = ""
 
 class MainWindowController: NSWindowController {
-    
-    var delegate: AppDelegate?
-    
+        
     @IBOutlet weak var sourceView: NSView!
     @IBOutlet weak var sourceView1: NSView!
     
@@ -31,9 +29,9 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var account1               = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
-    var account2               = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
-    var account3               = Section (name:"Cities", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var section1               = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var section2               = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
+    var section3               = Section (name:"Cities", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
     var allSection1            = AllSection()
     var allSection2            = AllSection()
     
@@ -76,17 +74,17 @@ class MainWindowController: NSWindowController {
         let item7 = Account(name:"ContentView7", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
 
         
-        account1.accounts.append(item1)
-        account1.accounts.append(item2)
-        account2.accounts.append(item3)
-        account2.accounts.append(item4)
-        account2.accounts.append(item5)
-        account2.accounts.append(item6)
-        account2.accounts.append(item7)
+        section1.accounts.append(item1)
+        section1.accounts.append(item2)
+        section2.accounts.append(item3)
+        section2.accounts.append(item4)
+        section2.accounts.append(item5)
+        section2.accounts.append(item6)
+        section2.accounts.append(item7)
 
         allSection1.sections.removeAll()
-        allSection1.sections.append(account1)
-        allSection1.sections.append(account2)
+        allSection1.sections.append(section1)
+        allSection1.sections.append(section2)
         allSection1.dump()
         sideBarViewController1?.initData( allSection: allSection1 )
     }
@@ -108,7 +106,7 @@ class MainWindowController: NSWindowController {
         sideBarViewController2?.group.title = "City"
         
         allSection2.sections.removeAll()
-        allSection2.sections.append(account3)
+        allSection2.sections.append(section3)
         if sideBarViewController2?.load(allSection: allSection2) == false {
         
             let Human_resource = NSImage (named: NSImage.Name(rawValue: "Human_resource"))!
@@ -129,21 +127,21 @@ class MainWindowController: NSWindowController {
             let item9 = Account(name:"New Delhi", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
             let item10 = Account(name:"Washingtown", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
 
-            account3.accounts.append(item1)
-            account3.accounts.append(item2)
-            account3.accounts.append(item3)
-            account3.accounts.append(item4)
-            account3.accounts.append(item5)
-            account3.accounts.append(item6)
-            account3.accounts.append(item7)
-            account3.accounts.append(item8)
-            account3.accounts.append(item9)
-            account3.accounts.append(item10)
+            section3.accounts.append(item1)
+            section3.accounts.append(item2)
+            section3.accounts.append(item3)
+            section3.accounts.append(item4)
+            section3.accounts.append(item5)
+            section3.accounts.append(item6)
+            section3.accounts.append(item7)
+            section3.accounts.append(item8)
+            section3.accounts.append(item9)
+            section3.accounts.append(item10)
             
-            account3.accounts = account3.accounts.sorted(by: { $0.name < $1.name })
+            section3.accounts = section3.accounts.sorted(by: { $0.name < $1.name })
 
             allSection2.sections.removeAll()
-            allSection2.sections.append(account3)
+            allSection2.sections.append(section3)
             allSection2.dump()
             sideBarViewController2?.initData( allSection: allSection2 )
         }
@@ -192,10 +190,10 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
         sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
-//        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
-
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
+        
+//        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
 //        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
         
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)

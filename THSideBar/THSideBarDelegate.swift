@@ -44,7 +44,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         }
         else if let account = item as? Account
         {
-            let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? THSidebarTableCellView
+            let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? THSideBarCellView
             
             cell?.imageView!.image       = account.icon
 

@@ -75,7 +75,7 @@
                                                     <outlet property="textField" destination="yfM-7C-Fgn" id="JIg-EI-UHS"/>
                                                 </connections>
                                             </tableCellView>
-                                            <customView identifier="FeedCell" id="MGN-mc-ofJ" userLabel="FeedCell" customClass="THSidebarTableCellView" customModule="SideBarDemo" customModuleProvider="target">
+                                            <customView identifier="FeedCell" id="MGN-mc-ofJ" userLabel="FeedCell" customClass="THSideBarCellView" customModule="SideBarDemo" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="20" width="349" height="26"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <subviews>

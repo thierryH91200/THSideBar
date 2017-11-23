@@ -11,15 +11,12 @@ import Cocoa
 private var defaultsContext = 0
 
 
-class ContentView3Controller: NSViewController {
+class ContentView3Controller: ContentViewController {
     
     @IBOutlet weak var titleView: NSView!
     
     let key = "THEKEY3"
-    let Defaults = UserDefaults.standard
-    
-    let textLayer = CATextLayer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -42,10 +39,6 @@ class ContentView3Controller: NSViewController {
     deinit
     {
         Defaults.removeObserver(self, forKeyPath: key)
-    }
-    
-    func UpdateView() {
-        self.textLayer.string = nameCity
     }
     
 }
