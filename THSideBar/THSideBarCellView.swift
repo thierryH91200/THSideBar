@@ -10,12 +10,13 @@ import Cocoa
 
 
 class KSHeaderCellView : NSTableCellView {
+    
+    var fillColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
         let bPath = NSBezierPath(rect: dirtyRect)
-        let fillColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         fillColor.set()
         bPath.fill()
     }

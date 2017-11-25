@@ -16,6 +16,17 @@ class ContentView1Controller: ContentViewController {
     @IBOutlet weak var titleView: NSView!
     
     let key = "THEKEY1"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do view setup here.
+        
+        Defaults.set("", forKey: key )
+        Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
+        
+        CommunController.sharedInstance.initLayer(titleView: titleView, textLayer: textLayer)
+        UpdateView()
+    }
 
     open  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {

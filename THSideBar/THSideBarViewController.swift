@@ -30,7 +30,9 @@ class THSideBarViewController: NSViewController {
     var allSection = AllSection()
     var allowDragAndDrop = true
     var saveSection = true
-    
+    var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+    var rowSizeStyle = NSTableView.RowSizeStyle.small
+
     var selectIndex = [1]
     let Defaults = UserDefaults.standard
     
@@ -55,6 +57,8 @@ class THSideBarViewController: NSViewController {
             // Enable dragging items within and into our view.
             sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation.every, forLocal: true)
         }
+        
+        sidebarOutlineView.rowSizeStyle = rowSizeStyle
         
         let index = sidebarOutlineView.row(forItem: 1)
         sidebarOutlineView.scrollRowToVisible(index)

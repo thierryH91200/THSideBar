@@ -17,6 +17,7 @@ public protocol THSideBarViewDelegate
 
 extension THSideBarViewController: NSOutlineViewDelegate {
     
+    // TODO -
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
         let item = item as? Section
@@ -38,6 +39,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         {
             let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCellHeader"), owner: self) as! KSHeaderCellView
 
+            cell.fillColor = self.colorBackGround
             cell.textField!.stringValue = section.name.uppercased()
             cell.imageView!.image = section.icon
             return cell

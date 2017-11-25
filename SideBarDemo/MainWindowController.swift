@@ -95,6 +95,7 @@ class MainWindowController: NSWindowController {
         addSubview(subView: (sideBarViewController2?.view)!, toView: sourceView1)
         
         sideBarViewController2?.delegate = self
+        sideBarViewController2?.colorBackGround = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
         initData2()

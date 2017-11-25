@@ -30,7 +30,7 @@
 		032081F31FA31F2B000925C6 /* THSideBarDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032081F21FA31F2B000925C6 /* THSideBarDragDrop.swift */; };
 		0324E0901FA085EF00D0AB52 /* THSideBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E08F1FA085EF00D0AB52 /* THSideBarDelegate.swift */; };
 		0324E0921FA0867400D0AB52 /* THSideBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */; };
-		0324E0941FA0D96600D0AB52 /* THTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0931FA0D96500D0AB52 /* THTextFieldDelegate.swift */; };
+		0346867C1FC7634B0065C180 /* THTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346867B1FC7634B0065C180 /* THTextFieldDelegate.swift */; };
 		034D65631FBD6C0F00D980A9 /* ContentView1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */; };
 		034D65651FBD6C3100D980A9 /* ContentView2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */; };
 		034D65671FBD6C5800D980A9 /* ContentView3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */; };
@@ -93,7 +93,7 @@
 		032081F21FA31F2B000925C6 /* THSideBarDragDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THSideBarDragDrop.swift; sourceTree = "<group>"; };
 		0324E08F1FA085EF00D0AB52 /* THSideBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THSideBarDelegate.swift; sourceTree = "<group>"; };
 		0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THSideBarDataSource.swift; sourceTree = "<group>"; };
-		0324E0931FA0D96500D0AB52 /* THTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THTextFieldDelegate.swift; sourceTree = "<group>"; };
+		0346867B1FC7634B0065C180 /* THTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THTextFieldDelegate.swift; sourceTree = "<group>"; };
 		034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView1Controller.swift; sourceTree = "<group>"; };
 		034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2Controller.swift; sourceTree = "<group>"; };
 		034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView3Controller.swift; sourceTree = "<group>"; };
@@ -210,9 +210,9 @@
 				0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */,
 				0324E08F1FA085EF00D0AB52 /* THSideBarDelegate.swift */,
 				032081F21FA31F2B000925C6 /* THSideBarDragDrop.swift */,
+				0346867B1FC7634B0065C180 /* THTextFieldDelegate.swift */,
 				034D65701FBD72A300D980A9 /* THSideBarViewController.swift */,
 				034D65711FBD72A300D980A9 /* THSideBarViewController.xib */,
-				0324E0931FA0D96500D0AB52 /* THTextFieldDelegate.swift */,
 			);
 			path = THSideBar;
 			sourceTree = "<group>";
@@ -394,9 +394,9 @@
 			files = (
 				0305FAF21F80BBA500D9B979 /* THSideBarCellView.swift in Sources */,
 				0361A1281F9FD05B00FED796 /* THSideBarData.swift in Sources */,
-				0324E0941FA0D96600D0AB52 /* THTextFieldDelegate.swift in Sources */,
 				034D656D1FBD6CC100D980A9 /* ContentView6Controller.swift in Sources */,
 				034D65721FBD72A300D980A9 /* THSideBarViewController.swift in Sources */,
+				0346867C1FC7634B0065C180 /* THTextFieldDelegate.swift in Sources */,
 				034D65671FBD6C5800D980A9 /* ContentView3Controller.swift in Sources */,
 				034D65651FBD6C3100D980A9 /* ContentView2Controller.swift in Sources */,
 				034D65631FBD6C0F00D980A9 /* ContentView1Controller.swift in Sources */,

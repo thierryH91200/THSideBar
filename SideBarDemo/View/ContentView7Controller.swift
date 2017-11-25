@@ -40,7 +40,7 @@ class ContentView7Controller: ContentViewController {
     {
         Defaults.removeObserver(self, forKeyPath: key)
     }
-        
+    
 }
 
 
