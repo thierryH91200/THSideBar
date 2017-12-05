@@ -29,13 +29,14 @@ public class BaseItem : NSObject, NSCoding {
         self.isHidden = aDecoder.decodeBool(forKey: "isHidden")
     }
     
-    var name: String
-    var nameView: String
+    var name = ""
+    var nameView   = ""
     var icon : NSImage?
-    var badge: String
-    var colorBadge : NSColor
-    var isHidden = false
-    var identity :AnyObject? = nil
+    var badge      = " "
+    var colorBadge = NSColor.blue
+    var isHidden   = false
+    var colorText  = NSColor.black
+    var identity : AnyObject? = nil
 
     
     init(name: String, icon: NSImage,  nameView : String = "", badge : String = "", colorBadge : NSColor = .blue) {
@@ -50,8 +51,12 @@ public class BaseItem : NSObject, NSCoding {
         self.name       = ""
         self.nameView   = ""
         self.icon       = NSImage (named: NSImage.Name(rawValue: "account"))!
-        self.badge      = ""
-        self.colorBadge = NSColor.blue
+    }
+    
+    init(name: String, colorText: NSColor, icon: NSImage, isHidden : Bool = true) {
+        self.name       = name
+        self.icon       = icon
+        self.colorText = colorText
     }
 
     func dump()

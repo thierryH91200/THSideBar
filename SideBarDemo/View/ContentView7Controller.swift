@@ -25,7 +25,7 @@ class ContentView7Controller: ContentViewController {
         Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
         
         CommunController.sharedInstance.initLayer(titleView: titleView, textLayer: textLayer)
-        UpdateView()
+        UpdateView(nameView : "View7 : ")
     }
     
     open  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -33,7 +33,7 @@ class ContentView7Controller: ContentViewController {
         if Defaults.object(forKey: key) as? NSString == "anime"
         {
             Defaults.set("", forKey: key)
-            UpdateView()
+            UpdateView(nameView : "View7 : ")
         }
     }
     deinit

@@ -25,7 +25,7 @@ class ContentView1Controller: ContentViewController {
         Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
         
         CommunController.sharedInstance.initLayer(titleView: titleView, textLayer: textLayer)
-        UpdateView()
+        UpdateView(nameView : "View1 : ")
     }
 
     open  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -33,7 +33,7 @@ class ContentView1Controller: ContentViewController {
         if Defaults.object(forKey: key) as? NSString == "anime"
         {
             Defaults.set("", forKey: key)
-            UpdateView()
+            UpdateView(nameView : "View1 : ")
         }
     }
     deinit
@@ -48,11 +48,10 @@ class ContentViewController: NSViewController {
     let Defaults = UserDefaults.standard
     let textLayer = CATextLayer()
     
-    func UpdateView() {
-        textLayer.string = nameCity
+    func UpdateView(nameView : String) {
+        textLayer.string = nameView + nameCity
     }
 }
-
 
 class CommunController
 {
@@ -70,7 +69,7 @@ class CommunController
         titleView.wantsLayer = true
         layer.layoutManager = CAConstraintLayoutManager()
         
-        textLayer.foregroundColor = NSColor.black.cgColor
+//        textLayer.foregroundColor = NSColor.black.cgColor
         textLayer.frame = layer.frame
         textLayer.string = ""
         textLayer.font = "Menlo" as CFTypeRef

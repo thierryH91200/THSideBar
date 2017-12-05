@@ -50,14 +50,24 @@ extension THSideBarViewController: NSOutlineViewDelegate {
             
             cell?.imageView!.image       = account.icon
 
+            var attribut = [NSAttributedStringKey : AnyObject]()
+            attribut[.foregroundColor] = NSColor.red
+            attribut[ .font] = NSFont.boldSystemFont(ofSize: 12.0)
+            let attributText = NSMutableAttributedString(string: account.name )
+            attributText.setAttributes(attribut, range: NSMakeRange(0, attributText.length))
+            
             cell?.textField!.delegate    = self
-            cell?.textField!.stringValue = account.name
+//            cell?.textField!.stringValue = account.name
+            cell?.textField!.attributedStringValue = attributText
+            cell?.textField!.textColor = colorText
             
             cell?.button.isHidden        = account.isHidden
             cell?.title                  = account.badge
             cell?.backgroundColor        = account.colorBadge.cgColor
             
             cell?.button?.bezelStyle     = .inline // Make it appear as a normal label and not a button
+//            cell?.backgroundStyle = .dark
+            cell?.needsDisplay = true
             return cell
         }
         return nil

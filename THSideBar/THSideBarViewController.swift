@@ -31,7 +31,8 @@ class THSideBarViewController: NSViewController {
     var allowDragAndDrop = true
     var saveSection = true
     var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-    var rowSizeStyle = NSTableView.RowSizeStyle.small
+    var rowStyle = NSTableView.RowSizeStyle.small
+    var colorText = NSColor.black
 
     var selectIndex = [1]
     let Defaults = UserDefaults.standard
@@ -58,7 +59,7 @@ class THSideBarViewController: NSViewController {
             sidebarOutlineView.setDraggingSourceOperationMask(NSDragOperation.every, forLocal: true)
         }
         
-        sidebarOutlineView.rowSizeStyle = rowSizeStyle
+        sidebarOutlineView.rowSizeStyle = rowStyle
         
         let index = sidebarOutlineView.row(forItem: 1)
         sidebarOutlineView.scrollRowToVisible(index)
@@ -75,7 +76,7 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.reloadData()
         sidebarOutlineView.floatsGroupRows = false
         
-        sidebarOutlineView.rowSizeStyle = .default
+        sidebarOutlineView.rowSizeStyle = rowStyle
         sidebarOutlineView.expandItem(nil, expandChildren: true)
         sidebarOutlineView.selectRowIndexes(IndexSet(selectIndex), byExtendingSelection: false)
     }

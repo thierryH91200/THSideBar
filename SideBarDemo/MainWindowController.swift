@@ -54,6 +54,7 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.delegate = self
         sideBarViewController1?.allowDragAndDrop = false
         sideBarViewController1?.saveSection = false
+        sideBarViewController1?.rowStyle =  .medium
         
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
         initData1()
@@ -96,6 +97,7 @@ class MainWindowController: NSWindowController {
         
         sideBarViewController2?.delegate = self
         sideBarViewController2?.colorBackGround = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        sideBarViewController2?.rowStyle =  .small
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
         initData2()
