@@ -123,5 +123,10 @@ extension MainWindowController: THSideBarViewDelegate
 
 ```
 
-## Ability to save / load Account
-Ideal for dynamic sections
+## Custom NSOutlineView
+
+    var saveSection = true                       // Ideal for dynamic sections
+    var colorBackGround = NSColor.blue
+    var rowSizeStyle = NSTableView.RowSizeStyle.small
+    var allowDragAndDrop = true
+
