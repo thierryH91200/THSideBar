@@ -66,7 +66,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
     }
 
     func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
-        var retVal:Bool = false
+        var retVal = false
         if !(draggedNode is BaseItem)
         {
             return false

@@ -38,13 +38,7 @@ extension THSideBarViewController: NSOutlineViewDataSource {
         return allSection.sections[index]
     }
     
-    // ok
-    // indicates whether a given row should be drawn in the “group row” style.
-    public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
-    {
-        return isSourceGroupItem(item)
-    }
-    
+   
     public func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool
     {
         return !isSourceGroupItem(item)

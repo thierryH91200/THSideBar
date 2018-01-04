@@ -17,6 +17,13 @@ public protocol THSideBarViewDelegate
 
 extension THSideBarViewController: NSOutlineViewDelegate {
     
+    // ok
+    // indicates whether a given row should be drawn in the “group row” style.
+    public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
+    {
+        return isSourceGroupItem(item)
+    }
+    
     // TODO -
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
