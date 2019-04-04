@@ -38,7 +38,6 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         var itemName = "nilItem"
 
         let baseItem = item as? Account
-
         if baseItem != nil
         {
             itemName = baseItem!.name
@@ -73,8 +72,8 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         }
 
         let srcItem              = draggedNode as! BaseItem
-        let destItem :Section?   = item as? Section
-        let parentItem:Section?  = outlineView.parent(forItem: srcItem) as? Section
+        let destItem    = item as? Section
+        let parentItem  = outlineView.parent(forItem: srcItem) as? Section
         let oldIndex             = outlineView.childIndex(forItem: srcItem)
         var toIndex            = index
         

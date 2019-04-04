@@ -6,7 +6,7 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 
 class KSHeaderCellView : NSTableCellView {
@@ -24,7 +24,7 @@ class KSHeaderCellView : NSTableCellView {
 
 class THSideBarCellView: NSTableCellView {
     
-    var attribut                  = [NSAttributedStringKey : AnyObject] ()
+    var attribut                  = [NSAttributedString.Key : AnyObject] ()
     
     var backgroundColor : CGColor = NSColor.green.cgColor
     var cornerRadius : CGFloat    = 8.0

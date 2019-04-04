@@ -6,8 +6,7 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Foundation
-import Cocoa
+import AppKit
 
 
 extension THSideBarViewController: NSOutlineViewDataSource {

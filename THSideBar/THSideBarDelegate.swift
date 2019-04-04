@@ -27,10 +27,10 @@ extension THSideBarViewController: NSOutlineViewDelegate {
     // TODO -
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
-        let item = item as? Section
-        if item != nil
+        let section = item as? Section
+        if section != nil
         {
-            if item?.name == "Account2" {
+            if section?.name == "Account2" {
                 return false
             }
             else {
@@ -57,14 +57,13 @@ extension THSideBarViewController: NSOutlineViewDelegate {
             
             cell?.imageView!.image       = account.icon
 
-            var attribut = [NSAttributedStringKey : AnyObject]()
+            var attribut = [NSAttributedString.Key : AnyObject]()
             attribut[.foregroundColor] = NSColor.red
             attribut[ .font] = NSFont.boldSystemFont(ofSize: 12.0)
             let attributText = NSMutableAttributedString(string: account.name )
             attributText.setAttributes(attribut, range: NSMakeRange(0, attributText.length))
             
             cell?.textField!.delegate    = self
-//            cell?.textField!.stringValue = account.name
             cell?.textField!.attributedStringValue = attributText
             cell?.textField!.textColor = colorText
             
@@ -73,7 +72,6 @@ extension THSideBarViewController: NSOutlineViewDelegate {
             cell?.backgroundColor        = account.colorBadge.cgColor
             
             cell?.button?.bezelStyle     = .inline // Make it appear as a normal label and not a button
-//            cell?.backgroundStyle = .dark
             cell?.needsDisplay = true
             return cell
         }

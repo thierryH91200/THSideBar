@@ -11,7 +11,7 @@ import Cocoa
 
 extension THSideBarViewController: NSTextFieldDelegate {
     
-    override func controlTextDidEndEditing(_ obj: Notification) {
+    func controlTextDidEndEditing(_ obj: Notification) {
         
         let textField = obj.object as! NSTextField
         let row = sidebarOutlineView.row(for: textField)

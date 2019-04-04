@@ -6,7 +6,7 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 var nameCity = ""
 
@@ -29,16 +29,16 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var section1               = Section (name:"Account1", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
-    var section2               = Section (name:"Account2", icon:NSImage (named: NSImage.Name(rawValue: "film"))!)
-    var section3               = Section (name:"Cities", icon:NSImage (named: NSImage.Name(rawValue: "account"))!)
+    var section1               = Section (name:"Account1", icon:NSImage (named: "account")!)
+    var section2               = Section (name:"Account2", icon:NSImage (named: "film")!)
+    var section3               = Section (name:"Cities", icon:NSImage (named: "account")!)
     var allSection1            = AllSection()
     var allSection2            = AllSection()
     
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        splitView.autosaveName = NSSplitView.AutosaveName(rawValue: "splitView")
+        splitView.autosaveName = "splitView"
         splitView.minPossiblePositionOfDivider(at: 0)
         splitView.maxPossiblePositionOfDivider(at: 999)
         
@@ -63,16 +63,16 @@ class MainWindowController: NSWindowController {
     
     func initData1() {
         
-        let item1 = Account(name:"ContentView1", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
+        let item1 = Account(name:"ContentView1", icon:NSImage (named: "Human_resource")!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
         
-        let item2 = Account(name:"ContentView2", icon:NSImage (named: NSImage.Name(rawValue: "Human_resource"))!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
+        let item2 = Account(name:"ContentView2", icon:NSImage (named: "Human_resource")!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
         item2.isHidden = true
         
-        let item3 = Account(name:"ContentView3", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
-        let item4 = Account(name:"ContentView4", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
-        let item5 = Account(name:"ContentView5", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
-        let item6 = Account(name:"ContentView6", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView6Controller", badge: "8", colorBadge: .blue)
-        let item7 = Account(name:"ContentView7", icon:NSImage (named: NSImage.Name(rawValue: "employee"))!, nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
+        let item3 = Account(name:"ContentView3", icon:NSImage (named: "employee")!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
+        let item4 = Account(name:"ContentView4", icon:NSImage (named: "employee")!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
+        let item5 = Account(name:"ContentView5", icon:NSImage (named: "employee")!, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
+        let item6 = Account(name:"ContentView6", icon:NSImage (named: "employee")!, nameView: "ContentView6Controller", badge: "8", colorBadge: .blue)
+        let item7 = Account(name:"ContentView7", icon:NSImage (named: "employee")!, nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
 
         
         section1.accounts.append(item1)
@@ -112,8 +112,8 @@ class MainWindowController: NSWindowController {
         allSection2.sections.append(section3)
         if sideBarViewController2?.load(allSection: allSection2) == false {
         
-            let Human_resource = NSImage (named: NSImage.Name(rawValue: "Human_resource"))!
-            let employee = NSImage (named: NSImage.Name(rawValue: "employee"))!
+            let Human_resource = NSImage (named: "Human_resource")!
+            let employee = NSImage (named: "employee")!
             
             let item1 = Account(name:"London", icon: Human_resource, nameView: "City", badge: "3", colorBadge: .blue)
             item1.isHidden = true
@@ -177,7 +177,7 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func ItemPlus(_ sender: Any) {
-        let account8 = Account(name:"Account 8", icon:NSImage (named: NSImage.Name(rawValue: "account"))!, nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
+        let account8 = Account(name:"Account 8", icon:NSImage (named: "account")!, nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
         sideBarViewController1?.allSection.sections[0].accounts.append(account8)
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
@@ -222,8 +222,8 @@ class MainWindowController: NSWindowController {
 extension NSView {
     
     override open var description: String {
-        let id = identifier?._rawValue
-        return "id: \(String(describing: id!))"
+        let id = identifier ?? NSUserInterfaceItemIdentifier(rawValue: "view ")
+        return "id: \(String(describing: id))"
     }
 }
 

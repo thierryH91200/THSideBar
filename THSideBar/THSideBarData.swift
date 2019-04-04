@@ -6,8 +6,7 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Foundation
-import Cocoa
+import AppKit
 
 public class BaseItem : NSObject, NSCoding {
     
@@ -50,7 +49,7 @@ public class BaseItem : NSObject, NSCoding {
     override init() {
         self.name       = ""
         self.nameView   = ""
-        self.icon       = NSImage (named: NSImage.Name(rawValue: "account"))!
+        self.icon       = NSImage (named: "account")!
     }
     
     init(name: String, colorText: NSColor, icon: NSImage, isHidden : Bool = true) {
@@ -128,14 +127,6 @@ public class Account: BaseItem {
         super.dump()
     }
 }
-
-
-
-
-
-
-
-
 
 // Start Base
 // Just for debug
