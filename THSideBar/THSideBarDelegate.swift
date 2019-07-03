@@ -57,7 +57,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
             
             cell?.imageView!.image       = account.icon
 
-            var attribut = [NSAttributedString.Key : AnyObject]()
+            var attribut = [NSAttributedString.Key : Any]()
             attribut[.foregroundColor] = NSColor.red
             attribut[ .font] = NSFont.boldSystemFont(ofSize: 12.0)
             let attributText = NSMutableAttributedString(string: account.name )
