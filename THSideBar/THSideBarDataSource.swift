@@ -15,26 +15,26 @@ extension THSideBarViewController: NSOutlineViewDataSource {
         
         if let item: Any = item {
             switch item {
-            case let section as Section:
-                return section.accounts.count
+            case let section as [ItemAccount]:
+                return section.count
             default:
                 return 0
             }
         }
-        return allSection.sections.count
+        return allSection.count
     }
 
     // Returns the child item at the specified index of a given item
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         if let item: Any = item {
             switch item {
-            case let section as Section:
-                return section.accounts[index]
+            case let section as [ItemAccount]:
+                return section[index]
             default:
                 return self
             }
         }
-        return allSection.sections[index]
+        return allSection[index]
     }
     
    
@@ -45,19 +45,19 @@ extension THSideBarViewController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         switch item {
-        case let section as Section:
-            return (section.accounts.count > 0) ? true : false
+        case let section as ItemAccount:
+            return (section.item.count > 0) ? true : false
         default:
             return false
         }
     }
     
     func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item :Any?) -> Any? {
-        if let item = item as? Section
+        if let item = item as? [ItemAccount]
         {
             return item
         }
-        if let item = item as? Account
+        if let item = item as? Item
         {
             return item
         }
@@ -72,7 +72,7 @@ extension THSideBarViewController: NSOutlineViewDataSource {
     
     func isSourceGroupItem(_ item: Any) -> Bool
     {
-        if item is Section {
+        if item is [ItemAccount] {
             return true
         }
         return false

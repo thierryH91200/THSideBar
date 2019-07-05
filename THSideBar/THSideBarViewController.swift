@@ -13,7 +13,7 @@
 //
 //Apple recommends to use always view based table views
 
-import Cocoa
+import AppKit
 
 
 class THSideBarViewController: NSViewController {
@@ -22,12 +22,13 @@ class THSideBarViewController: NSViewController {
     @IBOutlet weak var group: NSButton!
     
     /// delegate to receive events
-    @objc open weak var delegate: THSideBarViewDelegate?
+    open weak var delegate: THSideBarViewDelegate?
     
     var draggedNode:AnyObject? = nil
     var fromIndex: Int? = nil
     
-    var allSection = AllSection()
+    var Sections = [ ItemAccount]()
+    var allSection = [ ItemAccount]()
     var allowDragAndDrop = true
     var saveSection = true
     var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
@@ -66,7 +67,7 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.selectRowIndexes(IndexSet(selectIndex), byExtendingSelection: false)
     }
     
-    func initData( allSection: AllSection) {
+    func initData( allSection: [ItemAccount]) {
         self.allSection = allSection
     }
     
@@ -83,40 +84,79 @@ class THSideBarViewController: NSViewController {
     
     func save()
     {
-        for section in allSection.sections {
-            let account = section.accounts
-            let name = section.name
-            
-            let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
-            Defaults.set(archiver, forKey: name)
-        }
-        Defaults.synchronize()
+//        for section in allSection.sections {
+//            let account = section.accounts
+//            let name = section.name
+//
+//            let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
+//            Defaults.set(archiver, forKey: name)
+//        }
+//        Defaults.synchronize()
     }
     
-    func load(allSection: AllSection) -> Bool
+    func load(allSection: ItemAccount) -> Bool
     {
-        self.allSection = allSection
-        
-        for section in allSection.sections {
-            
-            let name = section.name
-            let retrievedData = Defaults.object(forKey: name) as? Data
-            if retrievedData != nil
-            {
-                let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)
-                let accounts = unarchivedObject  as! [Account]
-                for account in accounts
-                {
-                    section.accounts.append( account )
-                }
-            }
-            else {
-                return false
-            }
-        }
+//        self.allSection = allSection
+//        
+//        for section in allSection.sections {
+//            
+//            let name = section.name
+//            let retrievedData = Defaults.object(forKey: name) as? Data
+//            if retrievedData != nil
+//            {
+//                let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)
+//                let accounts = unarchivedObject  as! [Account]
+//                for account in accounts
+//                {
+//                    section.accounts.append( account )
+//                }
+//            }
+//            else {
+//                return false
+//            }
+//        }
         return true
     }
     
+    public func loadAccount() -> [ItemAccount] {
+        var model = [ItemAccount]()
+        let json = UserDefaults.standard.data(forKey: "account")
+        if let json = json {
+            do {
+                let decoder = JSONDecoder()
+                model = try decoder.decode(Array<ItemAccount>.self, from: json)
+                return model
+            } catch let DecodingError.dataCorrupted(context) {
+                print(context)
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch {
+                print("error: ", error)
+            }
+        }
+        return []
+    }
+    
+    func saveAccount()
+    {
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            
+            let data = try encoder.encode(Sections)
+            Defaults.set(data, forKey: "account")
+            
+        } catch {
+            print("error: ", error)
+        }
+    }
 }
 
 

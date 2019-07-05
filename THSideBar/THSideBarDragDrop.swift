@@ -6,8 +6,7 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Foundation
-import Cocoa
+import AppKit
 
 
 extension THSideBarViewController: NSPasteboardItemDataProvider {
@@ -37,7 +36,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         var retVal:NSDragOperation = NSDragOperation()
         var itemName = "nilItem"
 
-        let baseItem = item as? Account
+        let baseItem = item as? Item
         if baseItem != nil
         {
             itemName = baseItem!.name
@@ -47,14 +46,14 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         // - If dragging a set target item must be nil
         if (item as AnyObject? !== draggedNode && index != NSOutlineViewDropOnItemIndex)
         {
-            if let _ = draggedNode as? Section
+            if let _ = draggedNode as? ItemAccount
             {
                 if (item == nil)
                 {
                     retVal = NSDragOperation.generic
                 }
             }
-            else if let _ = draggedNode as? Account
+            else if let _ = draggedNode as? Item
             {
                 retVal = NSDragOperation.generic
             }
@@ -66,14 +65,14 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
 
     func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
         var retVal = false
-        if !(draggedNode is BaseItem)
+        if !(draggedNode is Item)
         {
             return false
         }
 
-        let srcItem              = draggedNode as! BaseItem
-        let destItem    = item as? Section
-        let parentItem  = outlineView.parent(forItem: srcItem) as? Section
+        let srcItem              = draggedNode as! Item
+        let destItem    = item as? ItemAccount
+        let parentItem  = outlineView.parent(forItem: srcItem) as? ItemAccount
         let oldIndex             = outlineView.childIndex(forItem: srcItem)
         var toIndex            = index
         
@@ -81,7 +80,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
             return false
         }
 
-        debugPrint("move src:\(srcItem.name) dest:\(String(describing: (destItem?.name)!)) destIndex:\(index) oldIndex:\(oldIndex) srcParent:\(String(describing: (parentItem?.name)!)) toIndex:\(toIndex) toParent:\(String(describing: (destItem?.name)!)) childIndex:\(index)", terminator: "")
+        debugPrint("move src:\(srcItem.name) dest:\(String(describing: (destItem?.section.name)!)) destIndex:\(index) oldIndex:\(oldIndex) srcParent:\(String(describing: (parentItem?.section.name)!)) toIndex:\(toIndex) toParent:\(String(describing: (destItem?.section.name)!)) childIndex:\(index)", terminator: "")
 
         if (toIndex == NSOutlineViewDropOnItemIndex) // This should never happen, prevented in validateDrop
         {
@@ -92,16 +91,16 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
             toIndex -= 1
         }
 
-        if srcItem is Section && destItem != nil
+        if srcItem is ItemAccount && destItem != nil
         {
             retVal = false
         }
-        else if oldIndex != toIndex || parentItem !== destItem
-        {
-            allSection.moveItemAtIndex(oldIndex, inParent: parentItem, toIndex: toIndex, inParent: destItem)
-            outlineView.moveItem(at: oldIndex, inParent: parentItem, to: toIndex, inParent: destItem)
-            retVal = true
-        }
+//        else if oldIndex != toIndex || parentItem != destItem
+//        {
+////            allSection.moveItemAtIndex(oldIndex, inParent: parentItem, toIndex: toIndex, inParent: destItem)
+//            outlineView.moveItem(at: oldIndex, inParent: parentItem, to: toIndex, inParent: destItem)
+//            retVal = true
+//        }
 
         debugPrint(" returning:\(retVal)")
         if retVal

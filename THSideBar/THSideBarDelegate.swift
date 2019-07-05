@@ -6,13 +6,13 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
-@objc
-public protocol THSideBarViewDelegate
+
+public protocol THSideBarViewDelegate : class
 {
     /// Called when a value has been selected inside the outline.
-    @objc func changeView( item : Account)
+    func changeView( item : Item)
 }
 
 extension THSideBarViewController: NSOutlineViewDelegate {
@@ -27,10 +27,10 @@ extension THSideBarViewController: NSOutlineViewDelegate {
     // TODO -
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
-        let section = item as? Section
+        let section = item as? ItemAccount
         if section != nil
         {
-            if section?.name == "Account2" {
+            if section?.section.name == "Account2" {
                 return false
             }
             else {
@@ -42,20 +42,20 @@ extension THSideBarViewController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 
-        if let section = item as? Section
+        if let section = item as? ItemAccount
         {
             let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCellHeader"), owner: self) as! KSHeaderCellView
 
             cell.fillColor = self.colorBackGround
-            cell.textField!.stringValue = section.name.uppercased()
-            cell.imageView!.image = section.icon
+            cell.textField!.stringValue = section.section.name.uppercased()
+//            cell.imageView!.image = section.icon
             return cell
         }
-        else if let account = item as? Account
+        else if let account = item as? Item
         {
             let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedCell"), owner: self) as? THSideBarCellView
             
-            cell?.imageView!.image       = account.icon
+//            cell?.imageView!.image       = account.icon
 
             var attribut = [NSAttributedString.Key : Any]()
             attribut[.foregroundColor] = NSColor.red
@@ -69,7 +69,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
             
             cell?.button.isHidden        = account.isHidden
             cell?.title                  = account.badge
-            cell?.backgroundColor        = account.colorBadge.cgColor
+//            cell?.backgroundColor        = account.colorBadge.cgColor
             
             cell?.button?.bezelStyle     = .inline // Make it appear as a normal label and not a button
             cell?.needsDisplay = true
@@ -83,7 +83,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
         guard let outlineView = notification.object as? NSOutlineView else { return }
         
         let selectedIndex = outlineView.selectedRow
-        if let item = outlineView.item(atRow: selectedIndex) as? Account
+        if let item = outlineView.item(atRow: selectedIndex) as? Item
         {
             delegate?.changeView( item : item)
         }

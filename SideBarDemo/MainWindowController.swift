@@ -29,12 +29,13 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var section1               = Section (name:"Account1", icon:NSImage (named: "account")!)
-    var section2               = Section (name:"Account2", icon:NSImage (named: "film")!)
-    var section3               = Section (name:"Cities", icon:NSImage (named: "account")!)
-    var allSection1            = AllSection()
-    var allSection2            = AllSection()
-    
+    var section               = [ItemAccount]()
+//    var section1               = Section (name:"Account1", icon:NSImage (named: "account")!)
+//    var section2               = Section (name:"Account2", icon:NSImage (named: "film")!)
+//    var section3               = Section (name:"Cities", icon:NSImage (named: "account")!)
+//    var allSection1            = AllSection()
+//    var allSection2            = AllSection()
+//
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -61,35 +62,58 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.reloadData()
     }
     
+//    func initData1() {
+//
+//        let item1 = Account(name:"ContentView1", icon:NSImage (named: "Human_resource")!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
+//
+//        let item2 = Account(name:"ContentView2", icon:NSImage (named: "Human_resource")!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
+//        item2.isHidden = true
+//
+//        let item3 = Account(name:"ContentView3", icon:NSImage (named: "employee")!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
+//        let item4 = Account(name:"ContentView4", icon:NSImage (named: "employee")!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
+//        let item5 = Account(name:"ContentView5", icon:NSImage (named: "employee")!, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
+//        let item6 = Account(name:"ContentView6", icon:NSImage (named: "employee")!, nameView: "ContentView6Controller", badge: "8", colorBadge: .blue)
+//        let item7 = Account(name:"ContentView7", icon:NSImage (named: "employee")!, nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
+//
+//
+//        section1.accounts.append(item1)
+//        section1.accounts.append(item2)
+//        section2.accounts.append(item3)
+//        section2.accounts.append(item4)
+//        section2.accounts.append(item5)
+//        section2.accounts.append(item6)
+//        section2.accounts.append(item7)
+//
+//        allSection1.sections.removeAll()
+//        allSection1.sections.append(section1)
+//        allSection1.sections.append(section2)
+//        allSection1.dump()
+//        sideBarViewController1?.initData( allSection: allSection1 )
+//    }
     func initData1() {
         
-        let item1 = Account(name:"ContentView1", icon:NSImage (named: "Human_resource")!, nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
+        let item1 = Item(name:"ContentView1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: ".blue")
+        let item2 = Item(name:"ContentView2", icon: "Human_resource", nameView: "ContentView2Controller", badge: "-5", colorBadge: ".red")
+//        let item3 = Item(name:"ContentView3", icon: "employee",       nameView: "ContentView3Controller", badge: "3", colorBadge: ".blue")
+//        let item4 = Item(name:"ContentView4", icon: "employee",       nameView: "ContentView4Controller", badge: "1", colorBadge: ".blue")
+//        let item5 = Item(name:"ContentView5", icon: "employee",       nameView: "ContentView5Controller", badge: "3", colorBadge: ".blue")
+//        let item6 = Item(name:"ContentView6", icon: "employee",       nameView: "ContentView6Controller", badge: "8", colorBadge: ".blue")
+//        let item7 = Item(name:"ContentView7", icon: "employee",       nameView: "ContentView7Controller", badge: "-1", colorBadge: ".red")
         
-        let item2 = Account(name:"ContentView2", icon:NSImage (named: "Human_resource")!, nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
-        item2.isHidden = true
-        
-        let item3 = Account(name:"ContentView3", icon:NSImage (named: "employee")!, nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
-        let item4 = Account(name:"ContentView4", icon:NSImage (named: "employee")!, nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
-        let item5 = Account(name:"ContentView5", icon:NSImage (named: "employee")!, nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
-        let item6 = Account(name:"ContentView6", icon:NSImage (named: "employee")!, nameView: "ContentView6Controller", badge: "8", colorBadge: .blue)
-        let item7 = Account(name:"ContentView7", icon:NSImage (named: "employee")!, nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
+        let sectionItem =  Item(name:"Account1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: ".blue")
+        var item = [Item]()
+        item.append(item1)
+        item.append(item2)
+        let section1 = ItemAccount(section: sectionItem, item: item)
+        let section2 = ItemAccount(section: sectionItem, item: item)
 
         
-        section1.accounts.append(item1)
-        section1.accounts.append(item2)
-        section2.accounts.append(item3)
-        section2.accounts.append(item4)
-        section2.accounts.append(item5)
-        section2.accounts.append(item6)
-        section2.accounts.append(item7)
-
-        allSection1.sections.removeAll()
-        allSection1.sections.append(section1)
-        allSection1.sections.append(section2)
-        allSection1.dump()
-        sideBarViewController1?.initData( allSection: allSection1 )
+        section.removeAll()
+        section.append(section1)
+        section.append(section2)
+        sideBarViewController1?.initData( allSection: section )
     }
-    
+
     func setUpSourceList2()
     {
         self.sideBarViewController2 = THSideBarViewController()
@@ -106,48 +130,48 @@ class MainWindowController: NSWindowController {
     
     func initData2() {
         
-        sideBarViewController2?.group.title = "City"
-        
-        allSection2.sections.removeAll()
-        allSection2.sections.append(section3)
-        if sideBarViewController2?.load(allSection: allSection2) == false {
-        
-            let Human_resource = NSImage (named: "Human_resource")!
-            let employee = NSImage (named: "employee")!
-            
-            let item1 = Account(name:"London", icon: Human_resource, nameView: "City", badge: "3", colorBadge: .blue)
-            item1.isHidden = true
-            
-            let item2 = Account(name:"Paris", icon: employee, nameView: "City", badge: "-8", colorBadge: .red)
-            item2.isHidden = true
-            
-            let item3 = Account(name:"Tokyo", icon: Human_resource, nameView: "City", badge: "-2", colorBadge: .red)
-            let item4 = Account(name:"Mexico", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item5 = Account(name:"Ottawa", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item6 = Account(name:"Berlin", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item7 = Account(name:"Madrid", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item8 = Account(name:"Bruxelles", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item9 = Account(name:"New Delhi", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-            let item10 = Account(name:"Washingtown", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
-
-            section3.accounts.append(item1)
-            section3.accounts.append(item2)
-            section3.accounts.append(item3)
-            section3.accounts.append(item4)
-            section3.accounts.append(item5)
-            section3.accounts.append(item6)
-            section3.accounts.append(item7)
-            section3.accounts.append(item8)
-            section3.accounts.append(item9)
-            section3.accounts.append(item10)
-            
-            section3.accounts = section3.accounts.sorted(by: { $0.name < $1.name })
-
-            allSection2.sections.removeAll()
-            allSection2.sections.append(section3)
-            allSection2.dump()
-            sideBarViewController2?.initData( allSection: allSection2 )
-        }
+//        sideBarViewController2?.group.title = "City"
+//
+//        allSection2.sections.removeAll()
+//        allSection2.sections.append(section3)
+//        if sideBarViewController2?.load(allSection: allSection2) == false {
+//
+//            let Human_resource = NSImage (named: "Human_resource")!
+//            let employee = NSImage (named: "employee")!
+//
+//            let item1 = Account(name:"London", icon: Human_resource, nameView: "City", badge: "3", colorBadge: .blue)
+//            item1.isHidden = true
+//
+//            let item2 = Account(name:"Paris", icon: employee, nameView: "City", badge: "-8", colorBadge: .red)
+//            item2.isHidden = true
+//
+//            let item3 = Account(name:"Tokyo", icon: Human_resource, nameView: "City", badge: "-2", colorBadge: .red)
+//            let item4 = Account(name:"Mexico", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//            let item5 = Account(name:"Ottawa", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//            let item6 = Account(name:"Berlin", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//            let item7 = Account(name:"Madrid", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//            let item8 = Account(name:"Bruxelles", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//            let item9 = Account(name:"New Delhi", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//            let item10 = Account(name:"Washingtown", icon: employee, nameView: "City", badge: "0", colorBadge: .blue)
+//
+//            section3.accounts.append(item1)
+//            section3.accounts.append(item2)
+//            section3.accounts.append(item3)
+//            section3.accounts.append(item4)
+//            section3.accounts.append(item5)
+//            section3.accounts.append(item6)
+//            section3.accounts.append(item7)
+//            section3.accounts.append(item8)
+//            section3.accounts.append(item9)
+//            section3.accounts.append(item10)
+//
+//            section3.accounts = section3.accounts.sorted(by: { $0.name < $1.name })
+//
+//            allSection2.sections.removeAll()
+//            allSection2.sections.append(section3)
+//            allSection2.dump()
+//            sideBarViewController2?.initData( allSection: allSection2 )
+//        }
     }
     
     func addSubview(subView: NSView, toView parentView : NSView)
@@ -177,8 +201,8 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func ItemPlus(_ sender: Any) {
-        let account8 = Account(name:"Account 8", icon:NSImage (named: "account")!, nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
-        sideBarViewController1?.allSection.sections[0].accounts.append(account8)
+//        let account8 = Account(name:"Account 8", icon:NSImage (named: "account")!, nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
+//        sideBarViewController1?.allSection[0].item.append(account8)
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
@@ -186,12 +210,12 @@ class MainWindowController: NSWindowController {
     
     @IBAction func buttonBadgeP(_ sender: Any) {
         let selectedIndex = 1
-        let badge = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge
+        let badge = sideBarViewController1?.allSection[0].item[selectedIndex - 1].badge
         var numBadge = Int(badge!)
 
         numBadge = numBadge! + 1
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
+//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
@@ -204,12 +228,12 @@ class MainWindowController: NSWindowController {
     
     @IBAction func buttonBadgeM(_ sender: Any) {
         let selectedIndex = 1
-        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
-        var numBadge = Int((item?.badge)!)
-        
-        numBadge = numBadge! - 1
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
-        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+//        let item = sideBarViewController1?.allSection[0].accounts[selectedIndex - 1]
+//        var numBadge = Int((item?.badge)!)
+//        
+//        numBadge = numBadge! - 1
+//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
+//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
@@ -229,7 +253,7 @@ extension NSView {
 
 extension MainWindowController: THSideBarViewDelegate
 {
-    func changeView(item : Account)
+    func changeView(item : Item)
     {
         var  vc = NSView()
                 
