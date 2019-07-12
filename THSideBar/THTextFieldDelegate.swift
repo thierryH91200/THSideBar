@@ -6,7 +6,7 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 
 extension THSideBarViewController: NSTextFieldDelegate {

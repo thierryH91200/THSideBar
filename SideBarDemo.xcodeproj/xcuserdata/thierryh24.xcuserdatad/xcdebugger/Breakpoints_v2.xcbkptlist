@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84F8EEE7-CD7C-4608-8811-81802B6463B6"
-            shouldBeEnabled = "Yes"
+            uuid = "804F736C-44C0-49E0-8B30-0F4BE2E5535F"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SideBarDemo/MainWindowController.swift"
+            filePath = "THSideBar/THSideBarDragDrop.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "initData1()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "outlineView(_:acceptDrop:item:childIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BFC95AF-E797-4D88-9D79-43E202A30026"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "THSideBar/THSideBarDragDrop.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "moveItemAtIndex(_:inParent:toIndex:inParent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

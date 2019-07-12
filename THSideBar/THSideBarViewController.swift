@@ -6,12 +6,6 @@
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 
-//
-//A cell can contain only one UI element like a text cell, image view cell, button cell and a few more. The customization ability is quite poor.
-//
-//A view can contain multiple UI elements as well as other views. The customization ability is almost infinite.
-//
-//Apple recommends to use always view based table views
 
 import AppKit
 
@@ -27,8 +21,8 @@ class THSideBarViewController: NSViewController {
     var draggedNode:AnyObject? = nil
     var fromIndex: Int? = nil
     
-    var Sections = [ ItemAccount]()
-    var allSection = [ ItemAccount]()
+    var sections = [ Section]()
+//    var allSection = AllSection(allSection: [])
     var allowDragAndDrop = true
     var saveSection = true
     var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
@@ -67,8 +61,9 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.selectRowIndexes(IndexSet(selectIndex), byExtendingSelection: false)
     }
     
-    func initData( allSection: [ItemAccount]) {
-        self.allSection = allSection
+    func initData( allSection: [Section]) {
+//        self.allSection.allSection = allSection
+        self.sections = allSection
     }
     
     func reloadData() {
@@ -94,13 +89,13 @@ class THSideBarViewController: NSViewController {
 //        Defaults.synchronize()
     }
     
-    func load(allSection: ItemAccount) -> Bool
+    func load(allSection: [Section]) -> Bool
     {
-//        self.allSection = allSection
-//        
-//        for section in allSection.sections {
-//            
-//            let name = section.name
+//        self.sections = allSection
+//
+//        for section in sections {
+//
+//            let name = section.section.name
 //            let retrievedData = Defaults.object(forKey: name) as? Data
 //            if retrievedData != nil
 //            {
@@ -118,13 +113,13 @@ class THSideBarViewController: NSViewController {
         return true
     }
     
-    public func loadAccount() -> [ItemAccount] {
-        var model = [ItemAccount]()
+    func loadAccount() -> [Section] {
+        var model = [Section]()
         let json = UserDefaults.standard.data(forKey: "account")
         if let json = json {
             do {
                 let decoder = JSONDecoder()
-                model = try decoder.decode(Array<ItemAccount>.self, from: json)
+                model = try decoder.decode(Array<Section>.self, from: json)
                 return model
             } catch let DecodingError.dataCorrupted(context) {
                 print(context)
@@ -149,10 +144,10 @@ class THSideBarViewController: NSViewController {
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
-            
-            let data = try encoder.encode(Sections)
+
+            let data = try encoder.encode(sections)
             Defaults.set(data, forKey: "account")
-            
+
         } catch {
             print("error: ", error)
         }

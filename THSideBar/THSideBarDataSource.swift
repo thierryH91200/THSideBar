@@ -8,71 +8,61 @@
 
 import AppKit
 
-
 extension THSideBarViewController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         
-        if let item: Any = item {
-            switch item {
-            case let section as [ItemAccount]:
-                return section.count
-            default:
-                return 0
-            }
+        var count = 0
+        if item == nil {
+            //at root
+            count = sections.count
+        } else {
+            let section = item as! Section
+            count =  section.item.count
         }
-        return allSection.count
-    }
-
-    // Returns the child item at the specified index of a given item
-    func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if let item: Any = item {
-            switch item {
-            case let section as [ItemAccount]:
-                return section[index]
-            default:
-                return self
-            }
-        }
-        return allSection[index]
+        return count
     }
     
-   
+    // Returns the child item at the specified index of a given item
+    func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
+        
+        if item == nil {
+            return sections[index]
+        } else {
+            let section = item as! Section
+            return section.item[index]
+            
+        }
+    }
+    
     public func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool
     {
         return !isSourceGroupItem(item)
     }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        switch item {
-        case let section as ItemAccount:
-            return (section.item.count > 0) ? true : false
-        default:
+        if let section = item as? Section {
+            return section.item.count > 0
+        } else {
             return false
         }
     }
     
-    func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item :Any?) -> Any? {
-        if let item = item as? [ItemAccount]
-        {
-            return item
-        }
-        if let item = item as? Item
-        {
-            return item
-        }
-        return nil
-    }
-    
-//    func outlineView(_ tableView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any?
-//    {
-//
-//    }
-
+    //    func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item :Any?) -> Any? {
+    //        if let item = item as? [Section]
+    //        {
+    //            return item
+    //        }
+    //        if let item = item as? Item
+    //        {
+    //            return item
+    //        }
+    //        return nil
+    //    }
     
     func isSourceGroupItem(_ item: Any) -> Bool
     {
-        if item is [ItemAccount] {
+        if item is [Section] {
             return true
         }
         return false
