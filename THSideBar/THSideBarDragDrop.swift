@@ -41,13 +41,12 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
 //        }
         
         var retVal:NSDragOperation = NSDragOperation()
-        var itemName = "nilItem"
         
-        let baseItem = item as? Item
-        if baseItem != nil
-        {
-            itemName = baseItem!.name
-        }
+//        let baseItem = item as? Item
+//        if baseItem != nil
+//        {
+//            itemName = baseItem!.name
+//        }
         
         // proposedItem is the item we are dropping on not the item we are dragging
         // - If dragging a set target item must be nil
@@ -65,35 +64,39 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
                 retVal = NSDragOperation.generic
             }
         }
+        print(retVal)
         return retVal
     }
     
-    func selectedTree() -> Item? {
-        let selectedRow = self.sidebarOutlineView.selectedRow;
-        if selectedRow >= 0 {
-            return sidebarOutlineView.item(atRow: selectedRow) as? Item
-        }
-        return nil
-    }
-    
-    
-    func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
+    func outlineView(_ outlineView: NSOutlineView,
+                     acceptDrop info: NSDraggingInfo,
+                     item: Any?,
+                     childIndex index: Int) -> Bool {
+        
+        guard (draggedNode is Item) == true else { return false }
         
         var retVal = false
-        if (draggedNode is Item) == false 
-        {
-            return false
-        }
+
         
         let srcItem     = draggedNode as! Item
-        let parentItem  = outlineView.parent(forItem: srcItem) as? Section
+        let parentSrcItem  = outlineView.parent(forItem: srcItem) as? Section
         
-        let destItem    = item as? Section
+        let parentDstItem    = item as? Section
         
         let oldIndex    = sidebarOutlineView.childIndex(forItem: srcItem)
         var toIndex     = index
         
-        if destItem == nil {
+        if parentDstItem != nil && parentSrcItem != nil
+        {
+            debugPrint("move src:\(srcItem.name) dest:\(parentDstItem!.section.name) destIndex:\(index) oldIndex:\(oldIndex) srcParent:\(parentSrcItem!.section.name) toIndex:\(toIndex) toParent:\(parentDstItem!.section.name) childIndex:\(index)", terminator: "")
+        }
+        else
+        {
+            debugPrint("destination or parent is nil")
+        }
+
+        
+        if parentDstItem == nil {
             return false
         }
         
@@ -106,13 +109,14 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
             toIndex -= 1
         }
         
-        if oldIndex != toIndex || parentItem != destItem
+        if oldIndex != toIndex || parentSrcItem != parentDstItem
         {
-            self.moveItemAtIndex(oldIndex, inParent: parentItem, toIndex: toIndex, inParent: destItem)
-            outlineView.moveItem(at: oldIndex, inParent: parentItem, to: toIndex, inParent: destItem)
+            self.moveItemAtIndex(oldIndex, inParent: parentSrcItem, toIndex: toIndex, inParent: parentDstItem)
+            outlineView.moveItem(at: oldIndex, inParent: parentSrcItem, to: toIndex, inParent: parentDstItem)
             retVal = true
         }
         
+        debugPrint(" returning:\(retVal)")
         return retVal
     }
     

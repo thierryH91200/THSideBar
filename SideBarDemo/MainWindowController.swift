@@ -54,26 +54,30 @@ class MainWindowController: NSWindowController {
         addSubview(subView: (sideBarViewController1?.view)!, toView: sourceView)
         
         sideBarViewController1?.delegate = self
-        sideBarViewController1?.allowDragAndDrop = false
+        sideBarViewController1?.allowDragAndDrop = true
         sideBarViewController1?.saveSection = false
         sideBarViewController1?.rowStyle =  .medium
         
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
+        var sections = sideBarViewController1?.load()
         initData1()
+        sideBarViewController1?.save()
+         sections = sideBarViewController1?.load()
+
         sideBarViewController1?.reloadData()
     }
     
     func initData1() {
         
-        let item1 = Item(name:"ContentView1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: ".blue")
-        let item2 = Item(name:"ContentView2", icon: "Human_resource", nameView: "ContentView2Controller", badge: "-5", colorBadge: ".red")
-        let item3 = Item(name:"ContentView3", icon: "employee",       nameView: "ContentView3Controller", badge: "3", colorBadge: ".blue")
-        let item4 = Item(name:"ContentView4", icon: "employee",       nameView: "ContentView4Controller", badge: "1", colorBadge: ".blue")
-        let item5 = Item(name:"ContentView5", icon: "employee",       nameView: "ContentView5Controller", badge: "3", colorBadge: ".blue")
-        let item6 = Item(name:"ContentView6", icon: "employee",       nameView: "ContentView6Controller", badge: "8", colorBadge: ".blue")
-        let item7 = Item(name:"ContentView7", icon: "employee",       nameView: "ContentView7Controller", badge: "-1", colorBadge: ".red")
+        let item1 = Item(name:"ContentView1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
+        let item2 = Item(name:"ContentView2", icon: "Human_resource", nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
+        let item3 = Item(name:"ContentView3", icon: "employee",       nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)
+        let item4 = Item(name:"ContentView4", icon: "employee",       nameView: "ContentView4Controller", badge: "1", colorBadge: .blue)
+        let item5 = Item(name:"ContentView5", icon: "employee",       nameView: "ContentView5Controller", badge: "3", colorBadge: .blue)
+        let item6 = Item(name:"ContentView6", icon: "employee",       nameView: "ContentView6Controller", badge: "8", colorBadge: .blue)
+        let item7 = Item(name:"ContentView7", icon: "employee",       nameView: "ContentView7Controller", badge: "-1", colorBadge: .red)
         
-        let sectionItem =  Item(name:"Account1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: ".blue")
+        let sectionItem =  Item(name:"Account1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
         var item = [Item]()
         item.append(item1)
         item.append(item2)
@@ -111,20 +115,20 @@ class MainWindowController: NSWindowController {
         
         sideBarViewController2?.group.title = "City"
 
-        var item1 = Item(name:"London", icon: "Human_resource", nameView: "City", badge: "3", colorBadge: ".blue")
+        let item1 = Item(name:"London", icon: "Human_resource", nameView: "City", badge: "3", colorBadge: .blue)
         item1.isHidden = true
         
-        var item2 = Item(name:"Paris", icon: "employee", nameView: "City", badge: "-8", colorBadge: ".red")
+        let item2 = Item(name:"Paris", icon: "employee", nameView: "City", badge: "-8", colorBadge: .red)
         item2.isHidden = true
 
-        let item3 = Item(name:"Tokyo", icon: "Human_resource", nameView: "City", badge: "-2", colorBadge: ".red")
-        let item4 = Item(name:"Mexico", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
-        let item5 = Item(name:"Ottawa", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
-        let item6 = Item(name:"Berlin", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
-        let item7 = Item(name:"Madrid", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
-        let item8 = Item(name:"Bruxelles", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
-        let item9 = Item(name:"New Delhi", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
-        let item10 = Item(name:"Washingtown", icon: "employee", nameView: "City", badge: "0", colorBadge: ".blue")
+        let item3 = Item(name:"Tokyo", icon: "Human_resource", nameView: "City", badge: "-2", colorBadge: .red)
+        let item4 = Item(name:"Mexico", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
+        let item5 = Item(name:"Ottawa", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
+        let item6 = Item(name:"Berlin", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
+        let item7 = Item(name:"Madrid", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
+        let item8 = Item(name:"Bruxelles", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
+        let item9 = Item(name:"New Delhi", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
+        let item10 = Item(name:"Washingtown", icon: "employee", nameView: "City", badge: "0", colorBadge: .blue)
         
         var item = [Item]()
         item.append(item1)
@@ -138,17 +142,15 @@ class MainWindowController: NSWindowController {
         item.append(item9)
         item.append(item10)
         
-        let sectionItem =  Item(name:"Cities", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: ".blue")
+        let sectionItem =  Item(name:"Cities", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
 
 
-            item = item.sorted(by: { $0.name < $1.name })
+        item = item.sorted(by: { $0.name < $1.name })
         let section1 = Section(section: sectionItem, item: item)
 
-        
         section3.removeAll()
         section3.append(section1)
         sideBarViewController2?.initData( allSection: section3 )
-//        }
     }
     
     func addSubview(subView: NSView, toView parentView : NSView)
@@ -191,8 +193,8 @@ class MainWindowController: NSWindowController {
         var numBadge = Int(badge!)
 
         numBadge = numBadge! + 1
-//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
-//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+        sideBarViewController1?.sections[0].item[selectedIndex - 1].badge = String(describing: numBadge!)
+//        sideBarViewController1?.sections[0].item[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()

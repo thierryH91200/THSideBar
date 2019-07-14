@@ -22,7 +22,7 @@ class THSideBarViewController: NSViewController {
     var fromIndex: Int? = nil
     
     var sections = [ Section]()
-//    var allSection = AllSection(allSection: [])
+
     var allowDragAndDrop = true
     var saveSection = true
     var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
@@ -62,7 +62,6 @@ class THSideBarViewController: NSViewController {
     }
     
     func initData( allSection: [Section]) {
-//        self.allSection.allSection = allSection
         self.sections = allSection
     }
     
@@ -77,43 +76,8 @@ class THSideBarViewController: NSViewController {
         sidebarOutlineView.selectRowIndexes(IndexSet(selectIndex), byExtendingSelection: false)
     }
     
-    func save()
-    {
-//        for section in allSection.sections {
-//            let account = section.accounts
-//            let name = section.name
-//
-//            let archiver = NSKeyedArchiver.archivedData(withRootObject: account)
-//            Defaults.set(archiver, forKey: name)
-//        }
-//        Defaults.synchronize()
-    }
     
-    func load(allSection: [Section]) -> Bool
-    {
-//        self.sections = allSection
-//
-//        for section in sections {
-//
-//            let name = section.section.name
-//            let retrievedData = Defaults.object(forKey: name) as? Data
-//            if retrievedData != nil
-//            {
-//                let unarchivedObject = NSKeyedUnarchiver.unarchiveObject(with: retrievedData!)
-//                let accounts = unarchivedObject  as! [Account]
-//                for account in accounts
-//                {
-//                    section.accounts.append( account )
-//                }
-//            }
-//            else {
-//                return false
-//            }
-//        }
-        return true
-    }
-    
-    func loadAccount() -> [Section] {
+    func load() -> [Section] {
         var model = [Section]()
         let json = UserDefaults.standard.data(forKey: "account")
         if let json = json {
@@ -139,7 +103,7 @@ class THSideBarViewController: NSViewController {
         return []
     }
     
-    func saveAccount()
+    func save()
     {
         do {
             let encoder = JSONEncoder()

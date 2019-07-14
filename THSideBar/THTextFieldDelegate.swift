@@ -17,7 +17,7 @@ extension THSideBarViewController: NSTextFieldDelegate {
         let row = sidebarOutlineView.row(for: textField)
         let item = sidebarOutlineView.item(atRow: row)
         
-        if var theItem = item as? Item
+        if let theItem = item as? Item
         {
             theItem.name = textField.stringValue
         }
