@@ -29,14 +29,7 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-    var section               = [Section]()
-    var section3               = [Section]()
-//    var section1               = Section (name:"Account1", icon:NSImage (named: "account")!)
-//    var section2               = Section (name:"Account2", icon:NSImage (named: "film")!)
-//    var section3               = Section (name:"Cities", icon:NSImage (named: "account")!)
-//    var allSection1            = AllSection()
-//    var allSection2            = AllSection()
-//
+
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -59,15 +52,19 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.rowStyle =  .medium
         
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
-        let sections = sideBarViewController1?.load("view")
-        if sections?.count ?? 0 > 0 {
-            initData1()
+        var sections = sideBarViewController1?.load("view")
+        if sections?.count ?? 0 == 0 {
+            sections = initData1()
             sideBarViewController1?.save("view")
         }
+        sideBarViewController1?.initData( allSection: sections! )
         sideBarViewController1?.reloadData()
     }
     
-    func initData1() {
+    func initData1() -> [Section] {
+        
+        var section               = [Section]()
+
         
         let item1 = Item(name:"ContentView1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
         let item2 = Item(name:"ContentView2", icon: "Human_resource", nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
@@ -94,7 +91,9 @@ class MainWindowController: NSWindowController {
         section.removeAll()
         section.append(section1)
         section.append(section2)
-        sideBarViewController1?.initData( allSection: section )
+//        sideBarViewController1?.initData( allSection: section )
+        return section
+
     }
 
     func setUpSourceList2()
@@ -108,15 +107,18 @@ class MainWindowController: NSWindowController {
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
         
-        let sections = sideBarViewController1?.load("city")
-        if sections?.count ?? 0 > 0 {
-            initData2()
-            sideBarViewController1?.save("city")
+        var sections = sideBarViewController2?.load("city")
+        if sections?.count ?? 0 == 0 {
+            sections = initData2()
+            sideBarViewController2?.save("city")
         }
+        sideBarViewController2?.initData( allSection: sections! )
         sideBarViewController2?.reloadData()
     }
     
-    func initData2() {
+    func initData2() -> [Section] {
+        
+        var section               = [Section]()
         
         sideBarViewController2?.group.title = "City"
 
@@ -149,13 +151,13 @@ class MainWindowController: NSWindowController {
         
         let sectionItem =  Item(name:"Cities", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
 
-
         item = item.sorted(by: { $0.name < $1.name })
         let section1 = Section(section: sectionItem, item: item)
 
-        section3.removeAll()
-        section3.append(section1)
-        sideBarViewController2?.initData( allSection: section3 )
+        section.removeAll()
+        section.append(section1)
+//        sideBarViewController2?.initData( allSection: section3 )
+        return section
     }
     
     func addSubview(subView: NSView, toView parentView : NSView)

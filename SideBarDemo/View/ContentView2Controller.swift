@@ -8,6 +8,7 @@
 
 import AppKit
 
+
 class ContentView2Controller: NSViewController {
     
     @IBOutlet weak var titleView: NSView!
@@ -22,13 +23,9 @@ class ContentView2Controller: NSViewController {
         NotificationCenter.receive(instance: self, name: .updateView, selector: #selector(UpdateView(_: )))
         CommunController.shared.initLayer(titleView: titleView, textLayer: textLayer)
         UpdateView(Notification(name: .updateView))
-
     }
     
     @objc func UpdateView(_ notification: Notification) {
         textLayer.string = nameView + nameCity
     }
-
-    
-
 }

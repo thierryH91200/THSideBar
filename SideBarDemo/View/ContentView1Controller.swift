@@ -8,6 +8,7 @@
 
 import AppKit
 
+
 class ContentView1Controller: NSViewController {
     
     @IBOutlet weak var titleView: NSView!
@@ -27,7 +28,4 @@ class ContentView1Controller: NSViewController {
     @objc func UpdateView(_ notification: Notification) {
         textLayer.string = nameView + nameCity
     }
-    
-    
 }
-
