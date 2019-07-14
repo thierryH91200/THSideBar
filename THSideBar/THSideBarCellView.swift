@@ -46,6 +46,7 @@ class THSideBarCellView: NSTableCellView {
         super.viewWillDraw()
         if !button.isHidden
         {
+            let wl = button.wantsLayer
             button.wantsLayer = true
             button.layer?.backgroundColor = backgroundColor
             button.layer?.cornerRadius = cornerRadius
