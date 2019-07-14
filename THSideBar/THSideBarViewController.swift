@@ -31,6 +31,7 @@ class THSideBarViewController: NSViewController {
 
     var selectIndex = [1]
     let Defaults = UserDefaults.standard
+    var name = ""
     
     let REORDER_PASTEBOARD_TYPE = "com.outline.item"
     
@@ -77,9 +78,9 @@ class THSideBarViewController: NSViewController {
     }
     
     
-    func load() -> [Section] {
+    func load(_ name: String) -> [Section] {
         var model = [Section]()
-        let json = UserDefaults.standard.data(forKey: "account")
+        let json = UserDefaults.standard.data(forKey: name)
         if let json = json {
             do {
                 let decoder = JSONDecoder()
@@ -103,14 +104,15 @@ class THSideBarViewController: NSViewController {
         return []
     }
     
-    func save()
+    func save(_ name: String)
     {
+        self.name = name
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
 
             let data = try encoder.encode(sections)
-            Defaults.set(data, forKey: "account")
+            Defaults.set(data, forKey: name)
 
         } catch {
             print("error: ", error)

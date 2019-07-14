@@ -8,10 +8,11 @@
 
 import AppKit
 
-class ContentView5Controller: ContentViewController {
+class ContentView5Controller: NSViewController {
     
     @IBOutlet weak var titleView: NSView!
     
+    let textLayer = CATextLayer()
     let nameView = "View5 : "
 
     override func viewDidLoad() {

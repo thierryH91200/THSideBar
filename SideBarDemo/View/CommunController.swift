@@ -8,15 +8,6 @@
 
 import AppKit
 
-class ContentViewController: NSViewController {
-    
-    let Defaults = UserDefaults.standard
-    let textLayer = CATextLayer()
-    
-    @objc func UpdateView(nameView : String) {
-        textLayer.string = nameView + nameCity
-    }
-}
 
 class CommunController
 {

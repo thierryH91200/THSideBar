@@ -59,11 +59,11 @@ class MainWindowController: NSWindowController {
         sideBarViewController1?.rowStyle =  .medium
         
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
-        var sections = sideBarViewController1?.load()
-        initData1()
-        sideBarViewController1?.save()
-         sections = sideBarViewController1?.load()
-
+        let sections = sideBarViewController1?.load("view")
+        if sections?.count ?? 0 > 0 {
+            initData1()
+            sideBarViewController1?.save("view")
+        }
         sideBarViewController1?.reloadData()
     }
     
@@ -238,15 +238,8 @@ extension MainWindowController: THSideBarViewDelegate
                 
         if item.nameView == "City" {
             
-
             nameCity = item.name
             NotificationCenter.send(.updateView)
-
-            
-            let Defaults = UserDefaults.standard
-            Defaults.set("anime", forKey: "THEKEY5")
-            Defaults.set("anime", forKey: "THEKEY6")
-            Defaults.set("anime", forKey: "THEKEY7")
             return
         }
 

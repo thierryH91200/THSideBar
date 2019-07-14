@@ -28,7 +28,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         debugPrint("Drag session ended")
         self.draggedNode = nil
         if saveSection == true {
-            save()
+            save(name)
         }
     }
     
