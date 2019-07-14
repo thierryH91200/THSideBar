@@ -8,37 +8,25 @@
 
 import AppKit
 
-private var defaultsContext = 0
-
-
-class ContentView3Controller: ContentViewController {
+class ContentView3Controller: NSViewController {
     
     @IBOutlet weak var titleView: NSView!
     
-    let key = "THEKEY3"
+    let textLayer = CATextLayer()
+    let nameView = "View3 : "
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
-        Defaults.set("", forKey: key )
-        Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
-        
+        NotificationCenter.receive(instance: self, name: .updateView, selector: #selector(UpdateView(_: )))
         CommunController.shared.initLayer(titleView: titleView, textLayer: textLayer)
-        UpdateView(nameView : "View3 : ")
+        UpdateView(Notification(name: .updateView))
+
     }
     
-    open  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
-    {
-        if Defaults.object(forKey: key) as? NSString == "anime"
-        {
-            Defaults.set("", forKey: key)
-            UpdateView(nameView : "View3 : ")
-        }
-    }
-    deinit
-    {
-        Defaults.removeObserver(self, forKeyPath: key)
+    @objc func UpdateView(_ notification: Notification) {
+        textLayer.string = nameView + nameCity
     }
     
 }
