@@ -180,8 +180,8 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func ItemPlus(_ sender: Any) {
-//        let account8 = Account(name:"Account 8", icon:NSImage (named: "account")!, nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
-//        sideBarViewController1?.allSection[0].item.append(account8)
+        let account8 = Item(name:"Account 8", icon: "account", nameView: "ContentView4Controller", badge: "5", colorBadge: .blue)
+        sideBarViewController1?.sections[0].item.append(account8)
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
@@ -194,25 +194,25 @@ class MainWindowController: NSWindowController {
 
         numBadge = numBadge! + 1
         sideBarViewController1?.sections[0].item[selectedIndex - 1].badge = String(describing: numBadge!)
-//        sideBarViewController1?.sections[0].item[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+        sideBarViewController1?.sections[0].item[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()
         
-//        let item = sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1]
-//        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
+        let item = sideBarViewController1?.sections[0].item[selectedIndex - 1]
+        sideBarViewController1?.sidebarOutlineView.reloadItem(item)
         
         sideBarViewController1?.sidebarOutlineView.selectRowIndexes(NSIndexSet(index: selectedIndex  ) as IndexSet, byExtendingSelection: false)
     }
     
     @IBAction func buttonBadgeM(_ sender: Any) {
         let selectedIndex = 1
-//        let item = sideBarViewController1?.allSection[0].accounts[selectedIndex - 1]
-//        var numBadge = Int((item?.badge)!)
-//        
-//        numBadge = numBadge! - 1
-//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].badge = String(describing: numBadge!)
-//        sideBarViewController1?.allSection.sections[0].accounts[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
+        let item = sideBarViewController1?.sections[0].item[selectedIndex - 1]
+        var numBadge = Int((item?.badge)!)
+        
+        numBadge = numBadge! - 1
+        sideBarViewController1?.sections[0].item[selectedIndex - 1].badge = String(describing: numBadge!)
+        sideBarViewController1?.sections[0].item[selectedIndex - 1].colorBadge = numBadge! >= 0 ? .blue : .red
         
         sideBarViewController1?.sidebarOutlineView.sizeLastColumnToFit()
         sideBarViewController1?.sidebarOutlineView.reloadData()

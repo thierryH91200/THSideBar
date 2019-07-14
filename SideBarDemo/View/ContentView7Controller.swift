@@ -24,7 +24,7 @@ class ContentView7Controller: ContentViewController {
         Defaults.set("", forKey: key )
         Defaults.addObserver(self, forKeyPath: key, options: NSKeyValueObservingOptions(), context: &defaultsContext)
         
-        CommunController.sharedInstance.initLayer(titleView: titleView, textLayer: textLayer)
+        CommunController.shared.initLayer(titleView: titleView, textLayer: textLayer)
         UpdateView(nameView : "View7 : ")
     }
     
