@@ -24,7 +24,7 @@ class KSHeaderCellView : NSTableCellView {
 
 class THSideBarCellView: NSTableCellView {
     
-    var attribut                  = [NSAttributedString.Key : AnyObject] ()
+    var attribut                  = [NSAttributedString.Key : Any] ()
     
     var backgroundColor : CGColor = NSColor.green.cgColor
     var cornerRadius : CGFloat    = 8.0
@@ -46,7 +46,6 @@ class THSideBarCellView: NSTableCellView {
         super.viewWillDraw()
         if !button.isHidden
         {
-            button.wantsLayer = true
             button.layer?.backgroundColor = backgroundColor
             button.layer?.cornerRadius = cornerRadius
             

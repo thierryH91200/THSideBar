@@ -29,7 +29,3 @@ class ContentView6Controller: NSViewController {
         textLayer.string = nameView + nameCity
     }
 }
-
-
-
-

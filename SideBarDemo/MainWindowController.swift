@@ -107,7 +107,12 @@ class MainWindowController: NSWindowController {
         sideBarViewController2?.rowStyle =  .small
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
-        initData2()
+        
+        let sections = sideBarViewController1?.load("city")
+        if sections?.count ?? 0 > 0 {
+            initData2()
+            sideBarViewController1?.save("city")
+        }
         sideBarViewController2?.reloadData()
     }
     
