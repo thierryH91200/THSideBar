@@ -69,7 +69,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
             
             cell?.button.isHidden        = account.isHidden
             cell?.title                  = account.badge
-//            cell?.backgroundColor        = account.colorBadge.cgColor
+            cell?.backgroundColor        = account.colorBadge.cgColor
             
             cell?.button?.bezelStyle     = .inline // Make it appear as a normal label and not a button
             cell?.needsDisplay = true

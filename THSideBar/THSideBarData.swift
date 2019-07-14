@@ -55,9 +55,7 @@ public class Item : Codable {
         try container.encode(badge, forKey: .badge)
         try container.encode(Color(uiColor: colorBadge), forKey: .colorBadge)
         try container.encode(isHidden, forKey: .isHidden)
-
     }
-
 }
 
 class Section : Codable {
