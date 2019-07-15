@@ -16,9 +16,10 @@ class KSHeaderCellView : NSTableCellView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
-        let bPath = NSBezierPath(rect: dirtyRect)
-        fillColor.set()
-        bPath.fill()
+//        let bPath = NSBezierPath(rect: dirtyRect)
+//        fillColor.set()
+//        dirtyRect.fill()
+//        bPath.fill()
     }
 }
 
@@ -44,9 +45,8 @@ class THSideBarCellView: NSTableCellView {
     // Overlapping accesses to 'textFrame', but modification requires exclusive access; consider copying to a local variable
     override func viewWillDraw() {
         super.viewWillDraw()
-        if !button.isHidden
+        if button.isHidden == false 
         {
-            let wl = button.wantsLayer
             button.wantsLayer = true
             button.layer?.backgroundColor = backgroundColor
             button.layer?.cornerRadius = cornerRadius

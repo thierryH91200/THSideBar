@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "68D73219-1F9E-4964-AC13-D2A5D756DD0C"
-            shouldBeEnabled = "Yes"
+            uuid = "3805A73A-CA78-41B0-B056-75CB8A688CF9"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "THSideBar/THSideBarCellView.swift"
+            filePath = "THSideBar/THSideBarDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "viewWillDraw()"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "outlineView(_:shouldSelectItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D97819B-C4E7-4949-89FC-6361E5595A5F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "THSideBar/THSideBarDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "isSourceGroupItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

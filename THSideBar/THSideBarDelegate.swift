@@ -25,20 +25,22 @@ extension THSideBarViewController: NSOutlineViewDelegate {
     }
     
     // TODO -
-    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
-        // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
-        let section = item as? Section
-        if section != nil
-        {
-            if section?.section.name == "Account2" {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-        return true
-    }
+//    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
+//        // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
+//        let section = item as? Section
+//        if section != nil
+//        {
+//            if section?.section.name == "Account2" {
+//                return false
+//            }
+//            else {
+//                return true
+//            }
+//        }
+//        return true
+//    }
+    
+
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 

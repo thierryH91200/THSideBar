@@ -19,7 +19,6 @@ class THSideBarViewController: NSViewController {
     open weak var delegate: THSideBarViewDelegate?
     
     var draggedNode:AnyObject? = nil
-    var fromIndex: Int? = nil
     
     var sections = [ Section]()
 

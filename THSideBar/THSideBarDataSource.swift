@@ -62,7 +62,7 @@ extension THSideBarViewController: NSOutlineViewDataSource {
     
     func isSourceGroupItem(_ item: Any) -> Bool
     {
-        if item is [Section] {
+        if item is Section {
             return true
         }
         return false

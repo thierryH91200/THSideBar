@@ -111,7 +111,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         
         if oldIndex != toIndex || parentSrcItem != parentDstItem
         {
-            self.moveItemAtIndex(oldIndex, inParent: parentSrcItem, toIndex: toIndex, inParent: parentDstItem)
+            self.moveItemAtIndex(fromIndex : oldIndex, oldParent: parentSrcItem, toIndex: toIndex, newParent: parentDstItem)
             outlineView.moveItem(at: oldIndex, inParent: parentSrcItem, to: toIndex, inParent: parentDstItem)
             retVal = true
         }
@@ -127,7 +127,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         item.setString(s, forType: type)
     }
     
-    func moveItemAtIndex(_ fromIndex: Int, inParent oldParent: Section?, toIndex: Int, inParent newParent: Section?)
+    func moveItemAtIndex( fromIndex: Int, oldParent: Section?, toIndex: Int, newParent: Section?)
     {
 //        var removedSection : Section?
         var removedItem : Item?
