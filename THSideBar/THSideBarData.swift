@@ -8,8 +8,6 @@
 
 import AppKit
 
-
-
 public class Item : Codable {
     
     var name: String

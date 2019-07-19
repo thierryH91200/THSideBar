@@ -40,6 +40,14 @@ extension THSideBarViewController: NSOutlineViewDelegate {
 //        return true
 //    }
     
+//    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
+//        if item is Section {
+//            let myCustomView = MyRowView()
+//        return myCustomView
+//        }
+//        return nil
+//    }
+
 
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {

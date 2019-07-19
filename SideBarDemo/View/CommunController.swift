@@ -25,7 +25,6 @@ class CommunController
         titleView.wantsLayer = true
         layer.layoutManager = CAConstraintLayoutManager()
         
-        //        textLayer.foregroundColor = NSColor.black.cgColor
         textLayer.frame = layer.frame
         textLayer.string = ""
         textLayer.font = "Menlo" as CFTypeRef
@@ -49,7 +48,7 @@ class CommunController
 
 extension NotificationCenter {
     
-    // Send(Post) Notification
+    /// Send(Post) Notification
     static func send(_ key: Notification.Name) {
         self.default.post(
             name: key,
@@ -57,7 +56,7 @@ extension NotificationCenter {
         )
     }
     
-    // Receive(addObserver) Notification
+    /// Receive(addObserver) Notification
     static func receive(instance: Any, name: Notification.Name, selector: Selector) {
         self.default.addObserver(
             instance,
@@ -67,7 +66,7 @@ extension NotificationCenter {
         )
     }
     
-    // Remove(removeObserver) Notification
+    /// Remove(removeObserver) Notification
     static func remove( instance: Any, name: Notification.Name  ) {
         self.default.removeObserver(
             instance,

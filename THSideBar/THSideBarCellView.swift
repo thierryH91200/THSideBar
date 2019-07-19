@@ -12,14 +12,37 @@ import AppKit
 class KSHeaderCellView : NSTableCellView {
     
     var fillColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+    
+//    override var backgroundStyle: NSView.BackgroundStyle {
+//        didSet {
+//            if backgroundStyle == .light {
+//                let color = NSColor.white
+//                self.fillColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+//            } else if self.backgroundStyle == .dark {
+//                let color = NSColor.gray
+//                self.fillColor = color
+//            }
+//        }
+//    }
+
         
     override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+        
+        wantsLayer = true
+        layer?.backgroundColor = fillColor.cgColor
+
         
 //        let bPath = NSBezierPath(rect: dirtyRect)
 //        fillColor.set()
 //        dirtyRect.fill()
 //        bPath.fill()
+        super.draw(dirtyRect)
+        
+//        self.backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
+//        
+//        NSRectFill(dirtyRect)
+
+
     }
 }
 
@@ -68,3 +91,16 @@ class THSideBarCellView: NSTableCellView {
         }
     }
 }
+//class MyRowView: NSTableRowView {
+//    
+//    override func draw(_ dirtyRect: NSRect) {
+//        super.draw(dirtyRect)
+//        
+//        self.backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
+//        
+//        __NSRectFill(dirtyRect)
+//        
+//        
+//    }
+//}
+
