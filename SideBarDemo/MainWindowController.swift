@@ -86,6 +86,7 @@ class MainWindowController: NSWindowController {
         item20.append(item5)
         item20.append(item6)
         item20.append(item7)
+        sectionItem.name = "Account10"
         let section2 = Section(section: sectionItem, item: item20)
 
         section.removeAll()

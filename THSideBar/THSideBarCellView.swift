@@ -13,23 +13,10 @@ class KSHeaderCellView : NSTableCellView {
     
     var fillColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
     
-//    override var backgroundStyle: NSView.BackgroundStyle {
-//        didSet {
-//            if backgroundStyle == .light {
-//                let color = NSColor.white
-//                self.fillColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-//            } else if self.backgroundStyle == .dark {
-//                let color = NSColor.gray
-//                self.fillColor = color
-//            }
-//        }
-//    }
-
-        
     override func draw(_ dirtyRect: NSRect) {
         
-        wantsLayer = true
-        layer?.backgroundColor = fillColor.cgColor
+//        wantsLayer = true
+//        layer?.backgroundColor = fillColor.cgColor
 
         
 //        let bPath = NSBezierPath(rect: dirtyRect)

@@ -35,10 +35,6 @@ extension THSideBarViewController: NSOutlineViewDataSource {
         }
     }
     
-    public func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool
-    {
-        return !isSourceGroupItem(item)
-    }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if let section = item as? Section {
