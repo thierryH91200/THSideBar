@@ -45,7 +45,7 @@ extension THSideBarViewController: NSOutlineViewDelegate {
 
 //            cell.fillColor = self.colorBackGround
             cell.wantsLayer = true
-//            cell.layer?.backgroundColor = self.colorBackGround.cgColor
+            cell.layer?.backgroundColor = self.colorBackGround.cgColor
 
             
             cell.textField!.stringValue = section.section.name.uppercased()

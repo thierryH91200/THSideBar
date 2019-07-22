@@ -124,25 +124,24 @@ class JPOutliveView : NSOutlineView {
     let kOutlineCellWidth : CGFloat = 30
     let kOutlineMinLeftMargin : CGFloat = 25
     
-    
     override func makeView(withIdentifier identifier: NSUserInterfaceItemIdentifier, owner: Any?) -> NSView?    {
         
         let view = super.makeView(withIdentifier:identifier, owner:owner)
         
         if identifier == NSOutlineView.disclosureButtonIdentifier
         {
-            let view = view as? NSButton
-            
-            let targetSize = NSSize(width: 20.0, height: 20.0)
-            let image = NSImage(named: "RightArrow")?.resized(to: targetSize)
-            let alternateImage = NSImage(named: "DownArrow")?.resized(to: targetSize)
-
-            
-            view?.image = image
-            view?.alternateImage =  alternateImage
-            
-            view?.frame = NSMakeRect(0, 0, 50, 50)
-            return view
+            if let btnView = view as? NSButton {
+                
+                let targetSize = NSSize(width: 20.0, height: 20.0)
+                let image = NSImage(named: "RightArrow")?.resized(to: targetSize)
+                let alternateImage = NSImage(named: "DownArrow")?.resized(to: targetSize)
+                
+                
+                btnView.image = image
+                btnView.alternateImage =  alternateImage
+                
+                btnView.frame = NSMakeRect(0, 0, 50, 50)
+            }
         }
         return view
     }
@@ -170,41 +169,7 @@ class JPOutliveView : NSOutlineView {
         }
         return superFrame
     }
-
-
-//    - (NSCell *)preparedCellAtColumn:(NSInteger)column row:(NSInteger)row {
-//        // NSCell *cell =  [super viewAtColumn:column row:row makeIfNecessary:YES];
-//        NSCell *cell = [super preparedCellAtColumn:column row:row];
-//        if (cell.isHighlighted && self.window.isKeyWindow) {
-//            cell.backgroundStyle = NSBackgroundStyleDark;
-//            cell.highlighted = NO;
-//        }
-//
-//        return cell;
-//    }
-
-//    override func highlightSelection(inClipRect clipRect: NSRect) {
-//        if (!self.window.isKeyWindow) {
-//            return super.highlightSelection( inClipRect:clipRect)
-//        }
-//
-//        let range = rows(in : clipRect)
-////        NSRange range = [self rowsInRect:clipRect];
-//        [[NSColor alternateSelectedControlColor] set];
-//
-//        [self.selectedRowIndexes enumerateRangesInRange:range options:0 usingBlock:^(NSRange curRange, BOOL *stop) {
-//
-//
-//            for row in curRange.location..< NSMaxRange(curRange){
-////                for (NSUInteger row = curRange.location; row < NSMaxRange(curRange); ++row) {
-//                NSRect rect = [self rectOfRow:row];
-//                rect.size.height -= 1
-//                [[NSColor redColor] set];
-//                NSRectFill(rect);
-//            }
-//        }];
-//    }
-
+    
     
     
 }
@@ -215,18 +180,18 @@ extension NSImage {
             bitmapDataPlanes: nil, pixelsWide: Int(newSize.width), pixelsHigh: Int(newSize.height),
             bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
             colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0
-        ) {
+            ) {
             bitmapRep.size = newSize
             NSGraphicsContext.saveGraphicsState()
             NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmapRep)
             draw(in: NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height), from: .zero, operation: .copy, fraction: 1.0)
             NSGraphicsContext.restoreGraphicsState()
-
+            
             let resizedImage = NSImage(size: newSize)
             resizedImage.addRepresentation(bitmapRep)
             return resizedImage
         }
-
+        
         return nil
     }
 }

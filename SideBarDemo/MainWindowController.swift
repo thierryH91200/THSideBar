@@ -29,7 +29,6 @@ class MainWindowController: NSWindowController {
     var contentView6Controller =  ContentView6Controller()
     var contentView7Controller =  ContentView7Controller()
     
-
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -65,7 +64,6 @@ class MainWindowController: NSWindowController {
         
         var section               = [Section]()
 
-        
         let item1 = Item(name:"ContentView1", icon: "Human_resource", nameView: "ContentView1Controller", badge: "10", colorBadge: .blue)
         let item2 = Item(name:"ContentView2", icon: "Human_resource", nameView: "ContentView2Controller", badge: "-5", colorBadge: .red)
         let item3 = Item(name:"ContentView3", icon: "employee",       nameView: "ContentView3Controller", badge: "3", colorBadge: .blue)

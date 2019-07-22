@@ -36,6 +36,7 @@
 		0324E0921FA0867400D0AB52 /* THSideBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */; };
 		0336FB2322DAF11900FEC527 /* CommunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336FB2222DAF11900FEC527 /* CommunController.swift */; };
 		0346867C1FC7634B0065C180 /* THTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346867B1FC7634B0065C180 /* THTextFieldDelegate.swift */; };
+		034CF9EB22E5BC22005BDF21 /* MARKDOWN_REFERENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = 034CF9EA22E5BC22005BDF21 /* MARKDOWN_REFERENCE.md */; };
 		034D65631FBD6C0F00D980A9 /* ContentView1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */; };
 		034D65651FBD6C3100D980A9 /* ContentView2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */; };
 		034D65671FBD6C5800D980A9 /* ContentView3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */; };
@@ -105,6 +106,7 @@
 		0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THSideBarDataSource.swift; sourceTree = "<group>"; };
 		0336FB2222DAF11900FEC527 /* CommunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunController.swift; sourceTree = "<group>"; };
 		0346867B1FC7634B0065C180 /* THTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THTextFieldDelegate.swift; sourceTree = "<group>"; };
+		034CF9EA22E5BC22005BDF21 /* MARKDOWN_REFERENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = MARKDOWN_REFERENCE.md; sourceTree = "<group>"; };
 		034D65621FBD6C0F00D980A9 /* ContentView1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView1Controller.swift; sourceTree = "<group>"; };
 		034D65641FBD6C3100D980A9 /* ContentView2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2Controller.swift; sourceTree = "<group>"; };
 		034D65661FBD6C5800D980A9 /* ContentView3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView3Controller.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		0305FAB71F80AE3900D9B979 = {
 			isa = PBXGroup;
 			children = (
+				034CF9EA22E5BC22005BDF21 /* MARKDOWN_REFERENCE.md */,
 				035BAA8E22CCB4820081B76B /* README.md */,
 				0324E08E1FA0847700D0AB52 /* THSideBar */,
 				0305FAC21F80AE3900D9B979 /* SideBarDemo */,
@@ -392,6 +395,7 @@
 				0305FAC91F80AE3900D9B979 /* MainMenu.xib in Resources */,
 				032081EE1FA30C97000925C6 /* vintage-radio-on-glass-table.jpg in Resources */,
 				032081EF1FA30C97000925C6 /* woman-writing-in-music-sheet.jpg in Resources */,
+				034CF9EB22E5BC22005BDF21 /* MARKDOWN_REFERENCE.md in Resources */,
 				034D65731FBD72A300D980A9 /* THSideBarViewController.xib in Resources */,
 				032081E21FA309BB000925C6 /* ContentView7Controller.xib in Resources */,
 			);
