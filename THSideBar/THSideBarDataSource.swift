@@ -10,6 +10,7 @@ import AppKit
 
 extension THSideBarViewController: NSOutlineViewDataSource {
     
+    /// Number of items in the sidebar
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         
         var count = 0
@@ -23,7 +24,7 @@ extension THSideBarViewController: NSOutlineViewDataSource {
         return count
     }
     
-    // Returns the child item at the specified index of a given item
+    /// Returns the child item at the specified index of a given item
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         
         if item == nil {
@@ -36,6 +37,7 @@ extension THSideBarViewController: NSOutlineViewDataSource {
     }
     
     
+    /// Whether rows are expandable by an arrow
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if let section = item as? Section {
             return section.item.count > 0
@@ -43,18 +45,6 @@ extension THSideBarViewController: NSOutlineViewDataSource {
             return false
         }
     }
-    
-    //    func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item :Any?) -> Any? {
-    //        if let item = item as? [Section]
-    //        {
-    //            return item
-    //        }
-    //        if let item = item as? Item
-    //        {
-    //            return item
-    //        }
-    //        return nil
-    //    }
     
     func isSourceGroupItem(_ item: Any) -> Bool
     {

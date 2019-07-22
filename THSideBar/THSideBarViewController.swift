@@ -133,9 +133,9 @@ class JPOutliveView : NSOutlineView {
         {
             let view = view as? NSButton
             
-            let targetSize = NSSize(width: 50.0, height: 50.0)
-            let image = NSImage(named: "clapperboard.png")?.resized(to: targetSize)
-            let alternateImage = NSImage(named: "clapperboard-open.png")?.resized(to: targetSize)
+            let targetSize = NSSize(width: 20.0, height: 20.0)
+            let image = NSImage(named: "RightArrow")?.resized(to: targetSize)
+            let alternateImage = NSImage(named: "DownArrow")?.resized(to: targetSize)
 
             
             view?.image = image
@@ -165,7 +165,6 @@ class JPOutliveView : NSOutlineView {
                 print("adjustment amount is incorrect: adjustment ")
                 adjustment = max(0, superFrame.origin.x - kOutlineMinLeftMargin);
             }
-            
             return NSMakeRect(superFrame.origin.x - adjustment, superFrame.origin.y, superFrame.size.width + adjustment, superFrame.size.height)
             
         }
@@ -192,6 +191,7 @@ class JPOutliveView : NSOutlineView {
 //        let range = rows(in : clipRect)
 ////        NSRange range = [self rowsInRect:clipRect];
 //        [[NSColor alternateSelectedControlColor] set];
+//
 //        [self.selectedRowIndexes enumerateRangesInRange:range options:0 usingBlock:^(NSRange curRange, BOOL *stop) {
 //
 //

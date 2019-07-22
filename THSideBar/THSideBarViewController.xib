@@ -15,21 +15,21 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView identifier="sideBarView" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="354" height="557"/>
+        <customView identifier="sideBarView" misplaced="YES" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="556"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvM-Os-wkw">
-                    <rect key="frame" x="0.0" y="0.0" width="354" height="537"/>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvM-Os-wkw">
+                    <rect key="frame" x="0.0" y="0.0" width="354" height="534"/>
                     <clipView key="contentView" drawsBackground="NO" id="eMN-ua-DGW">
-                        <rect key="frame" x="1" y="1" width="352" height="535"/>
+                        <rect key="frame" x="1" y="1" width="352" height="532"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="yp2-59-YXi" id="20q-RR-MVu" customClass="JPOutliveView" customModule="SideBarDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="352" height="535"/>
+                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="22" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" outlineTableColumn="yp2-59-YXi" id="20q-RR-MVu" customClass="JPOutliveView" customModule="SideBarDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="532"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <size key="intercellSpacing" width="2" height="3"/>
-                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="intercellSpacing" width="3" height="0.0"/>
+                                <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn width="349" minWidth="16" maxWidth="1000" id="yp2-59-YXi">
@@ -46,7 +46,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="FeedCellHeader" id="FHq-uz-7dU" customClass="KSHeaderCellView" customModule="SideBarDemo" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="1" width="349" height="60"/>
+                                                <rect key="frame" x="1" y="0.0" width="349" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-Cf-aOa">
@@ -68,7 +68,7 @@
                                                 </connections>
                                             </tableCellView>
                                             <tableCellView identifier="FeedCell" id="FDN-gX-arZ" customClass="THSideBarCellView" customModule="SideBarDemo" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="64" width="349" height="17"/>
+                                                <rect key="frame" x="1" y="60" width="349" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dfl-Fj-eYT">
@@ -121,7 +121,7 @@
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HHf-du-cUa">
-                    <rect key="frame" x="0.0" y="536" width="354" height="21"/>
+                    <rect key="frame" x="0.0" y="533" width="354" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="8nH-9K-ajY"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="k5v-rF-3y3"/>

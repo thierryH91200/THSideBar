@@ -17,79 +17,26 @@ public protocol THSideBarViewDelegate : class
 
 extension THSideBarViewController: NSOutlineViewDelegate {
     
-    // ok
-    // indicates whether a given row should be drawn in the “group row” style.
-    public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
-    {
-        return isSourceGroupItem(item)
-    }
     
-    
-    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
-        print(isSourceGroupItem(item))
-        return isSourceGroupItem(item)
-
-    }
-    
+    /// When a row is clicked on should it be selected
     public func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool
     {
         return !isSourceGroupItem(item)
     }
     
-//    - (void)outlineView:(NSOutlineView *)outlineView willDisplayOutlineCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item {
-//        NSString *theImageName;
-//        NSInteger theCellValue = [cell integerValue];
-//        if (theCellValue==1) {
-//            theImageName = @"PMOutlineCellOn";
-//        } else if (theCellValue==0) {
-//            theImageName = @"PMOutlineCellOff";
-//        } else {
-//            theImageName = @"PMOutlineCellMixed";
-//        }
-//
-//        NSImage *theImage = [NSImage imageNamed: theImageName];
-//        NSRect theFrame = [outlineView frameOfOutlineCellAtRow:[outlineView rowForItem: item]];
-//        theFrame.origin.y = theFrame.origin.y +17;
-//        // adjust theFrame here to position your image
-//        [theImage compositeToPoint: theFrame.origin operation:NSCompositeSourceOver];
-//        [cell setImagePosition: NSNoImage];
-//    }
-
-    
-    // TODO -
-//    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
-//        // As an example, hide the "outline disclosure button" for Account2. This hides the "Show/Hide" button and disables the tracking area for that row.
-//        let section = item as? Section
-//        if section != nil
-//        {
-//            if section?.section.name == "Account2" {
-//                return false
-//            }
-//            else {
-//                return true
-//            }
-//        }
-//        return true
-//    }
-    
-//    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
-//        if item is Section {
-//            let myCustomView = MyRowView()
-//        return myCustomView
-//        }
-//        return nil
-//    }
-    
+    /// Height of each row
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
         if isSourceGroupItem(item) == true {
-            return 55.0
+            return 30.0
         }
         return 20.0
     }
-
-
-
     
+    /// Whether a row should be collapsed
+    func outlineView(_ outlineView: NSOutlineView, shouldCollapseItem item: Any) -> Bool {
+      return isSourceGroupItem(item)
+    }
+
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 
         if let section = item as? Section
