@@ -27,8 +27,8 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
         debugPrint("Drag session ended")
         self.draggedNode = nil
-        if saveSection == true {
-            save(name)
+        if isSaveSection == true {
+            save()
         }
     }
     
@@ -40,7 +40,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
 //            return NSDragOperation();
 //        }
         
-        var retVal:NSDragOperation = NSDragOperation()
+        var retVal = NSDragOperation()
         
 //        let baseItem = item as? Item
 //        if baseItem != nil

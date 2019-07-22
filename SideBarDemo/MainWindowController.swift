@@ -46,17 +46,15 @@ class MainWindowController: NSWindowController {
         addSubview(subView: (sideBarViewController1?.view)!, toView: sourceView)
         
         sideBarViewController1?.delegate = self
-        sideBarViewController1?.allowDragAndDrop = true
-        sideBarViewController1?.saveSection = false
+        sideBarViewController1?.isAllowDragAndDrop = false
+        sideBarViewController1?.isSaveSection = false
         sideBarViewController1?.rowStyle =  .medium
-        
+        sideBarViewController1?.name = "view"
+
         setUpLayoutConstraints(item: sideBarViewController1!.view, toItem: sourceView)
-        var sections = sideBarViewController1?.load("view")
-        if sections?.count ?? 0 == 0 {
-            sections = initData1()
-            sideBarViewController1?.save("view")
-        }
-        sideBarViewController1?.initData( allSection: sections! )
+        let sections = initData1()
+
+        sideBarViewController1?.initData( allSection: sections )
         sideBarViewController1?.reloadData()
     }
     
@@ -103,13 +101,16 @@ class MainWindowController: NSWindowController {
         sideBarViewController2?.delegate = self
         sideBarViewController2?.colorBackGround = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         sideBarViewController2?.rowStyle =  .small
+        sideBarViewController2?.name = "city"
+        sideBarViewController2?.isSaveSection = true
+        sideBarViewController2?.isAllowDragAndDrop = true
 
         setUpLayoutConstraints(item: sideBarViewController2!.view, toItem: sourceView1)
         
-        var sections = sideBarViewController2?.load("city")
+        var sections = sideBarViewController2?.load()
         if sections?.count ?? 0 == 0 {
             sections = initData2()
-            sideBarViewController2?.save("city")
+            sideBarViewController2?.save()
         }
         sideBarViewController2?.initData( allSection: sections! )
         sideBarViewController2?.reloadData()

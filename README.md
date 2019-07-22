@@ -124,7 +124,7 @@ extension MainWindowController: THSideBarViewDelegate
 
 ## Custom NSOutlineView
 
-    var saveSection = true                       // Ideal for dynamic sections
+    var isSaveSection = true                       // Ideal for dynamic sections
     var colorBackGround = NSColor.blue
     var rowSizeStyle = NSTableView.RowSizeStyle.small
     var allowDragAndDrop = true

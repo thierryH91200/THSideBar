@@ -22,8 +22,8 @@ class THSideBarViewController: NSViewController {
     
     var sections = [ Section]()
     
-    var allowDragAndDrop = true
-    var saveSection = true
+    var isAllowDragAndDrop = false
+    var isSaveSection = false
     var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
     var rowStyle = NSTableView.RowSizeStyle.small
     var colorText = NSColor.black
@@ -43,7 +43,7 @@ class THSideBarViewController: NSViewController {
     {
         super.viewDidAppear()
         
-        if allowDragAndDrop == true {
+        if isAllowDragAndDrop == true {
             // Register for the dropped object types we can accept.
             sidebarOutlineView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: REORDER_PASTEBOARD_TYPE)])
             
@@ -77,7 +77,7 @@ class THSideBarViewController: NSViewController {
     }
     
     
-    func load(_ name: String) -> [Section] {
+    func load() -> [Section] {
         var model = [Section]()
         let json = UserDefaults.standard.data(forKey: name)
         if let json = json {
@@ -103,9 +103,8 @@ class THSideBarViewController: NSViewController {
         return []
     }
     
-    func save(_ name: String)
+    func save()
     {
-        self.name = name
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
