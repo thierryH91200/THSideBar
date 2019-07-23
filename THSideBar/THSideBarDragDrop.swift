@@ -102,11 +102,10 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         
         let srcItem     = draggedNode as! Item
         let parentSrcItem  = outlineView.parent(forItem: srcItem) as? Section
-        
+        let rowSrcItem  = outlineView.row(forItem: srcItem)
         let oldIndex    = sidebarOutlineView.childIndex(forItem: srcItem)
-        var toIndex     = index
-
         
+        var toIndex     = index
 //        let parentDstItem    = item as? Section
         let destItem    = outlineView.item(atRow: toIndex) as? Item
         let parentDstItem = outlineView.parent(forItem: destItem) as? Section
@@ -114,16 +113,17 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         
         if parentDstItem != nil && parentSrcItem != nil
         {
-            print("move      src:\(srcItem.name)")
-            print("    srcParent:\(parentSrcItem!.section.name)")
-            print("     oldIndex:\(oldIndex)")
-
-            print("      toIndex:\(toIndex)")
-            print("     toParent:\(parentDstItem!.section.name)")
+            print("move  srcItem:   \(srcItem.name)")
+            print("    srcParent:   \(parentSrcItem!.section.name)")
+            print("     oldIndex:   \(oldIndex)")
+            print("   rowSrcItem:   \(rowSrcItem)")
+            print("")
+            print("      toIndex:   \(toIndex)")
+            print("     toParent:   \(parentDstItem!.section.name)")
         }
         else
         {
-            debugPrint("destination or parent is nil")
+            print("destination or parent is nil")
         }
 
         
@@ -135,8 +135,7 @@ extension THSideBarViewController: NSPasteboardItemDataProvider {
         {
             toIndex = 0
         }
-        else if toIndex > oldIndex
-        {
+        else if toIndex > oldIndex && parentSrcItem == parentDstItem   {
             toIndex -= 1
         }
         
