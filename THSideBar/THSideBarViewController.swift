@@ -25,7 +25,7 @@ class THSideBarViewController: NSViewController {
     var isAllowDragAndDrop = false
     var isSaveSection = false
     var colorBackGround = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-    var rowStyle = NSTableView.RowSizeStyle.small
+    var rowStyle = NSTableView.RowSizeStyle.medium
     var colorText = NSColor.black
     
     var selectIndex = [1]

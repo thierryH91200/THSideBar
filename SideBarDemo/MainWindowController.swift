@@ -46,7 +46,7 @@ class MainWindowController: NSWindowController {
         addSubview(subView: (sideBarViewController1?.view)!, toView: sourceView)
         
         sideBarViewController1?.delegate = self
-        sideBarViewController1?.isAllowDragAndDrop = false
+        sideBarViewController1?.isAllowDragAndDrop = true
         sideBarViewController1?.isSaveSection = false
         sideBarViewController1?.rowStyle =  .medium
         sideBarViewController1?.name = "view"
@@ -82,8 +82,8 @@ class MainWindowController: NSWindowController {
         item20.append(item5)
         item20.append(item6)
         item20.append(item7)
-        sectionItem.name = "Account10"
-        let section2 = Section(section: sectionItem, item: item20)
+        let sectionItem2 =  Item(name:"Account3", icon: "Human_resource", nameView: "ContentView1Controller", badge: "40", colorBadge: .blue)
+        let section2 = Section(section: sectionItem2, item: item20)
 
         section.removeAll()
         section.append(section1)
