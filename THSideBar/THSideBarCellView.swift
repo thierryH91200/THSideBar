@@ -15,21 +15,7 @@ class KSHeaderCellView : NSTableCellView {
     
     override func draw(_ dirtyRect: NSRect) {
         
-//        wantsLayer = true
-//        layer?.backgroundColor = fillColor.cgColor
-
-        
-//        let bPath = NSBezierPath(rect: dirtyRect)
-//        fillColor.set()
-//        dirtyRect.fill()
-//        bPath.fill()
         super.draw(dirtyRect)
-        
-//        self.backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
-//        
-//        NSRectFill(dirtyRect)
-
-
     }
 }
 
@@ -78,16 +64,3 @@ class THSideBarCellView: NSTableCellView {
         }
     }
 }
-//class MyRowView: NSTableRowView {
-//    
-//    override func draw(_ dirtyRect: NSRect) {
-//        super.draw(dirtyRect)
-//        
-//        self.backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
-//        
-//        __NSRectFill(dirtyRect)
-//        
-//        
-//    }
-//}
-

@@ -36,7 +36,6 @@ extension THSideBarViewController: NSOutlineViewDataSource {
         }
     }
     
-    
     /// Whether rows are expandable by an arrow
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if let section = item as? Section {

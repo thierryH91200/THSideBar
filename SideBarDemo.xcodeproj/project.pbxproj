@@ -28,8 +28,6 @@
 		032081F01FA30C97000925C6 /* rayban-ray-bans-spectacles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032081E91FA30C96000925C6 /* rayban-ray-bans-spectacles.jpg */; };
 		032081F11FA30C97000925C6 /* record-vinyl-turntable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032081EA1FA30C96000925C6 /* record-vinyl-turntable.jpg */; };
 		032081F31FA31F2B000925C6 /* THSideBarDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032081F21FA31F2B000925C6 /* THSideBarDragDrop.swift */; };
-		0320CF8322E49C6C005C4A31 /* clapperboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0320CF8222E49C6C005C4A31 /* clapperboard.png */; };
-		0320CF8522E49C78005C4A31 /* clapperboard-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 0320CF8422E49C78005C4A31 /* clapperboard-open.png */; };
 		0324E0901FA085EF00D0AB52 /* THSideBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E08F1FA085EF00D0AB52 /* THSideBarDelegate.swift */; };
 		0324E0921FA0867400D0AB52 /* THSideBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */; };
 		0336FB2322DAF11900FEC527 /* CommunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336FB2222DAF11900FEC527 /* CommunController.swift */; };
@@ -96,8 +94,6 @@
 		032081E91FA30C96000925C6 /* rayban-ray-bans-spectacles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rayban-ray-bans-spectacles.jpg"; sourceTree = "<group>"; };
 		032081EA1FA30C96000925C6 /* record-vinyl-turntable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "record-vinyl-turntable.jpg"; sourceTree = "<group>"; };
 		032081F21FA31F2B000925C6 /* THSideBarDragDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THSideBarDragDrop.swift; sourceTree = "<group>"; };
-		0320CF8222E49C6C005C4A31 /* clapperboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clapperboard.png; sourceTree = "<group>"; };
-		0320CF8422E49C78005C4A31 /* clapperboard-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clapperboard-open.png"; sourceTree = "<group>"; };
 		0324E08F1FA085EF00D0AB52 /* THSideBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THSideBarDelegate.swift; sourceTree = "<group>"; };
 		0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THSideBarDataSource.swift; sourceTree = "<group>"; };
 		0336FB2222DAF11900FEC527 /* CommunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunController.swift; sourceTree = "<group>"; };
@@ -217,8 +213,6 @@
 		0324E08E1FA0847700D0AB52 /* THSideBar */ = {
 			isa = PBXGroup;
 			children = (
-				0320CF8222E49C6C005C4A31 /* clapperboard.png */,
-				0320CF8422E49C78005C4A31 /* clapperboard-open.png */,
 				0305FAF11F80BBA500D9B979 /* THSideBarCellView.swift */,
 				0361A1271F9FD05B00FED796 /* THSideBarData.swift */,
 				0324E0911FA0867400D0AB52 /* THSideBarDataSource.swift */,
@@ -372,12 +366,10 @@
 				032081EB1FA30C97000925C6 /* abundance-church-family.jpg in Resources */,
 				032081E31FA309BB000925C6 /* ContentView6Controller.xib in Resources */,
 				0305FAF61F8117BC00D9B979 /* ContentView2Controller.xib in Resources */,
-				0320CF8322E49C6C005C4A31 /* clapperboard.png in Resources */,
 				0305FAF81F8117D500D9B979 /* ContentView3Controller.xib in Resources */,
 				032081EC1FA30C97000925C6 /* mobile-phone-and-headphones-on-white-wooden-table.jpg in Resources */,
 				032081E11FA309BB000925C6 /* ContentView4Controller.xib in Resources */,
 				032081F01FA30C97000925C6 /* rayban-ray-bans-spectacles.jpg in Resources */,
-				0320CF8522E49C78005C4A31 /* clapperboard-open.png in Resources */,
 				032081ED1FA30C97000925C6 /* hand-tuning-peg-instrument.jpg in Resources */,
 				0373C89D1FBC03F40000757D /* MainWindowController.xib in Resources */,
 				0305FAC61F80AE3900D9B979 /* Assets.xcassets in Resources */,
