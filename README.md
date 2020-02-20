@@ -17,6 +17,7 @@ NSOutlineView and badge
    
 
 
+[![Stargazers over time](https://starchart.cc/thierryH91200/THSideBar.svg)](https://starchart.cc/thierryH91200/THSideBar)
 
 
 # Usage
